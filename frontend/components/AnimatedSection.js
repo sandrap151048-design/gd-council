@@ -129,7 +129,7 @@ export function AnimatedCounter({
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [end, duration]);
+  }, [end, duration, animateCounter]);
 
   const animateCounter = (element, target, duration) => {
     const start = 0;

@@ -296,7 +296,7 @@ export const createFloatingShapes = (container, count = 5) => {
 // EXPORT ALL UTILITIES
 // ============================================
 
-export default {
+const animations = {
   ANIMATION_DURATION,
   EASING,
   STAGGER_DELAY,
@@ -309,3 +309,5 @@ export default {
   animateCounter,
   createFloatingShapes,
 };
+
+export default animations;
