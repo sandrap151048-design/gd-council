@@ -36,6 +36,8 @@ function AdminContent() {
         api.get('/newsletter')
       ]);
 
+      console.log('Newsletter data:', newsletter.data); // Debug log
+
       setStats({
         courses: courses.data.length,
         universities: universities.data.length,
@@ -43,10 +45,11 @@ function AdminContent() {
         enrollments: enrollments.data.length,
         inquiries: inquiries.data.length,
         partnerships: partnerships.data.length,
-        subscribers: newsletter.data.count
+        subscribers: newsletter.data.activeCount || newsletter.data.count || 0
       });
     } catch (error) {
       console.error('Error fetching stats:', error);
+      console.error('Error details:', error.response?.data || error.message);
     } finally {
       setLoading(false);
     }

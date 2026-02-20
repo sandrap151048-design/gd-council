@@ -32,27 +32,8 @@ export default function Footer() {
       setTimeout(() => setMessage(''), 5000);
     } catch (err) {
       console.error('Subscription error:', err);
-      
-      // Check if it's a network error (backend not available)
-      if (err.code === 'ERR_NETWORK' || !err.response) {
-        // Temporary: Store email locally until backend is deployed
-        try {
-          const subscribers = JSON.parse(localStorage.getItem('pendingSubscribers') || '[]');
-          if (!subscribers.includes(email)) {
-            subscribers.push(email);
-            localStorage.setItem('pendingSubscribers', JSON.stringify(subscribers));
-          }
-          setMessage('Thank you! Your subscription request has been saved. We will process it once our service is available.');
-          setEmail('');
-          setTimeout(() => setMessage(''), 7000);
-        } catch (storageErr) {
-          setError('Service temporarily unavailable. Please try again later.');
-          setTimeout(() => setError(''), 5000);
-        }
-      } else {
-        setError(err.response?.data?.message || 'Failed to subscribe. Please try again.');
-        setTimeout(() => setError(''), 5000);
-      }
+      setError(err.response?.data?.message || 'Failed to subscribe. Please try again.');
+      setTimeout(() => setError(''), 5000);
     } finally {
       setLoading(false);
     }
