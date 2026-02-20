@@ -112,10 +112,10 @@ export default function Courses() {
               {/* Hero Title */}
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
                 <span className="block text-white mb-2 animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>Skill Development</span>
-                <span className="block animate-smoothSlideFade" style={{
+                <span className="block text-white animate-smoothSlideFade" style={{
                   animationDelay: '0.2s',
-                  color: '#00a67d',
-                  textShadow: '0 0 30px rgba(0, 217, 163, 0.6), 0 0 60px rgba(0, 217, 163, 0.3)'
+                  textShadow: '0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.2)',
+                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, greenTextGlow 3s ease-in-out infinite'
                 }}>Courses & Programs</span>
               </h1>
               
