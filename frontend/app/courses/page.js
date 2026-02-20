@@ -66,8 +66,8 @@ export default function Courses() {
       console.log('Fetching courses from API...');
       const { data } = await api.get('/courses');
       console.log('Courses received:', data);
-      // Merge demo courses with database courses
-      setCourses([...demoCourses, ...data]);
+      // Use only demo courses (don't merge with database)
+      setCourses(demoCourses);
     } catch (error) {
       console.error('Error fetching courses:', error);
       console.error('Error details:', error.response?.data || error.message);

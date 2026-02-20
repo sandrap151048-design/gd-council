@@ -54,8 +54,8 @@ export default function Universities() {
       console.log('Fetching universities from API...');
       const { data } = await api.get('/universities');
       console.log('Universities received:', data);
-      // Merge demo universities with database universities
-      setUniversities([...demoUniversities, ...data]);
+      // Use only demo universities (don't merge with database)
+      setUniversities(demoUniversities);
     } catch (error) {
       console.error('Error fetching universities:', error);
       console.error('Error details:', error.response?.data || error.message);
