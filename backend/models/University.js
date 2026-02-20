@@ -10,21 +10,21 @@ const universitySchema = new mongoose.Schema({
     type: String,
     required: [true, 'Country is required']
   },
-  city: {
-    type: String,
-    required: false
-  },
   description: {
     type: String,
-    required: true
+    required: [true, 'Description is required']
+  },
+  city: {
+    type: String,
+    default: ''
   },
   ranking: {
     type: String,
-    required: false
+    default: ''
   },
   website: {
     type: String,
-    required: false
+    default: ''
   },
   logo: {
     type: String,
@@ -36,14 +36,15 @@ const universitySchema = new mongoose.Schema({
   },
   programs: {
     type: String,
-    required: false
+    default: ''
   },
   students: {
     type: String,
-    required: false
+    default: ''
   },
   tuitionFee: {
-    type: String
+    type: String,
+    default: ''
   },
   isActive: {
     type: Boolean,

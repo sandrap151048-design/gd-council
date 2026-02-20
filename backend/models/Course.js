@@ -12,19 +12,20 @@ const courseSchema = new mongoose.Schema({
   },
   duration: {
     type: String,
-    required: true
+    required: [true, 'Duration is required']
   },
   level: {
     type: String,
     enum: ['Beginner', 'Intermediate', 'Advanced'],
-    default: 'Beginner'
+    required: [true, 'Level is required']
   },
   category: {
     type: String,
-    required: true
+    required: [true, 'Category is required']
   },
   price: {
     type: Number,
+    required: [true, 'Price is required'],
     default: 0
   },
   image: {
@@ -33,7 +34,6 @@ const courseSchema = new mongoose.Schema({
   },
   instructor: {
     type: String,
-    required: false,
     default: ''
   },
   syllabus: [{
