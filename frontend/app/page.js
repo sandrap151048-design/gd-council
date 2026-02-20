@@ -72,7 +72,7 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="overflow-hidden">
-                      <span className="block bg-gradient-to-r from-emerald-700 via-emerald-800 to-emerald-900 bg-clip-text text-transparent animate-smoothSlideFade animate-shimmerWave" style={{
+                      <span className="block bg-gradient-to-r from-green-600 via-emerald-700 to-green-800 bg-clip-text text-transparent animate-smoothSlideFade animate-shimmerWave" style={{
                         animationDelay: '0.2s',
                         backgroundSize: '200% auto'
                       }}>
