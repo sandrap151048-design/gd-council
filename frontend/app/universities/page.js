@@ -38,39 +38,6 @@ const demoUniversities = [
     students: '40,000+',
     image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80',
     website: 'https://www.nus.edu.sg'
-  },
-  {
-    _id: 'demo-4',
-    name: 'University of Toronto',
-    country: 'Canada',
-    description: 'Canada\'s top university offering diverse programs with emphasis on research and innovation.',
-    ranking: 'Top 20 Global',
-    programs: '700+ Programs',
-    students: '95,000+',
-    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80',
-    website: 'https://www.utoronto.ca'
-  },
-  {
-    _id: 'demo-5',
-    name: 'ETH Zurich',
-    country: 'Switzerland',
-    description: 'Premier science and technology university known for cutting-edge research and innovation.',
-    ranking: 'Top 10 Global',
-    programs: '100+ Programs',
-    students: '23,000+',
-    image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80',
-    website: 'https://ethz.ch'
-  },
-  {
-    _id: 'demo-6',
-    name: 'University of Melbourne',
-    country: 'Australia',
-    description: 'Australia\'s leading university with comprehensive programs and strong international reputation.',
-    ranking: 'Top 40 Global',
-    programs: '300+ Programs',
-    students: '50,000+',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80',
-    website: 'https://www.unimelb.edu.au'
   }
 ];
 

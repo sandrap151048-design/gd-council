@@ -32,33 +32,6 @@ const demoCourses = [
     level: 'Advanced',
     duration: '10 weeks',
     price: 399
-  },
-  {
-    _id: 'demo-4',
-    title: 'Web Development Bootcamp',
-    description: 'Full-stack web development covering HTML, CSS, JavaScript, React, Node.js, and databases.',
-    category: 'Technology',
-    level: 'Beginner',
-    duration: '16 weeks',
-    price: 599
-  },
-  {
-    _id: 'demo-5',
-    title: 'Business Analytics',
-    description: 'Transform data into actionable insights with Excel, SQL, Tableau, and business intelligence tools.',
-    category: 'Business',
-    level: 'Intermediate',
-    duration: '10 weeks',
-    price: 449
-  },
-  {
-    _id: 'demo-6',
-    title: 'Cloud Computing Essentials',
-    description: 'Master AWS, Azure, and Google Cloud platforms with hands-on labs and certification prep.',
-    category: 'Technology',
-    level: 'Intermediate',
-    duration: '8 weeks',
-    price: 399
   }
 ];
 
