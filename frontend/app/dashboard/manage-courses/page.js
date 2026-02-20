@@ -201,7 +201,6 @@ export default function ManageCourses() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Instructor</label>
                   <input
                     type="text"
-                    required
                     value={formData.instructor}
                     onChange={(e) => setFormData({ ...formData, instructor: e.target.value })}
                     className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"

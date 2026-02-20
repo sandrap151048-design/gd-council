@@ -19,10 +19,12 @@ const universitySchema = new mongoose.Schema({
     required: true
   },
   ranking: {
-    type: String
+    type: String,
+    required: false
   },
   website: {
-    type: String
+    type: String,
+    required: false
   },
   logo: {
     type: String,
@@ -33,10 +35,12 @@ const universitySchema = new mongoose.Schema({
     default: ''
   },
   programs: {
-    type: String
+    type: String,
+    required: false
   },
   students: {
-    type: String
+    type: String,
+    required: false
   },
   tuitionFee: {
     type: String

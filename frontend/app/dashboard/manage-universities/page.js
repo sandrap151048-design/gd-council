@@ -163,7 +163,6 @@ export default function ManageUniversities() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Ranking</label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g., #1 Global"
                     value={formData.ranking}
                     onChange={(e) => setFormData({ ...formData, ranking: e.target.value })}
@@ -174,7 +173,6 @@ export default function ManageUniversities() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Programs</label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g., 350+ Programs"
                     value={formData.programs}
                     onChange={(e) => setFormData({ ...formData, programs: e.target.value })}
@@ -185,7 +183,6 @@ export default function ManageUniversities() {
                   <label className="block text-sm font-medium text-gray-300 mb-2">Students</label>
                   <input
                     type="text"
-                    required
                     placeholder="e.g., 23,000+ Students"
                     value={formData.students}
                     onChange={(e) => setFormData({ ...formData, students: e.target.value })}
