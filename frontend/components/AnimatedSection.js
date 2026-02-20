@@ -110,6 +110,24 @@ export function AnimatedCounter({
     const element = counterRef.current;
     if (!element || hasAnimated.current) return;
 
+    const animateCounter = (element, target, duration) => {
+      const start = 0;
+      const increment = target / (duration / 16);
+      let current = start;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          element.textContent = `${prefix}${Math.floor(current)}${suffix}`;
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = `${prefix}${target}${suffix}`;
+        }
+      };
+
+      updateCounter();
+    };
+
     const observerOptions = {
       threshold: 0.5,
     };
@@ -129,25 +147,7 @@ export function AnimatedCounter({
     return () => {
       if (element) observer.unobserve(element);
     };
-  }, [end, duration, animateCounter]);
-
-  const animateCounter = (element, target, duration) => {
-    const start = 0;
-    const increment = target / (duration / 16);
-    let current = start;
-
-    const updateCounter = () => {
-      current += increment;
-      if (current < target) {
-        element.textContent = `${prefix}${Math.floor(current)}${suffix}`;
-        requestAnimationFrame(updateCounter);
-      } else {
-        element.textContent = `${prefix}${target}${suffix}`;
-      }
-    };
-
-    updateCounter();
-  };
+  }, [end, duration, prefix, suffix]);
 
   return (
     <span ref={counterRef} className={className}>
