@@ -16,13 +16,30 @@ export default function Footer() {
     setMessage('');
     setError('');
 
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+      setLoading(false);
+      setTimeout(() => setError(''), 5000);
+      return;
+    }
+
     try {
       const { data } = await api.post('/newsletter/subscribe', { email });
-      setMessage(data.message);
+      setMessage(data.message || 'Successfully subscribed to our newsletter!');
       setEmail('');
       setTimeout(() => setMessage(''), 5000);
     } catch (err) {
-      setError(err.response?.data?.message || 'Failed to subscribe. Please try again.');
+      console.error('Subscription error:', err);
+      
+      // Check if it's a network error (backend not available)
+      if (err.code === 'ERR_NETWORK' || !err.response) {
+        setError('Service temporarily unavailable. Please try again later.');
+      } else {
+        setError(err.response?.data?.message || 'Failed to subscribe. Please try again.');
+      }
+      
       setTimeout(() => setError(''), 5000);
     } finally {
       setLoading(false);
