@@ -4,15 +4,71 @@ import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import Link from 'next/link';
 
-// Demo courses data - empty array, will use database data only
-const demoCourses = [];
+// Demo courses data
+const demoCourses = [
+  {
+    _id: '1',
+    title: 'Digital Marketing Mastery',
+    description: 'Comprehensive digital marketing course covering SEO, social media, content marketing, and analytics for modern businesses.',
+    category: 'Marketing',
+    level: 'Intermediate',
+    duration: '8 weeks',
+    price: 499
+  },
+  {
+    _id: '2',
+    title: 'Full Stack Web Development',
+    description: 'Learn to build complete web applications using modern technologies including React, Node.js, and MongoDB.',
+    category: 'Technology',
+    level: 'Advanced',
+    duration: '12 weeks',
+    price: 799
+  },
+  {
+    _id: '3',
+    title: 'Business Analytics & Data Science',
+    description: 'Master data analysis, visualization, and machine learning techniques to drive business decisions.',
+    category: 'Data Science',
+    level: 'Intermediate',
+    duration: '10 weeks',
+    price: 699
+  },
+  {
+    _id: '4',
+    title: 'Project Management Professional',
+    description: 'Prepare for PMP certification with comprehensive project management methodologies and best practices.',
+    category: 'Management',
+    level: 'Professional',
+    duration: '6 weeks',
+    price: 599
+  },
+  {
+    _id: '5',
+    title: 'UI/UX Design Fundamentals',
+    description: 'Create stunning user interfaces and experiences with industry-standard design tools and principles.',
+    category: 'Design',
+    level: 'Beginner',
+    duration: '8 weeks',
+    price: 449
+  },
+  {
+    _id: '6',
+    title: 'Cloud Computing with AWS',
+    description: 'Master Amazon Web Services and cloud architecture for scalable, secure applications.',
+    category: 'Technology',
+    level: 'Advanced',
+    duration: '10 weeks',
+    price: 749
+  }
+];
 
 export default function Courses() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(demoCourses);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchCourses();
+    // Use demo data instead of API
+    setCourses(demoCourses);
     
     // Scroll reveal observer
     const observerOptions = {
@@ -63,52 +119,55 @@ export default function Courses() {
 
   return (
     <div className="min-h-screen puzzle-bg-dark pt-20 md:pt-16">
-      {/* Hero Section - Matching Home Page Style */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black"></div>
-        
-        {/* Diagonal Accent */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-gold-500/20 via-transparent to-transparent transform skew-x-12"></div>
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=compress&cs=tinysrgb&w=1920" 
+            alt="Students learning"
+            className="w-full h-full object-cover"
+            style={{opacity: 0.35}}
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/85 via-[#0f1729]/80 to-[#0a0e1a]/85"></div>
         </div>
 
-        {/* Animated Grid */}
-        <div className="absolute inset-0 opacity-10" style={{
+        {/* Animated Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5 z-10" style={{
           backgroundImage: `
-            linear-gradient(rgba(230, 200, 124, 0.15) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(230, 200, 124, 0.15) 1px, transparent 1px)
+            linear-gradient(rgba(230, 200, 124, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(230, 200, 124, 0.5) 1px, transparent 1px)
           `,
-          backgroundSize: '80px 80px',
-          animation: 'gridMove 25s linear infinite'
+          backgroundSize: '80px 80px'
         }}></div>
 
         {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse z-10"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Column - Text Content (7 columns) */}
+            {/* Left: Content (7 columns) */}
             <div className="lg:col-span-7 text-center lg:text-left">
               {/* Animated Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-6 sm:mb-8 backdrop-blur-sm animate-blurToFocus">
-                <span className="relative flex h-2.5 w-2.5">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-4 sm:mb-6 backdrop-blur-sm animate-blurToFocus">
+                <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-400"></span>
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-gold-400 tracking-wider uppercase">Professional Development</span>
+                <span className="text-[10px] sm:text-xs font-bold text-gold-400 tracking-wider uppercase">Professional Development</span>
               </div>
               
               {/* Hero Title */}
-              <h1 className="font-black leading-none mb-4">
+              <h1 className="font-black leading-none mb-3 sm:mb-4">
                 <div className="overflow-hidden">
-                  <span className="block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                  <span className="block text-white text-lg sm:text-xl md:text-2xl lg:text-3xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
                     Skill Development
                   </span>
                 </div>
                 <div className="overflow-hidden">
-                  <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-smoothSlideFade" style={{
+                  <span className="block text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl animate-smoothSlideFade" style={{
                     animationDelay: '0.2s',
                     textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
                     animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
@@ -119,66 +178,30 @@ export default function Courses() {
               </h1>
               
               {/* Description */}
-              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
+              <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
                 Industry-recognized certifications and expert-led training programs designed for institutional growth
               </p>
             </div>
 
-            {/* Right Column - Workflow Circles with Curved Arrows (5 columns) */}
-            <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg aspect-square p-4 sm:p-8" style={{
+            {/* Right: Image (5 columns) */}
+            <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+              <div className="relative rounded-full overflow-hidden w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 max-w-md mx-auto" style={{
                 animation: 'spreadScale 1.5s ease-out forwards',
-                animationDelay: '0.7s',
+                animationDelay: '0.5s',
                 opacity: 0,
                 transform: 'scale(0.2)'
               }}>
-                {/* Top Circle */}
-                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Discover</p>
-                </div>
-
-                {/* Right Circle */}
-                <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '0.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Learn</p>
-                </div>
-
-                {/* Bottom Circle */}
-                <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Practice</p>
-                </div>
-
-                {/* Left Circle */}
-                <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Master</p>
-                </div>
-
-                {/* Center Circle - Main */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gold-500/60 to-gold-600/40 backdrop-blur-md border-4 border-gold-400/70 rounded-full flex flex-col items-center justify-center text-center shadow-2xl shadow-gold-400/50 z-20 relative">
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-full border-2 border-gold-400/50 animate-ping"></div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 to-transparent animate-pulse-slow"></div>
-                  
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-gold-400 mb-1 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                  <p className="text-xs sm:text-sm font-black text-white relative z-10 tracking-wide uppercase">CERTIFY</p>
-                </div>
-
-                {/* Decorative Glowing Orbs */}
-                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-40 sm:h-40 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&q=80" 
+                  alt="Students learning"
+                  className="w-full h-full object-cover"
+                  loading="eager"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 border-2 sm:border-3 md:border-4 border-gold-400/30 rounded-full"></div>
+                
+                {/* Pulsing ring effect */}
+                <div className="absolute inset-0 rounded-full border border-gold-400/50 animate-ping"></div>
               </div>
             </div>
           </div>

@@ -4,15 +4,83 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import api from '../../services/api';
 
-// Demo universities data - empty array, will use database data only
-const demoUniversities = [];
+// Demo universities data
+const demoUniversities = [
+  {
+    _id: '1',
+    name: 'University of Technology Sydney',
+    country: 'Australia',
+    description: 'Leading Australian university known for innovation and industry connections with world-class research facilities.',
+    ranking: 'Top 150 Global',
+    programs: '200+ Programs',
+    students: '45,000+ Students',
+    image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80',
+    website: 'https://www.uts.edu.au'
+  },
+  {
+    _id: '2',
+    name: 'University of Toronto',
+    country: 'Canada',
+    description: 'Canada\'s top-ranked university offering diverse programs and cutting-edge research opportunities.',
+    ranking: 'Top 20 Global',
+    programs: '700+ Programs',
+    students: '90,000+ Students',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
+    website: 'https://www.utoronto.ca'
+  },
+  {
+    _id: '3',
+    name: 'Technical University of Munich',
+    country: 'Germany',
+    description: 'Premier German university specializing in engineering, technology, and natural sciences.',
+    ranking: 'Top 50 Global',
+    programs: '150+ Programs',
+    students: '42,000+ Students',
+    image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80',
+    website: 'https://www.tum.de'
+  },
+  {
+    _id: '4',
+    name: 'National University of Singapore',
+    country: 'Singapore',
+    description: 'Asia\'s leading university with strong global partnerships and innovative research programs.',
+    ranking: 'Top 15 Global',
+    programs: '300+ Programs',
+    students: '38,000+ Students',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80',
+    website: 'https://www.nus.edu.sg'
+  },
+  {
+    _id: '5',
+    name: 'University of Melbourne',
+    country: 'Australia',
+    description: 'Prestigious Australian university with excellence in research and comprehensive academic programs.',
+    ranking: 'Top 40 Global',
+    programs: '350+ Programs',
+    students: '50,000+ Students',
+    image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80',
+    website: 'https://www.unimelb.edu.au'
+  },
+  {
+    _id: '6',
+    name: 'ETH Zurich',
+    country: 'Switzerland',
+    description: 'World-renowned Swiss university for science, technology, engineering and mathematics.',
+    ranking: 'Top 10 Global',
+    programs: '100+ Programs',
+    students: '22,000+ Students',
+    image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80',
+    website: 'https://ethz.ch'
+  }
+];
 
 export default function Universities() {
-  const [universities, setUniversities] = useState([]);
+  const [universities, setUniversities] = useState(demoUniversities);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchUniversities();
+    // Use demo data instead of API
+    setUniversities(demoUniversities);
   }, []);
 
   const fetchUniversities = async () => {
@@ -45,7 +113,7 @@ export default function Universities() {
   return (
     <div className="min-h-screen puzzle-bg-dark pt-20 md:pt-16">
       {/* Hero Section - Split Layout with Animated Images */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
         {/* Background Image - Students Studying */}
         <div className="absolute inset-0 z-0">
           <img 
@@ -75,18 +143,22 @@ export default function Universities() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: Content (7 columns) */}
             <div className="lg:col-span-7 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gold-400/10 border border-gold-400/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
-                <span className="text-xs font-bold text-gold-400 uppercase tracking-wider">500+ Partner Universities Worldwide</span>
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-4 sm:mb-6 backdrop-blur-sm animate-blurToFocus">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-400"></span>
+                </span>
+                <span className="text-[10px] sm:text-xs font-bold text-gold-400 tracking-wider uppercase">500+ Partner Universities Worldwide</span>
               </div>
               
-              <h1 className="font-black leading-none mb-4 sm:mb-6">
+              <h1 className="font-black leading-none mb-3 sm:mb-4">
                 <div className="overflow-hidden">
-                  <span className="block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                  <span className="block text-white text-lg sm:text-xl md:text-2xl lg:text-3xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
                     Partnership
                   </span>
                 </div>
                 <div className="overflow-hidden">
-                  <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-smoothSlideFade" style={{
+                  <span className="block text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl animate-smoothSlideFade" style={{
                     animationDelay: '0.2s',
                     textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
                     animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
@@ -96,76 +168,53 @@ export default function Universities() {
                 </div>
               </h1>
               
-              <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
+              <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
                 Discover our network of prestigious universities across 50+ countries
               </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-smoothSlideFade justify-center lg:justify-start" style={{animationDelay: '0.4s'}}>
-                <Link href="/contact" className="px-6 sm:px-8 py-3 sm:py-4 bg-gold-400 text-black font-bold rounded-xl hover:bg-gold-400 transition-all hover:scale-105 text-center">
-                  Partner With Us
-                </Link>
-                <Link href="/about" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 text-gold-400 font-bold rounded-xl border-2 border-gold-400/30 hover:bg-gold-400/10 transition-all text-center">
-                  Learn More
-                </Link>
-              </div>
             </div>
 
-            {/* Right Column - Workflow Circles with Curved Arrows */}
-            <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg aspect-square p-4 sm:p-8" style={{
-                animation: 'spreadScale 1.5s ease-out forwards',
-                animationDelay: '0.7s',
-                opacity: 0,
-                transform: 'scale(0.2)'
-              }}>
-                {/* Top Circle */}
-                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Research</p>
-                </div>
-
-                {/* Right Circle */}
-                <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '0.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Apply</p>
-                </div>
-
-                {/* Bottom Circle */}
-                <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Accept</p>
-                </div>
-
-                {/* Left Circle */}
-                <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Study</p>
-                </div>
-
-                {/* Center Circle - Main */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gold-500/60 to-gold-600/40 backdrop-blur-md border-4 border-gold-400/70 rounded-full flex flex-col items-center justify-center text-center shadow-2xl shadow-gold-400/50 z-20 relative">
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-full border-2 border-gold-400/50 animate-ping"></div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 to-transparent animate-pulse-slow"></div>
+            {/* Right: Images (5 columns) */}
+            <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+              <div className="relative flex flex-row gap-0 max-w-md mx-auto items-center justify-center">
+                {/* First Image */}
+                <div className="relative rounded-full overflow-hidden w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56" style={{
+                  animation: 'spreadScale 1.5s ease-out forwards',
+                  animationDelay: '0.5s',
+                  opacity: 0,
+                  transform: 'scale(0.2)'
+                }}>
+                  <img 
+                    src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80" 
+                    alt="University campus"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 border-2 sm:border-3 md:border-4 border-gold-400/30 rounded-full"></div>
                   
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-gold-400 mb-1 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  </svg>
-                  <p className="text-xs sm:text-sm font-black text-white relative z-10 tracking-wide uppercase">GRADUATE</p>
+                  {/* Pulsing ring effect */}
+                  <div className="absolute inset-0 rounded-full border border-gold-400/50 animate-ping"></div>
                 </div>
 
-                {/* Decorative Glowing Orbs */}
-                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-40 sm:h-40 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
+                {/* Second Image */}
+                <div className="relative rounded-full overflow-hidden w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 -ml-8 sm:-ml-10 md:-ml-12" style={{
+                  animation: 'spreadScale 1.5s ease-out forwards',
+                  animationDelay: '0.7s',
+                  opacity: 0,
+                  transform: 'scale(0.2)'
+                }}>
+                  <img 
+                    src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80" 
+                    alt="Students at university"
+                    className="w-full h-full object-cover"
+                    loading="eager"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/60 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 border-2 sm:border-3 md:border-4 border-gold-400/30 rounded-full"></div>
+                  
+                  {/* Pulsing ring effect */}
+                  <div className="absolute inset-0 rounded-full border border-gold-400/50 animate-ping"></div>
+                </div>
               </div>
             </div>
           </div>

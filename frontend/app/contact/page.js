@@ -24,40 +24,51 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen puzzle-bg-dark pt-20 md:pt-16">
-      {/* Hero Section - Split Layout with Rounded Images */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 2px 2px, rgba(230, 200, 124, 0.3) 1px, transparent 0)`,
-            backgroundSize: '40px 40px'
-          }}></div>
+      {/* Hero Section with Background Image */}
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=compress&cs=tinysrgb&w=1920" 
+            alt="Contact us"
+            className="w-full h-full object-cover"
+            style={{opacity: 0.35}}
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/85 via-[#0f1729]/80 to-[#0a0e1a]/85"></div>
         </div>
 
+        {/* Animated Pattern Overlay */}
+        <div className="absolute inset-0 opacity-5 z-10" style={{
+          backgroundImage: `
+            linear-gradient(rgba(230, 200, 124, 0.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(230, 200, 124, 0.5) 1px, transparent 1px)
+          `,
+          backgroundSize: '80px 80px'
+        }}></div>
+
         {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse z-10"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
         
-        <div className="container mx-auto px-6 lg:px-12 relative z-20">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left: Content (7 columns) */}
-            <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gold-400/10 rounded-full mb-6 animate-blurToFocus">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
-                </span>
-                <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">We're Here to Help</span>
-              </div>
-              
-              <h1 className="font-black leading-none mb-6">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-2.5 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-4 sm:mb-6 backdrop-blur-sm animate-blurToFocus">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-gold-400"></span>
+              </span>
+              <span className="text-[10px] sm:text-xs font-bold text-gold-400 tracking-wider uppercase">We're Here to Help</span>
+            </div>
+            
+            <h1 className="font-black leading-none mb-3 sm:mb-4">
                 <div className="overflow-hidden">
-                  <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                  <span className="block text-white text-lg sm:text-xl md:text-2xl lg:text-3xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
                     Contact
                   </span>
                 </div>
                 <div className="overflow-hidden">
-                  <span className="block text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl animate-smoothSlideFade" style={{
+                  <span className="block text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl animate-smoothSlideFade" style={{
                     animationDelay: '0.2s',
                     textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
                     animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
@@ -67,88 +78,9 @@ export default function Contact() {
                 </div>
               </h1>
               
-              <p className="text-xl text-gray-300 mb-4 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
+              <p className="text-sm sm:text-base text-gray-300 mb-4 sm:mb-6 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
                 Get in touch with our team for any inquiries or support
               </p>
-
-              <p className="text-base text-gray-400 leading-relaxed mb-8 animate-smoothSlideFade" style={{animationDelay: '0.4s'}}>
-                Our dedicated support team is available 24/7 to assist with partnership inquiries, enrollment questions, and technical support.
-              </p>
-
-              {/* Quick Contact Options */}
-              <div className="flex flex-wrap gap-4 animate-smoothSlideFade" style={{animationDelay: '0.5s'}}>
-                <a href="mailto:info@globaleducation.com" className="px-6 py-3 bg-gold-400 text-black font-semibold rounded-xl hover:bg-gold-400 transition-all hover:scale-105 inline-flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Email Us
-                </a>
-                <a href="tel:+12345678900" className="px-6 py-3 bg-white/5 text-gold-400 font-semibold rounded-xl hover:bg-gold-400/10 transition-all hover:scale-105 inline-flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  Call Now
-                </a>
-              </div>
-            </div>
-
-            {/* Right Column - Workflow Circles with Curved Arrows */}
-            <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
-              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg aspect-square p-4 sm:p-8" style={{
-                animation: 'spreadScale 1.5s ease-out forwards',
-                animationDelay: '0.7s',
-                opacity: 0,
-                transform: 'scale(0.2)'
-              }}>
-                {/* Top Circle */}
-                <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Call</p>
-                </div>
-
-                {/* Right Circle */}
-                <div className="absolute right-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '0.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Email</p>
-                </div>
-
-                {/* Bottom Circle */}
-                <div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Schedule</p>
-                </div>
-
-                {/* Left Circle */}
-                <div className="absolute left-[10%] top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1.5s'}}>
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                  </svg>
-                  <p className="text-[10px] sm:text-xs font-bold text-white">Chat</p>
-                </div>
-
-                {/* Center Circle - Main */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-gold-500/60 to-gold-600/40 backdrop-blur-md border-4 border-gold-400/70 rounded-full flex flex-col items-center justify-center text-center shadow-2xl shadow-gold-400/50 z-20 relative">
-                  {/* Pulsing ring effect */}
-                  <div className="absolute inset-0 rounded-full border-2 border-gold-400/50 animate-ping"></div>
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 to-transparent animate-pulse-slow"></div>
-                  
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 text-gold-400 mb-1 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                  </svg>
-                  <p className="text-xs sm:text-sm font-black text-white relative z-10 tracking-wide uppercase">CONNECT</p>
-                </div>
-
-                {/* Decorative Glowing Orbs */}
-                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
-                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-40 sm:h-40 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

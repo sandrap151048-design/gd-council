@@ -27,45 +27,48 @@ export default function Home() {
       
       <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-black pt-20 md:pt-16">
         {/* Hero Section - Modern Asymmetric Design */}
-        <section className="relative min-h-screen flex items-center overflow-hidden">
-          {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black"></div>
-          
-          {/* Diagonal Accent */}
-          <div className="absolute inset-0 opacity-30">
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-gold-500/20 via-transparent to-transparent transform skew-x-12"></div>
+        <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f1729] to-[#0a0e1a]">
+          {/* Background Image */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80" 
+              alt="Education and learning"
+              className="w-full h-full object-cover"
+              style={{opacity: 0.35}}
+              loading="eager"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0a0e1a]/85 via-[#0f1729]/80 to-[#0a0e1a]/85"></div>
           </div>
-
-          {/* Animated Grid */}
-          <div className="absolute inset-0 opacity-10" style={{
+          
+          {/* Animated Pattern Overlay */}
+          <div className="absolute inset-0 opacity-5 z-10" style={{
             backgroundImage: `
-              linear-gradient(rgba(230, 200, 124, 0.15) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(230, 200, 124, 0.15) 1px, transparent 1px)
+              linear-gradient(rgba(230, 200, 124, 0.5) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(230, 200, 124, 0.5) 1px, transparent 1px)
             `,
-            backgroundSize: '80px 80px',
-            animation: 'gridMove 25s linear infinite'
+            backgroundSize: '80px 80px'
           }}></div>
 
           {/* Floating Orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse z-10"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
           
-          <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column - Text Content (7 columns) */}
               <div className="lg:col-span-7 text-center lg:text-left">
                 {/* Animated Badge */}
-                <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-6 sm:mb-8 backdrop-blur-sm animate-blurToFocus">
-                  <span className="relative flex h-2.5 w-2.5">
+                <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-4 sm:mb-5 backdrop-blur-sm animate-blurToFocus">
+                  <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-gold-400"></span>
                   </span>
-                  <span className="text-xs sm:text-sm font-bold text-gold-400 tracking-wider uppercase">Trusted Globally</span>
+                  <span className="text-[10px] sm:text-xs font-bold text-gold-400 tracking-wider uppercase">Trusted Globally</span>
                 </div>
                 
                 {/* Hero Title - Stacked Design */}
-                <div className="mb-6 sm:mb-8">
-                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4">
+                <div className="mb-4 sm:mb-6">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-none mb-3">
                     <div className="overflow-hidden">
                       <span className="block text-white animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
                         Transform
@@ -81,7 +84,7 @@ export default function Home() {
                       </span>
                     </div>
                     <div className="overflow-hidden">
-                      <span className="block text-gray-300 text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
+                      <span className="block text-gray-300 text-2xl sm:text-3xl md:text-4xl lg:text-5xl animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
                         Through Global Partnerships
                       </span>
                     </div>
@@ -89,22 +92,22 @@ export default function Home() {
                 </div>
                 
                 {/* Description */}
-                <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.4s'}}>
+                <p className="text-sm sm:text-base md:text-lg text-gray-400 mb-5 sm:mb-7 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.4s'}}>
                   Building bridges between institutions worldwide. We deliver comprehensive education solutions that drive growth, foster innovation, and create lasting impact in the global academic community.
                 </p>
                 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-smoothSlideFade" style={{animationDelay: '0.5s'}}>
-                  <Link href="/register" className="group relative px-8 py-4 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-gold-500/50 hover:scale-105">
+                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start animate-smoothSlideFade" style={{animationDelay: '0.5s'}}>
+                  <Link href="/register" className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-gold-500/50 hover:scale-105 text-sm sm:text-base">
                     <div className="absolute inset-0 bg-gradient-to-r from-gold-400 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Get Started
-                      <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </span>
                   </Link>
-                  <Link href="/about" className="px-8 py-4 bg-white/5 text-white font-bold rounded-xl border-2 border-white/10 hover:bg-white/10 hover:border-gold-400/50 transition-all hover:scale-105 text-center backdrop-blur-sm">
+                  <Link href="/about" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white/5 text-white font-bold rounded-xl border-2 border-white/10 hover:bg-white/10 hover:border-gold-400/50 transition-all hover:scale-105 text-center backdrop-blur-sm text-sm sm:text-base">
                     Learn More
                   </Link>
                 </div>

@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div className="min-h-screen puzzle-bg-dark pt-20 md:pt-16">
       {/* Hero Section - Matching Home Page Style */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black"></div>
         
