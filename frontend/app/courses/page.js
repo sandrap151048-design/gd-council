@@ -101,14 +101,14 @@ export default function Courses() {
               </div>
               
               {/* Hero Title */}
-              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4">
+              <h1 className="font-black leading-none mb-4">
                 <div className="overflow-hidden">
-                  <span className="block text-white animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                  <span className="block text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
                     Skill Development
                   </span>
                 </div>
                 <div className="overflow-hidden">
-                  <span className="block text-white animate-smoothSlideFade" style={{
+                  <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-smoothSlideFade" style={{
                     animationDelay: '0.2s',
                     textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
                     animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
