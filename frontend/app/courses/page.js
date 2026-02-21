@@ -63,75 +63,75 @@ export default function Courses() {
 
   return (
     <div className="min-h-screen puzzle-bg-dark pt-20 md:pt-16">
-      {/* Hero Section - Split Layout with Photos and Background (Home Page Style) */}
-      <section className="relative min-h-[85vh] flex items-center overflow-hidden puzzle-bg">
-        {/* Large Background Image - More Visible */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1920&q=80" 
-            alt="Professional training and skill development"
-            className="w-full h-full object-cover animate-elasticScale"
-            style={{opacity: 0.15}}
-          />
-          {/* Puzzle-style Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0f1729]/95 via-[#1a1f35]/90 to-[#0f1729]/85"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e1a]/90 via-transparent to-transparent"></div>
+      {/* Hero Section - Matching Home Page Style */}
+      <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-black"></div>
+        
+        {/* Diagonal Accent */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-gold-500/20 via-transparent to-transparent transform skew-x-12"></div>
         </div>
 
-        {/* Animated Tech Grid */}
-        <div className="absolute inset-0 z-10 opacity-20" style={{
+        {/* Animated Grid */}
+        <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: `
-            linear-gradient(rgba(230, 200, 124, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(230, 200, 124, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(230, 200, 124, 0.15) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(230, 200, 124, 0.15) 1px, transparent 1px)
           `,
-          backgroundSize: '60px 60px',
-          animation: 'gridMove 20s linear infinite'
+          backgroundSize: '80px 80px',
+          animation: 'gridMove 25s linear infinite'
         }}></div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-1000 opacity-40"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-gold-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
-          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
-        </div>
+        {/* Floating Orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '2s'}}></div>
         
-        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center lg:text-left">
               {/* Animated Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-gold-400/10 border border-gold-400/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
-                <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500/20 to-gold-400/10 border border-gold-400/40 rounded-full mb-6 sm:mb-8 backdrop-blur-sm animate-blurToFocus">
+                <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-gold-400"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
                 </span>
-                <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">Professional Development</span>
+                <span className="text-xs sm:text-sm font-bold text-gold-400 tracking-wider uppercase">Professional Development</span>
               </div>
               
               {/* Hero Title */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="block text-white mb-2 animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>Skill Development</span>
-                <span className="block text-white animate-smoothSlideFade" style={{
-                  animationDelay: '0.2s',
-                  textShadow: '0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.2)',
-                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, greenTextGlow 3s ease-in-out infinite'
-                }}>Courses & Programs</span>
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none mb-4">
+                <div className="overflow-hidden">
+                  <span className="block text-white animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                    Skill Development
+                  </span>
+                </div>
+                <div className="overflow-hidden">
+                  <span className="block text-white animate-smoothSlideFade" style={{
+                    animationDelay: '0.2s',
+                    textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
+                    animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
+                  }}>
+                    Courses & Programs
+                  </span>
+                </div>
               </h1>
               
               {/* Description */}
-              <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
+              <p className="text-base sm:text-lg md:text-xl text-gray-400 mb-8 sm:mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
                 Industry-recognized certifications and expert-led training programs designed for institutional growth
               </p>
             </div>
 
-            {/* Right: Circle Images - Joined Vertically - Visible on all devices */}
+            {/* Right: Circle Images */}
             <div className="flex flex-col gap-0 items-center mt-8 lg:mt-0">
               {/* Top Circle Image */}
               <div style={{
-                animation: 'spreadTopLeft 1s ease-out forwards',
-                animationDelay: '0.2s',
-                opacity: 0
+                animation: 'spreadScale 1.5s ease-out forwards',
+                animationDelay: '0.7s',
+                opacity: 0,
+                transform: 'scale(0.2)'
               }}>
                 <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
                   <img 
@@ -139,15 +139,16 @@ export default function Courses() {
                     alt="Students learning"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729]/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
                 </div>
               </div>
 
-              {/* Bottom Circle Image - Joined */}
+              {/* Bottom Circle Image */}
               <div className="-mt-6 sm:-mt-8" style={{
-                animation: 'spreadBottomRight 1s ease-out forwards',
-                animationDelay: '0.3s',
-                opacity: 0
+                animation: 'spreadScale 1.5s ease-out forwards',
+                animationDelay: '0.9s',
+                opacity: 0,
+                transform: 'scale(0.2)'
               }}>
                 <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
                   <img 
