@@ -2876,7 +2876,7 @@ nav.fixed-navbar.scroll-up {
 }
 
 .animate-gradientBorder {
-  background: linear-gradient(90deg, #00d9a3, #6366f1, #00d9a3);
+  background: linear-gradient(90deg, #E6C87C, #F5E5B8, #E6C87C);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
 }

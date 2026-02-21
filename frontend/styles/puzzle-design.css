@@ -1,22 +1,22 @@
 /**
  * Puzzle-Inspired Design System
- * Dark navy theme with emerald accents ONLY
+ * Black + Brown + Gold Academic Theme
  * Clean iconography and smooth micro-interactions
  */
 
 /* ============================================
-   COLOR SYSTEM - PUZZLE STYLE (EMERALD ONLY)
+   COLOR SYSTEM - PUZZLE STYLE (GOLD ONLY)
    ============================================ */
 
 :root {
-  --puzzle-navy: #0f1729;
-  --puzzle-dark: #1a1f35;
-  --puzzle-darker: #0a0e1a;
-  --puzzle-emerald: #00d9a3;
-  --puzzle-emerald-light: #00ffc4;
-  --puzzle-emerald-dark: #00a67d;
-  --puzzle-text: #e2e8f0;
-  --puzzle-text-dim: #94a3b8;
+  --puzzle-navy: #0B0A08;
+  --puzzle-dark: #1A1816;
+  --puzzle-darker: #0B0A08;
+  --puzzle-emerald: #E6C87C;
+  --puzzle-emerald-light: #F5E5B8;
+  --puzzle-emerald-dark: #D4B566;
+  --puzzle-text: #FAFAFA;
+  --puzzle-text-dim: #B8B8B8;
 }
 
 /* ============================================
@@ -24,16 +24,16 @@
    ============================================ */
 
 .puzzle-bg {
-  background: linear-gradient(135deg, #0f1729 0%, #1a1f35 50%, #0f1729 100%);
+  background: linear-gradient(135deg, #0B0A08 0%, #1A1816 50%, #0B0A08 100%);
 }
 
 .puzzle-bg-dark {
-  background: linear-gradient(180deg, #0a0e1a 0%, #0f1729 100%);
+  background: linear-gradient(180deg, #0B0A08 0%, #1A1816 100%);
 }
 
 .puzzle-section {
-  background: radial-gradient(ellipse at top, rgba(0, 217, 163, 0.08) 0%, transparent 50%),
-              linear-gradient(180deg, #0f1729 0%, #1a1f35 100%);
+  background: radial-gradient(ellipse at top, rgba(230, 200, 124, 0.08) 0%, transparent 50%),
+              linear-gradient(180deg, #0B0A08 0%, #1A1816 100%);
 }
 
 /* ============================================
@@ -42,8 +42,8 @@
 
 .puzzle-icon-card {
   position: relative;
-  background: rgba(26, 31, 53, 0.6);
-  border: 1px solid rgba(0, 217, 163, 0.2);
+  background: rgba(26, 24, 22, 0.6);
+  border: 1px solid rgba(230, 200, 124, 0.2);
   border-radius: 20px;
   padding: 2rem;
   backdrop-filter: blur(20px);
@@ -56,7 +56,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 217, 163, 0.3), rgba(0, 255, 196, 0.3));
+  background: linear-gradient(135deg, rgba(230, 200, 124, 0.3), rgba(245, 229, 184, 0.3));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -67,8 +67,8 @@
 
 .puzzle-icon-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(0, 217, 163, 0.4);
-  box-shadow: 0 20px 60px rgba(0, 217, 163, 0.2);
+  border-color: rgba(230, 200, 124, 0.4);
+  box-shadow: 0 20px 60px rgba(230, 200, 124, 0.2);
 }
 
 .puzzle-icon-card:hover::before {
@@ -80,8 +80,8 @@
   width: 80px;
   height: 80px;
   margin: 0 auto 1.5rem;
-  background: linear-gradient(135deg, rgba(0, 217, 163, 0.1), rgba(0, 255, 196, 0.1));
-  border: 1px solid rgba(0, 217, 163, 0.2);
+  background: linear-gradient(135deg, rgba(230, 200, 124, 0.1), rgba(245, 229, 184, 0.1));
+  border: 1px solid rgba(230, 200, 124, 0.2);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@
   content: '';
   position: absolute;
   inset: -50%;
-  background: conic-gradient(from 0deg, transparent, rgba(0, 217, 163, 0.3), transparent);
+  background: conic-gradient(from 0deg, transparent, rgba(230, 200, 124, 0.3), transparent);
   animation: iconRotate 3s linear infinite;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -104,7 +104,7 @@
 
 .puzzle-icon-card:hover .puzzle-icon {
   transform: scale(1.1) rotate(5deg);
-  border-color: rgba(0, 217, 163, 0.4);
+  border-color: rgba(230, 200, 124, 0.4);
 }
 
 .puzzle-icon-card:hover .puzzle-icon::before {
@@ -124,28 +124,28 @@
 .puzzle-btn-primary {
   position: relative;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #00d9a3, #00ffc4);
-  color: #0f1729;
+  background: linear-gradient(135deg, #E6C87C, #F5E5B8);
+  color: #0B0A08;
   font-weight: 700;
   border-radius: 12px;
   border: none;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 8px 24px rgba(0, 217, 163, 0.3);
+  box-shadow: 0 8px 24px rgba(230, 200, 124, 0.3);
 }
 
 .puzzle-btn-primary::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #00ffc4, #00d9a3);
+  background: linear-gradient(135deg, #F5E5B8, #E6C87C);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
 .puzzle-btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0, 217, 163, 0.4);
+  box-shadow: 0 12px 32px rgba(230, 200, 124, 0.4);
 }
 
 .puzzle-btn-primary:hover::before {
@@ -159,17 +159,17 @@
 
 .puzzle-btn-secondary {
   padding: 1rem 2rem;
-  background: rgba(0, 217, 163, 0.1);
-  color: #00d9a3;
+  background: rgba(230, 200, 124, 0.1);
+  color: #E6C87C;
   font-weight: 600;
   border-radius: 12px;
-  border: 1px solid rgba(0, 217, 163, 0.3);
+  border: 1px solid rgba(230, 200, 124, 0.3);
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .puzzle-btn-secondary:hover {
-  background: rgba(0, 217, 163, 0.2);
-  border-color: rgba(0, 217, 163, 0.5);
+  background: rgba(230, 200, 124, 0.2);
+  border-color: rgba(230, 200, 124, 0.5);
   transform: translateY(-2px);
 }
 
@@ -241,9 +241,9 @@
    ============================================ */
 
 .puzzle-glass-card {
-  background: rgba(26, 31, 53, 0.4);
+  background: rgba(26, 24, 22, 0.4);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 217, 163, 0.15);
+  border: 1px solid rgba(230, 200, 124, 0.15);
   border-radius: 24px;
   padding: 3rem;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
@@ -261,7 +261,7 @@
    ============================================ */
 
 .puzzle-gradient-text {
-  background: linear-gradient(135deg, #00d9a3, #00ffc4, #10b981);
+  background: linear-gradient(135deg, #E6C87C, #F5E5B8, #D4B566);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -312,7 +312,7 @@
   content: '';
   position: absolute;
   inset: -20px;
-  background: radial-gradient(circle, rgba(0, 217, 163, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(230, 200, 124, 0.2) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: -1;
@@ -329,7 +329,7 @@
 
 .puzzle-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0, 217, 163, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(230, 200, 124, 0.3), transparent);
   margin: 4rem 0;
   position: relative;
   overflow: hidden;
@@ -342,7 +342,7 @@
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 217, 163, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(230, 200, 124, 0.8), transparent);
   animation: dividerSlide 3s ease-in-out infinite;
 }
 
@@ -367,7 +367,7 @@
 .puzzle-stat-number {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #00d9a3, #00ffc4);
+  background: linear-gradient(135deg, #E6C87C, #F5E5B8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

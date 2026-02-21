@@ -39,9 +39,9 @@ export default function Contact() {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto px-6 lg:px-12 relative z-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Content */}
-            <div>
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left: Content (7 columns) */}
+            <div className="lg:col-span-7">
               <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gold-400/10 rounded-full mb-6 animate-blurToFocus">
                 <span className="relative flex h-2.5 w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
@@ -50,13 +50,21 @@ export default function Contact() {
                 <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">We're Here to Help</span>
               </div>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                <span className="block text-white mb-2 animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>Contact</span>
-                <span className="block text-white animate-smoothSlideFade" style={{
-                  animationDelay: '0.2s',
-                  textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
-                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
-                }}>Us</span>
+              <h1 className="font-black leading-none mb-6">
+                <div className="overflow-hidden">
+                  <span className="block text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                    Contact
+                  </span>
+                </div>
+                <div className="overflow-hidden">
+                  <span className="block text-white text-6xl sm:text-7xl md:text-8xl lg:text-9xl animate-smoothSlideFade" style={{
+                    animationDelay: '0.2s',
+                    textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
+                    animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
+                  }}>
+                    Us
+                  </span>
+                </div>
               </h1>
               
               <p className="text-xl text-gray-300 mb-4 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
@@ -84,38 +92,98 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Right: Circle Images - Vertical Stack (Joined) - Visible on all devices */}
-            <div className="flex flex-col gap-0 items-center mt-8 lg:mt-0">
-              {/* Top Circle Image */}
-              <div style={{
-                animation: 'spreadTopLeft 1s ease-out forwards',
-                animationDelay: '0.2s',
-                opacity: 0
+            {/* Right Column - Workflow Circles with Curved Arrows */}
+            <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg aspect-square p-4 sm:p-8" style={{
+                animation: 'spreadScale 1.5s ease-out forwards',
+                animationDelay: '0.7s',
+                opacity: 0,
+                transform: 'scale(0.2)'
               }}>
-                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
-                  <img 
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80"
-                    alt="Customer support"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729]/60 to-transparent"></div>
+                {/* Top Circle */}
+                <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Call</p>
                 </div>
-              </div>
 
-              {/* Bottom Circle Image - Joined */}
-              <div className="-mt-6 sm:-mt-8" style={{
-                animation: 'spreadBottomRight 1s ease-out forwards',
-                animationDelay: '0.3s',
-                opacity: 0
-              }}>
-                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
-                  <img 
-                    src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
-                    alt="Team meeting"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729]/60 to-transparent"></div>
+                {/* Right Circle */}
+                <div className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '0.5s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Email</p>
                 </div>
+
+                {/* Bottom Circle */}
+                <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Schedule</p>
+                </div>
+
+                {/* Left Circle */}
+                <div className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1.5s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Chat</p>
+                </div>
+
+                {/* Center Circle - Main (Larger) - Positioned more up */}
+                <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-gradient-to-br from-gold-500/40 to-gold-600/30 backdrop-blur-sm border-3 border-gold-400/50 rounded-full flex flex-col items-center justify-center text-center shadow-xl shadow-gold-400/30 animate-pulse-slow z-10">
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                  <p className="text-sm sm:text-base font-bold text-white">Connect</p>
+                </div>
+
+                {/* Curved Arrows - Clockwise Workflow */}
+                {/* Top to Right */}
+                <svg className="absolute top-[25%] right-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.3s'}}>
+                  <path d="M 5 5 Q 40 5 55 40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#contactArrow1)"/>
+                  <defs>
+                    <marker id="contactArrow1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Right to Bottom */}
+                <svg className="absolute bottom-[25%] right-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.6s'}}>
+                  <path d="M 55 5 Q 40 40 5 55" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#contactArrow2)"/>
+                  <defs>
+                    <marker id="contactArrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Bottom to Left */}
+                <svg className="absolute bottom-[25%] left-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.9s'}}>
+                  <path d="M 55 55 Q 5 40 5 5" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#contactArrow3)"/>
+                  <defs>
+                    <marker id="contactArrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Left to Top */}
+                <svg className="absolute top-[25%] left-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '1.2s'}}>
+                  <path d="M 5 55 Q 5 5 40 5" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#contactArrow4)"/>
+                  <defs>
+                    <marker id="contactArrow4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Decorative Glowing Orbs */}
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-40 sm:h-40 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>

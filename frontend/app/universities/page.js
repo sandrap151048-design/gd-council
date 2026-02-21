@@ -72,20 +72,28 @@ export default function Universities() {
         <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            {/* Left: Content */}
-            <div className="text-center lg:text-left">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left: Content (7 columns) */}
+            <div className="lg:col-span-7 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gold-400/10 border border-gold-400/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
                 <span className="text-xs font-bold text-gold-400 uppercase tracking-wider">500+ Partner Universities Worldwide</span>
               </div>
               
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="block text-white animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>Partnership</span>
-                <span className="block text-white animate-smoothSlideFade" style={{
-                  animationDelay: '0.2s',
-                  textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
-                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
-                }}>Universities</span>
+              <h1 className="font-black leading-none mb-4 sm:mb-6">
+                <div className="overflow-hidden">
+                  <span className="block text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>
+                    Partnership
+                  </span>
+                </div>
+                <div className="overflow-hidden">
+                  <span className="block text-white text-5xl sm:text-6xl md:text-7xl lg:text-8xl animate-smoothSlideFade" style={{
+                    animationDelay: '0.2s',
+                    textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
+                    animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
+                  }}>
+                    Universities
+                  </span>
+                </div>
               </h1>
               
               <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
@@ -102,70 +110,99 @@ export default function Universities() {
               </div>
             </div>
 
-            {/* Right: Animated Image Grid - Visible on all devices */}
-            <div className="grid grid-cols-2 gap-3 sm:gap-4 relative mt-8 lg:mt-0">
-              {/* Top Left Image - Spreads from center */}
-              <div className="relative z-10" style={{
-                animation: 'spreadTopLeft 1s ease-out forwards',
-                animationDelay: '0.2s',
-                opacity: 0
+            {/* Right Column - Workflow Circles with Curved Arrows */}
+            <div className="lg:col-span-5 relative mt-12 lg:mt-0 flex items-center justify-center">
+              <div className="relative w-full max-w-[280px] sm:max-w-md lg:max-w-lg aspect-square p-4 sm:p-8" style={{
+                animation: 'spreadScale 1.5s ease-out forwards',
+                animationDelay: '0.7s',
+                opacity: 0,
+                transform: 'scale(0.2)'
               }}>
-                <div className="group overflow-hidden rounded-xl sm:rounded-2xl bg-gray-800 shadow-2xl">
-                  <img 
-                    src="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="University campus"
-                    className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="eager"
-                  />
+                {/* Top Circle */}
+                <div className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Research</p>
                 </div>
-              </div>
 
-              {/* Top Right Image - Spreads from center */}
-              <div className="relative z-20 mt-4 sm:mt-8 -ml-4 sm:-ml-8" style={{
-                animation: 'spreadTopRight 1s ease-out forwards',
-                animationDelay: '0.3s',
-                opacity: 0
-              }}>
-                <div className="group overflow-hidden rounded-xl sm:rounded-2xl bg-gray-800 shadow-2xl">
-                  <img 
-                    src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="Students studying"
-                    className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="eager"
-                  />
+                {/* Right Circle */}
+                <div className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '0.5s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Apply</p>
                 </div>
-              </div>
 
-              {/* Bottom Left Image - Spreads from center */}
-              <div className="relative z-30 -mt-6 sm:-mt-12" style={{
-                animation: 'spreadBottomLeft 1s ease-out forwards',
-                animationDelay: '0.4s',
-                opacity: 0
-              }}>
-                <div className="group overflow-hidden rounded-xl sm:rounded-2xl bg-gray-800 shadow-2xl">
-                  <img 
-                    src="https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="University building"
-                    className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="eager"
-                  />
+                {/* Bottom Circle */}
+                <div className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Accept</p>
                 </div>
-              </div>
 
-              {/* Bottom Right Image - Spreads from center */}
-              <div className="relative z-40 -ml-4 sm:-ml-8 -mt-2 sm:-mt-4" style={{
-                animation: 'spreadBottomRight 1s ease-out forwards',
-                animationDelay: '0.5s',
-                opacity: 0
-              }}>
-                <div className="group overflow-hidden rounded-xl sm:rounded-2xl bg-gray-800 shadow-2xl">
-                  <img 
-                    src="https://images.pexels.com/photos/1370296/pexels-photo-1370296.jpeg?auto=compress&cs=tinysrgb&w=400"
-                    alt="University library"
-                    className="w-full h-32 sm:h-40 lg:h-48 object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="eager"
-                  />
+                {/* Left Circle */}
+                <div className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 bg-gradient-to-br from-gold-500/30 to-gold-600/20 backdrop-blur-sm border-2 border-gold-400/40 rounded-full flex flex-col items-center justify-center text-center animate-float shadow-lg shadow-gold-400/20" style={{animationDelay: '1.5s'}}>
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                  <p className="text-[10px] sm:text-xs font-bold text-white">Study</p>
                 </div>
+
+                {/* Center Circle - Main (Larger) - Positioned more up */}
+                <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-gradient-to-br from-gold-500/40 to-gold-600/30 backdrop-blur-sm border-3 border-gold-400/50 rounded-full flex flex-col items-center justify-center text-center shadow-xl shadow-gold-400/30 animate-pulse-slow z-10">
+                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                  </svg>
+                  <p className="text-sm sm:text-base font-bold text-white">Graduate</p>
+                </div>
+
+                {/* Curved Arrows - Clockwise Workflow */}
+                {/* Top to Right */}
+                <svg className="absolute top-[25%] right-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.3s'}}>
+                  <path d="M 5 5 Q 40 5 55 40" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#uniArrow1)"/>
+                  <defs>
+                    <marker id="uniArrow1" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Right to Bottom */}
+                <svg className="absolute bottom-[25%] right-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.6s'}}>
+                  <path d="M 55 5 Q 40 40 5 55" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#uniArrow2)"/>
+                  <defs>
+                    <marker id="uniArrow2" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Bottom to Left */}
+                <svg className="absolute bottom-[25%] left-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '0.9s'}}>
+                  <path d="M 55 55 Q 5 40 5 5" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#uniArrow3)"/>
+                  <defs>
+                    <marker id="uniArrow3" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Left to Top */}
+                <svg className="absolute top-[25%] left-[25%] w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 text-gold-400/50 animate-pulse" style={{animationDelay: '1.2s'}}>
+                  <path d="M 5 55 Q 5 5 40 5" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#uniArrow4)"/>
+                  <defs>
+                    <marker id="uniArrow4" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                </svg>
+
+                {/* Decorative Glowing Orbs */}
+                <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-24 h-24 sm:w-32 sm:h-32 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-40 sm:h-40 bg-gold-400/20 rounded-full blur-3xl animate-pulse-slow" style={{animationDelay: '1s'}}></div>
               </div>
             </div>
           </div>

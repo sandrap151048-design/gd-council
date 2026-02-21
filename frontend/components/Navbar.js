@@ -21,18 +21,18 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-400 rounded-xl flex items-center justify-center shadow-lg shadow-gold-400/50 group-hover:shadow-gold-400/80 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
+            <div className="w-11 h-11 bg-gradient-to-br from-gold-400 to-gold-400 rounded-xl flex items-center justify-center shadow-lg shadow-gold-400/50 group-hover:shadow-gold-400/80 group-hover:scale-110 transition-all duration-300 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-gold-300 to-gold-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <svg className="w-6 h-6 text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-7 h-7 text-black relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 14l9-5-9-5-9 5 9 5z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
               </svg>
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-xs sm:text-sm font-bold bg-gradient-to-r from-gold-400 to-gold-400 bg-clip-text text-transparent">
+              <span className="text-sm sm:text-base font-bold bg-gradient-to-r from-gold-400 to-gold-400 bg-clip-text text-transparent">
                 Global Education
               </span>
-              <span className="text-[10px] sm:text-xs font-semibold text-gray-400">
+              <span className="text-xs sm:text-sm font-semibold text-gray-400">
                 Council
               </span>
             </div>
