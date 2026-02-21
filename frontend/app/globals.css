@@ -3134,3 +3134,92 @@ nav.fixed-navbar.scroll-up {
     0 12px 48px rgba(230, 200, 124, 0.15);
 }
 
+
+
+/* Puzzle Theme Classes - Gold Academic Theme */
+.puzzle-bg-dark {
+  background: linear-gradient(to bottom, #0B0A08, #1A1816);
+}
+
+.puzzle-label {
+  @apply inline-block px-4 py-2 bg-gold-400/10 border border-gold-400/30 rounded-full text-xs font-bold text-gold-400 tracking-wider uppercase;
+}
+
+.puzzle-heading {
+  @apply text-4xl md:text-5xl font-bold mb-6;
+}
+
+.puzzle-gradient-text {
+  background: linear-gradient(135deg, #F5E5B8 0%, #E6C87C 50%, #D4B566 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.puzzle-text {
+  @apply text-gray-400 leading-relaxed;
+}
+
+.puzzle-section {
+  @apply py-20 relative;
+}
+
+.puzzle-glass-card {
+  @apply rounded-2xl border border-gold-400/20 p-8;
+  background: rgba(26, 24, 22, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 
+    0 8px 32px 0 rgba(11, 10, 8, 0.37),
+    inset 0 1px 0 0 rgba(230, 200, 124, 0.1);
+}
+
+.puzzle-icon-card {
+  @apply puzzle-glass-card hover:border-gold-400/40 transition-all duration-300;
+}
+
+.puzzle-icon-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 12px 48px 0 rgba(230, 200, 124, 0.15),
+    0 0 0 1px rgba(230, 200, 124, 0.2),
+    inset 0 1px 0 0 rgba(230, 200, 124, 0.2);
+}
+
+.puzzle-btn-primary {
+  @apply px-8 py-4 font-bold rounded-xl relative overflow-hidden;
+  background: linear-gradient(135deg, #E6C87C 0%, #F5E5B8 100%);
+  color: #0B0A08;
+  transition: all 0.3s ease;
+  box-shadow: 
+    0 4px 20px rgba(230, 200, 124, 0.4),
+    0 0 0 1px rgba(230, 200, 124, 0.3);
+}
+
+.puzzle-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 30px rgba(230, 200, 124, 0.6),
+    0 0 0 1px rgba(230, 200, 124, 0.5);
+}
+
+.puzzle-btn-secondary {
+  @apply px-8 py-4 font-bold rounded-xl border-2 border-gold-400/30;
+  background: rgba(230, 200, 124, 0.05);
+  backdrop-filter: blur(10px);
+  color: #E6C87C;
+  transition: all 0.3s ease;
+}
+
+.puzzle-btn-secondary:hover {
+  background: rgba(230, 200, 124, 0.15);
+  border-color: rgba(230, 200, 124, 0.5);
+}
+
+.puzzle-stat-number {
+  @apply text-5xl md:text-6xl font-bold mb-2;
+  background: linear-gradient(135deg, #E6C87C, #F5E5B8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
