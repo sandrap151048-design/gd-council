@@ -83,8 +83,8 @@ export default function Services() {
         {/* Animated Grid */}
         <div className="absolute inset-0 opacity-20" style={{
           backgroundImage: `
-            linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(230, 200, 124, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(230, 200, 124, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
           animation: 'gridMove 20s linear infinite'
@@ -119,8 +119,8 @@ export default function Services() {
               <div className="overflow-hidden">
                 <span className="block text-white animate-smoothSlideFade" style={{
                   animationDelay: '0.2s',
-                  textShadow: '0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.2)',
-                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, greenTextGlow 3s ease-in-out infinite'
+                  textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
+                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
                 }}>
                   Education Solutions
                 </span>
@@ -233,6 +233,7 @@ export default function Services() {
     </div>
   );
 }
+
 
 
 

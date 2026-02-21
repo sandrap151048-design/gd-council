@@ -83,8 +83,8 @@ export default function Universities() {
                 <span className="block text-white animate-smoothSlideFade" style={{animationDelay: '0.1s'}}>Partnership</span>
                 <span className="block text-white animate-smoothSlideFade" style={{
                   animationDelay: '0.2s',
-                  textShadow: '0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4), 0 0 60px rgba(16, 185, 129, 0.2)',
-                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, greenTextGlow 3s ease-in-out infinite'
+                  textShadow: '0 0 20px rgba(230, 200, 124, 0.6), 0 0 40px rgba(230, 200, 124, 0.4), 0 0 60px rgba(230, 200, 124, 0.2)',
+                  animation: 'smoothSlideFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.2s, goldTextGlow 3s ease-in-out infinite'
                 }}>Universities</span>
               </h1>
               
@@ -279,5 +279,6 @@ export default function Universities() {
     </div>
   );
 }
+
 
 

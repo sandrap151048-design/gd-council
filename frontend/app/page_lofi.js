@@ -49,7 +49,7 @@ export default function Home() {
           {/* Subtle Grid Background */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute inset-0" style={{
-              backgroundImage: 'linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)',
+              backgroundImage: 'linear-gradient(rgba(230, 200, 124, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(230, 200, 124, 0.1) 1px, transparent 1px)',
               backgroundSize: '50px 50px'
             }}></div>
           </div>
@@ -237,5 +237,6 @@ export default function Home() {
     </>
   );
 }
+
 
 

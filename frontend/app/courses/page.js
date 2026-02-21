@@ -81,8 +81,8 @@ export default function Courses() {
         {/* Animated Tech Grid */}
         <div className="absolute inset-0 z-10 opacity-20" style={{
           backgroundImage: `
-            linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)
+            linear-gradient(rgba(230, 200, 124, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(230, 200, 124, 0.1) 1px, transparent 1px)
           `,
           backgroundSize: '60px 60px',
           animation: 'gridMove 20s linear infinite'
@@ -92,7 +92,7 @@ export default function Courses() {
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-float opacity-60"></div>
           <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-1000 opacity-40"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
+          <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-gold-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
           <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
         </div>
         
