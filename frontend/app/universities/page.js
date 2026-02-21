@@ -36,7 +36,7 @@ export default function Universities() {
     return (
       <div className="flex justify-center items-center min-h-screen puzzle-bg-dark">
         <div className="puzzle-glass-card p-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-400 mx-auto"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400 mx-auto"></div>
         </div>
       </div>
     );
@@ -68,15 +68,15 @@ export default function Universities() {
         }}></div>
 
         {/* Floating Orbs */}
-        <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-emerald-500/20 rounded-full blur-3xl animate-pulse z-10"></div>
-        <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-green-500/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
+        <div className="absolute top-20 left-10 w-48 h-48 md:w-72 md:h-72 bg-gold-400/20 rounded-full blur-3xl animate-pulse z-10"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 md:w-96 md:h-96 bg-gold-400/10 rounded-full blur-3xl animate-pulse z-10" style={{animationDelay: '1s'}}></div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Content */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
-                <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">500+ Partner Universities Worldwide</span>
+              <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-gold-400/10 border border-gold-400/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
+                <span className="text-xs font-bold text-gold-400 uppercase tracking-wider">500+ Partner Universities Worldwide</span>
               </div>
               
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
@@ -93,10 +93,10 @@ export default function Universities() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-smoothSlideFade justify-center lg:justify-start" style={{animationDelay: '0.4s'}}>
-                <Link href="/contact" className="px-6 sm:px-8 py-3 sm:py-4 bg-emerald-500 text-black font-bold rounded-xl hover:bg-emerald-400 transition-all hover:scale-105 text-center">
+                <Link href="/contact" className="px-6 sm:px-8 py-3 sm:py-4 bg-gold-400 text-black font-bold rounded-xl hover:bg-gold-400 transition-all hover:scale-105 text-center">
                   Partner With Us
                 </Link>
-                <Link href="/about" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 text-emerald-400 font-bold rounded-xl border-2 border-emerald-500/30 hover:bg-emerald-500/10 transition-all text-center">
+                <Link href="/about" className="px-6 sm:px-8 py-3 sm:py-4 bg-white/5 text-gold-400 font-bold rounded-xl border-2 border-gold-400/30 hover:bg-gold-400/10 transition-all text-center">
                   Learn More
                 </Link>
               </div>
@@ -178,8 +178,8 @@ export default function Universities() {
           {universities.length === 0 ? (
             <div className="text-center py-12 sm:py-20">
               <div className="puzzle-glass-card p-8 sm:p-12 max-w-md mx-auto">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-emerald-500/30">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 border border-gold-400/30">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                   </svg>
                 </div>
@@ -205,7 +205,7 @@ export default function Universities() {
                       {/* Ranking Badge */}
                       {university.ranking && (
                         <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                          <span className="px-2 sm:px-3 py-1 bg-emerald-500/90 text-black text-xs font-bold rounded-full">
+                          <span className="px-2 sm:px-3 py-1 bg-gold-400/90 text-black text-xs font-bold rounded-full">
                             {university.ranking}
                           </span>
                         </div>
@@ -221,7 +221,7 @@ export default function Universities() {
                   </div>
 
                   {/* University Name */}
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-emerald-400 transition-colors min-h-[3.5rem]">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 group-hover:text-gold-400 transition-colors min-h-[3.5rem]">
                     {university.name}
                   </h3>
 
@@ -234,7 +234,7 @@ export default function Universities() {
                   <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3 sm:mb-4">
                     {university.programs && (
                       <div className="flex items-center gap-1 sm:gap-2 text-xs text-gray-400">
-                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
                         <span className="truncate">{university.programs}</span>
@@ -242,7 +242,7 @@ export default function Universities() {
                     )}
                     {university.students && (
                       <div className="flex items-center gap-1 sm:gap-2 text-xs text-gray-400">
-                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-3 h-3 sm:w-4 sm:h-4 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                         <span className="truncate">{university.students}</span>
@@ -251,10 +251,10 @@ export default function Universities() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-emerald-500/20 mt-auto">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-gold-400/20 mt-auto">
                     <Link 
                       href="/contact"
-                      className="flex-1 px-3 sm:px-4 py-2 bg-emerald-500 text-black text-xs sm:text-sm font-bold rounded-lg hover:bg-emerald-400 transition-all text-center"
+                      className="flex-1 px-3 sm:px-4 py-2 bg-gold-400 text-black text-xs sm:text-sm font-bold rounded-lg hover:bg-gold-400 transition-all text-center"
                     >
                       Apply Now
                     </Link>
@@ -263,7 +263,7 @@ export default function Universities() {
                         href={university.website}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-1 px-3 sm:px-4 py-2 bg-white/5 text-emerald-400 text-xs sm:text-sm font-bold rounded-lg border border-emerald-500/30 hover:bg-emerald-500/10 transition-all text-center"
+                        className="flex-1 px-3 sm:px-4 py-2 bg-white/5 text-gold-400 text-xs sm:text-sm font-bold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 transition-all text-center"
                       >
                         Visit Website
                       </a>
@@ -279,3 +279,4 @@ export default function Universities() {
     </div>
   );
 }
+

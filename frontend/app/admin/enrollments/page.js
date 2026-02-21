@@ -69,7 +69,7 @@ function EnrollmentsContent() {
                     <td className="px-6 py-4">{enrollment.email}</td>
                     <td className="px-6 py-4">
                       <span className={`px-2 py-1 rounded-full text-xs ${
-                        enrollment.status === 'approved' ? 'bg-green-500/20 text-green-400' :
+                        enrollment.status === 'approved' ? 'bg-gold-400/20 text-gold-400' :
                         enrollment.status === 'rejected' ? 'bg-red-500/20 text-red-400' :
                         'bg-yellow-500/20 text-yellow-400'
                       }`}>
@@ -82,7 +82,7 @@ function EnrollmentsContent() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => updateStatus(enrollment._id, 'approved')}
-                            className="text-green-400 hover:text-green-300 text-sm"
+                            className="text-gold-400 hover:text-gold-300 text-sm"
                           >
                             Approve
                           </button>
@@ -115,3 +115,5 @@ export default function AdminEnrollments() {
     </ProtectedRoute>
   );
 }
+
+

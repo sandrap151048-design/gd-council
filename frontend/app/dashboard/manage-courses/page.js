@@ -113,7 +113,7 @@ export default function ManageCourses() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400"></div>
       </div>
     );
   }
@@ -126,7 +126,7 @@ export default function ManageCourses() {
           <h1 className="text-3xl font-bold text-white">Manage Courses</h1>
           <button
             onClick={() => setShowForm(!showForm)}
-            className="px-6 py-3 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all"
+            className="px-6 py-3 bg-gold-400 text-black font-bold rounded-lg hover:bg-gold-400 transition-all"
           >
             {showForm ? 'Cancel' : '+ Add New Course'}
           </button>
@@ -134,7 +134,7 @@ export default function ManageCourses() {
 
         {/* Form */}
         {showForm && (
-          <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl p-6 mb-8">
+          <div className="bg-gray-900 border border-gold-400/20 rounded-2xl p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
               {editingCourse ? 'Edit Course' : 'Add New Course'}
             </h2>
@@ -147,7 +147,7 @@ export default function ManageCourses() {
                     required
                     value={formData.title}
                     onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -157,7 +157,7 @@ export default function ManageCourses() {
                     required
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -169,7 +169,7 @@ export default function ManageCourses() {
                   rows="4"
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                 />
               </div>
 
@@ -182,7 +182,7 @@ export default function ManageCourses() {
                     placeholder="e.g., 8 weeks"
                     value={formData.duration}
                     onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -191,7 +191,7 @@ export default function ManageCourses() {
                     required
                     value={formData.level}
                     onChange={(e) => setFormData({ ...formData, level: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   >
                     <option value="">Select Level</option>
                     <option value="Beginner">Beginner</option>
@@ -206,7 +206,7 @@ export default function ManageCourses() {
                     required
                     value={formData.price}
                     onChange={(e) => setFormData({ ...formData, price: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -218,7 +218,7 @@ export default function ManageCourses() {
                     type="text"
                     value={formData.instructor}
                     onChange={(e) => setFormData({ ...formData, instructor: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -228,7 +228,7 @@ export default function ManageCourses() {
                     value={formData.image}
                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                     placeholder="https://example.com/image.jpg"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -236,7 +236,7 @@ export default function ManageCourses() {
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all"
+                  className="px-6 py-3 bg-gold-400 text-black font-bold rounded-lg hover:bg-gold-400 transition-all"
                 >
                   {editingCourse ? 'Update Course' : 'Create Course'}
                 </button>
@@ -255,16 +255,16 @@ export default function ManageCourses() {
         {/* Courses List */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => (
-            <div key={course._id} className="bg-gray-900 border border-emerald-500/20 rounded-2xl overflow-hidden">
+            <div key={course._id} className="bg-gray-900 border border-gold-400/20 rounded-2xl overflow-hidden">
               {course.image && (
                 <img src={course.image} alt={course.title} className="w-full h-48 object-cover" />
               )}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full">
+                  <span className="px-3 py-1 bg-gold-400/10 text-gold-400 text-xs font-bold rounded-full">
                     {course.level}
                   </span>
-                  <span className="text-emerald-400 font-bold">${course.price}</span>
+                  <span className="text-gold-400 font-bold">${course.price}</span>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{course.title}</h3>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-2">{course.description}</p>
@@ -275,7 +275,7 @@ export default function ManageCourses() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleEdit(course)}
-                    className="flex-1 px-4 py-2 bg-emerald-500/10 text-emerald-400 font-bold rounded-lg hover:bg-emerald-500/20 transition-all"
+                    className="flex-1 px-4 py-2 bg-gold-400/10 text-gold-400 font-bold rounded-lg hover:bg-gold-400/20 transition-all"
                   >
                     Edit
                   </button>
@@ -300,3 +300,4 @@ export default function ManageCourses() {
     </div>
   );
 }
+

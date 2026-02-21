@@ -74,7 +74,7 @@ function PartnershipsContent() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400"></div>
       </div>
     );
   }
@@ -99,7 +99,7 @@ function PartnershipsContent() {
         </div>
 
         {/* Search and Filter */}
-        <div className="glass-dark rounded-xl p-4 border border-emerald-500/20 mb-6">
+        <div className="glass-dark rounded-xl p-4 border border-gold-400/20 mb-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <input
@@ -127,12 +127,12 @@ function PartnershipsContent() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {filteredPartnerships.length === 0 ? (
-            <div className="col-span-full glass-dark rounded-xl p-12 border border-emerald-500/20 text-center">
+            <div className="col-span-full glass-dark rounded-xl p-12 border border-gold-400/20 text-center">
               <p className="text-gray-400">No partnership applications found</p>
             </div>
           ) : (
             filteredPartnerships.map((partnership) => (
-              <div key={partnership._id} className="glass-dark rounded-xl p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+              <div key={partnership._id} className="glass-dark rounded-xl p-6 border border-gold-400/20 hover:border-gold-400/40 transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-2">{partnership.institutionName}</h3>
@@ -141,7 +141,7 @@ function PartnershipsContent() {
                     </span>
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    partnership.status === 'approved' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                    partnership.status === 'approved' ? 'bg-gold-400/20 text-gold-400 border border-gold-400/30' :
                     partnership.status === 'rejected' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
                     'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                   }`}>
@@ -151,17 +151,17 @@ function PartnershipsContent() {
                 
                 <div className="space-y-2 mb-4 text-sm">
                   <p className="text-gray-400">
-                    <span className="text-emerald-400">Contact:</span> {partnership.contactPerson}
+                    <span className="text-gold-400">Contact:</span> {partnership.contactPerson}
                   </p>
                   <p className="text-gray-400">
-                    <span className="text-emerald-400">Email:</span> {partnership.email}
+                    <span className="text-gold-400">Email:</span> {partnership.email}
                   </p>
                   <p className="text-gray-400">
-                    <span className="text-emerald-400">Phone:</span> {partnership.phone}
+                    <span className="text-gold-400">Phone:</span> {partnership.phone}
                   </p>
                   {partnership.website && (
                     <p className="text-gray-400">
-                      <span className="text-emerald-400">Website:</span>{' '}
+                      <span className="text-gold-400">Website:</span>{' '}
                       <a href={partnership.website} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
                         {partnership.website}
                       </a>
@@ -187,7 +187,7 @@ function PartnershipsContent() {
                     {partnership.status !== 'approved' && (
                       <button
                         onClick={() => updateStatus(partnership._id, 'approved')}
-                        className="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg hover:bg-green-500/30 transition-all text-sm border border-green-500/30"
+                        className="px-3 py-1 bg-gold-400/20 text-gold-400 rounded-lg hover:bg-gold-400/30 transition-all text-sm border border-gold-400/30"
                       >
                         Approve
                       </button>
@@ -220,3 +220,5 @@ export default function AdminPartnerships() {
     </ProtectedRoute>
   );
 }
+
+

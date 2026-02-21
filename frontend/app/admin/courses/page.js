@@ -155,7 +155,7 @@ function CoursesContent() {
         </div>
 
         {/* Search and Filter */}
-        <div className="glass-dark rounded-xl p-4 border border-emerald-500/20 mb-6">
+        <div className="glass-dark rounded-xl p-4 border border-gold-400/20 mb-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <input
@@ -182,7 +182,7 @@ function CoursesContent() {
         </div>
 
         {showForm && (
-          <div className="glass-dark rounded-xl p-6 border border-emerald-500/20 mb-8">
+          <div className="glass-dark rounded-xl p-6 border border-gold-400/20 mb-8">
             <h2 className="text-xl font-semibold mb-4 text-white">
               {editingId ? 'Edit Course' : 'Add New Course'}
             </h2>
@@ -260,7 +260,7 @@ function CoursesContent() {
           </div>
         )}
 
-        <div className="glass-dark rounded-xl overflow-hidden border border-emerald-500/20">
+        <div className="glass-dark rounded-xl overflow-hidden border border-gold-400/20">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead className="bg-gray-800/50">
@@ -285,13 +285,13 @@ function CoursesContent() {
                     <tr key={course._id} className="text-gray-300 hover:bg-gray-800/30 transition-colors">
                       <td className="px-6 py-4 font-medium text-white">{course.title}</td>
                       <td className="px-6 py-4">
-                        <span className="px-2 py-1 bg-emerald-500/10 text-emerald-400 rounded text-xs">
+                        <span className="px-2 py-1 bg-gold-400/10 text-gold-400 rounded text-xs">
                           {course.category}
                         </span>
                       </td>
                       <td className="px-6 py-4">
                         <span className={`px-2 py-1 rounded text-xs ${
-                          course.level === 'Beginner' ? 'bg-green-500/10 text-green-400' :
+                          course.level === 'Beginner' ? 'bg-gold-400/10 text-gold-400' :
                           course.level === 'Intermediate' ? 'bg-yellow-500/10 text-yellow-400' :
                           'bg-red-500/10 text-red-400'
                         }`}>
@@ -339,3 +339,5 @@ export default function AdminCourses() {
     </ProtectedRoute>
   );
 }
+
+

@@ -8,50 +8,49 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Emerald Green Primary Palette
-        primary: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',  // Main Primary - Emerald Green
-          800: '#065f46',
-          900: '#064e3b',
+        // Gold Primary Palette - Elegant Academic
+        gold: {
+          50: '#FDF8ED',
+          100: '#F5E5B8',
+          200: '#F0D99A',
+          300: '#EBCD7C',
+          400: '#E6C87C',  // Main Gold
+          500: '#D4B566',
+          600: '#C2A250',
+          700: '#A88B3E',
+          800: '#8E742C',
+          900: '#745D1A',
         },
-        // Light Green Accent Palette
-        accent: {
-          50: '#f0fdf4',
-          100: '#dcfce7',
-          200: '#bbf7d0',
-          300: '#86efac',
-          400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
-          800: '#166534',
-          900: '#14532d',
+        // Brown Accent Palette
+        brown: {
+          50: '#F5F3F2',
+          100: '#E8E4E3',
+          200: '#C9BFBD',
+          300: '#AA9A97',
+          400: '#6B4644',
+          500: '#4A2C2A',  // Main Brown
+          600: '#3D2422',
+          700: '#2D1A19',
+          800: '#1F1211',
+          900: '#110A09',
         },
-        // Dark Gray Text Palette
-        gray: {
-          50: '#f9fafb',
-          100: '#f3f4f6',
-          200: '#e5e7eb',
-          300: '#d1d5db',
-          400: '#9ca3af',
-          500: '#6b7280',
-          600: '#4b5563',
-          700: '#374151',
-          800: '#1f2937',  // Main Text Color
-          900: '#111827',
+        // Background Palette
+        bg: {
+          primary: '#0B0A08',
+          secondary: '#1A1816',
+          tertiary: '#2A2724',
+        },
+        // Text Palette
+        text: {
+          white: '#FAFAFA',
+          muted: '#B8B8B8',
+          dark: '#6B6B6B',
         },
         // Semantic Colors
-        success: '#10b981',
+        success: '#E6C87C',
         warning: '#f59e0b',
         error: '#ef4444',
-        info: '#047857',
+        info: '#D4B566',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
@@ -75,8 +74,10 @@ module.exports = {
         'large': '0 10px 40px 0 rgba(0, 0, 0, 0.1)',
         'xl': '0 20px 50px 0 rgba(0, 0, 0, 0.12)',
         'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-        'green': '0 4px 20px 0 rgba(4, 120, 87, 0.15)',
-        'green-lg': '0 10px 40px 0 rgba(4, 120, 87, 0.2)',
+        'green': '0 4px 20px 0 rgba(230, 200, 124, 0.15)',
+        'green-lg': '0 10px 40px 0 rgba(230, 200, 124, 0.2)',
+        'gold': '0 4px 20px 0 rgba(230, 200, 124, 0.15)',
+        'gold-lg': '0 10px 40px 0 rgba(230, 200, 124, 0.2)',
       },
       borderRadius: {
         'sm': '0.25rem',

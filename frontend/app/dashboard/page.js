@@ -57,8 +57,8 @@ function DashboardContent() {
     return (
       <div className="flex justify-center items-center min-h-screen bg-black">
         <div className="relative">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-emerald-500"></div>
-          <div className="absolute inset-0 animate-ping rounded-full h-16 w-16 border border-emerald-500/30"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gold-400"></div>
+          <div className="absolute inset-0 animate-ping rounded-full h-16 w-16 border border-gold-400/30"></div>
         </div>
       </div>
     );
@@ -133,7 +133,7 @@ function DashboardContent() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-4xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-gold-400 to-green-400 bg-clip-text text-transparent">
                   Welcome back, {user?.name}
                 </span>
               </h1>
@@ -146,7 +146,7 @@ function DashboardContent() {
               <button
                 onClick={fetchUserData}
                 disabled={loading}
-                className="px-4 py-2 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 rounded-lg transition-all text-emerald-400 font-semibold flex items-center gap-2 disabled:opacity-50"
+                className="px-4 py-2 bg-gold-400/10 hover:bg-gold-400/20 border border-gold-400/30 rounded-lg transition-all text-gold-400 font-semibold flex items-center gap-2 disabled:opacity-50"
               >
                 <svg className={`w-4 h-4 ${loading ? 'animate-spin' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -155,7 +155,7 @@ function DashboardContent() {
               </button>
               <div>
                 <div className="text-sm text-gray-400">Last updated</div>
-                <div className="text-emerald-400 font-semibold">{new Date().toLocaleTimeString()}</div>
+                <div className="text-gold-400 font-semibold">{new Date().toLocaleTimeString()}</div>
               </div>
             </div>
           </div>
@@ -171,11 +171,11 @@ function DashboardContent() {
             >
               {/* Icon and Trend */}
               <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-gold-500/20 to-green-500/20 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
                   {stat.icon}
                 </div>
                 {stat.total > 0 && (
-                  <div className={`flex items-center gap-1 text-sm font-semibold ${stat.trend === 'up' ? 'text-emerald-400' : 'text-red-400'}`}>
+                  <div className={`flex items-center gap-1 text-sm font-semibold ${stat.trend === 'up' ? 'text-gold-400' : 'text-red-400'}`}>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={stat.trend === 'up' ? 'M5 10l7-7m0 0l7 7m-7-7v18' : 'M19 14l-7 7m0 0l-7-7m7 7V3'} />
                     </svg>
@@ -222,7 +222,7 @@ function DashboardContent() {
           <div className="lg:col-span-2 data-card p-6 animate-fadeInUp" style={{ animationDelay: '400ms' }}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">Recent Activity</h2>
-              <Link href="/dashboard/browse-courses" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold flex items-center gap-1">
+              <Link href="/dashboard/browse-courses" className="text-gold-400 hover:text-gold-300 text-sm font-semibold flex items-center gap-1">
                 View All
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -237,14 +237,14 @@ function DashboardContent() {
                   className="info-card flex items-center gap-4 group"
                 >
                   <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                    activity.status === 'success' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-yellow-500/20 text-yellow-400'
+                    activity.status === 'success' ? 'bg-gold-400/20 text-gold-400' : 'bg-yellow-500/20 text-yellow-400'
                   }`}>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <div className="text-white font-semibold group-hover:text-emerald-400 transition-colors">
+                    <div className="text-white font-semibold group-hover:text-gold-400 transition-colors">
                       {activity.title}
                     </div>
                     <div className="text-gray-400 text-sm">{activity.time}</div>
@@ -263,16 +263,16 @@ function DashboardContent() {
               <Link href="/dashboard/browse-courses" className="block">
                 <div className="info-card group cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-black">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-500 to-green-500 flex items-center justify-center text-black">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-semibold group-hover:text-emerald-400 transition-colors">Browse Courses</div>
+                      <div className="text-white font-semibold group-hover:text-gold-400 transition-colors">Browse Courses</div>
                       <div className="text-gray-400 text-sm">Explore available programs</div>
                     </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gold-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -282,16 +282,16 @@ function DashboardContent() {
               <Link href="/dashboard/universities" className="block">
                 <div className="info-card group cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-500 flex items-center justify-center text-black">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-gold-500 flex items-center justify-center text-black">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-semibold group-hover:text-emerald-400 transition-colors">Universities</div>
+                      <div className="text-white font-semibold group-hover:text-gold-400 transition-colors">Universities</div>
                       <div className="text-gray-400 text-sm">View partner institutions</div>
                     </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gold-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -301,16 +301,16 @@ function DashboardContent() {
               <Link href="/dashboard/partnership" className="block">
                 <div className="info-card group cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-emerald-500 flex items-center justify-center text-black">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-teal-500 to-gold-500 flex items-center justify-center text-black">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-semibold group-hover:text-emerald-400 transition-colors">Partnership</div>
+                      <div className="text-white font-semibold group-hover:text-gold-400 transition-colors">Partnership</div>
                       <div className="text-gray-400 text-sm">Apply for partnerships</div>
                     </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gold-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -320,16 +320,16 @@ function DashboardContent() {
               <Link href="/dashboard/inquiry" className="block">
                 <div className="info-card group cursor-pointer">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-green-400 flex items-center justify-center text-black">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-gold-400 to-green-400 flex items-center justify-center text-black">
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                       </svg>
                     </div>
                     <div className="flex-1">
-                      <div className="text-white font-semibold group-hover:text-emerald-400 transition-colors">Submit Inquiry</div>
+                      <div className="text-white font-semibold group-hover:text-gold-400 transition-colors">Submit Inquiry</div>
                       <div className="text-gray-400 text-sm">Get assistance</div>
                     </div>
-                    <svg className="w-5 h-5 text-gray-400 group-hover:text-emerald-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-gray-400 group-hover:text-gold-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </div>
@@ -343,7 +343,7 @@ function DashboardContent() {
         <div className="data-card p-6 animate-fadeInUp mb-8" style={{ animationDelay: '600ms' }}>
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-bold text-white">Newsletter Subscribers</h2>
-            <div className="flex items-center gap-2 text-emerald-400">
+            <div className="flex items-center gap-2 text-gold-400">
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
@@ -353,8 +353,8 @@ function DashboardContent() {
           
           {newsletters.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-500/30">
-                <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-20 h-20 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-400/30">
+                <svg className="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -370,11 +370,11 @@ function DashboardContent() {
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-black font-bold flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-500 to-green-500 flex items-center justify-center text-black font-bold flex-shrink-0">
                       {subscriber.email.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="text-white font-semibold truncate group-hover:text-emerald-400 transition-colors">
+                      <div className="text-white font-semibold truncate group-hover:text-gold-400 transition-colors">
                         {subscriber.email}
                       </div>
                       <div className="text-gray-400 text-xs mt-1">
@@ -382,7 +382,7 @@ function DashboardContent() {
                       </div>
                       <div className="flex items-center gap-2 mt-2">
                         <div className="status-dot active"></div>
-                        <span className="text-emerald-400 text-xs font-semibold">Active</span>
+                        <span className="text-gold-400 text-xs font-semibold">Active</span>
                       </div>
                     </div>
                   </div>
@@ -398,8 +398,8 @@ function DashboardContent() {
           
           {enrollments.length === 0 && partnerships.length === 0 && inquiries.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-500/30">
-                <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-20 h-20 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-400/30">
+                <svg className="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
@@ -409,7 +409,7 @@ function DashboardContent() {
                 <Link href="/dashboard/browse-courses" className="cyber-button text-sm px-6 py-3">
                   <span>Browse Courses</span>
                 </Link>
-                <Link href="/dashboard/inquiry" className="px-6 py-3 text-sm font-bold text-emerald-400 rounded-lg border-2 border-emerald-500/50 hover:bg-emerald-500/10 transition-all">
+                <Link href="/dashboard/inquiry" className="px-6 py-3 text-sm font-bold text-gold-400 rounded-lg border-2 border-gold-400/50 hover:bg-gold-400/10 transition-all">
                   Submit Inquiry
                 </Link>
               </div>
@@ -498,3 +498,4 @@ export default function Dashboard() {
     </ProtectedRoute>
   );
 }
+

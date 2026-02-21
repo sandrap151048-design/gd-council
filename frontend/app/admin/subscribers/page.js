@@ -1,9 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import ProtectedRoute from '../../../components/ProtectedRoute';
+import DashboardLayout from '../../../components/DashboardLayout';
 import api from '../../../services/api';
 
-export default function Subscribers() {
+function SubscribersContent() {
   const [subscribers, setSubscribers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState({ count: 0, activeCount: 0 });
@@ -67,7 +69,7 @@ export default function Subscribers() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen bg-gray-950">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400"></div>
       </div>
     );
   }
@@ -83,7 +85,7 @@ export default function Subscribers() {
           {subscribers.length > 0 && (
             <button
               onClick={exportToCSV}
-              className="px-4 py-2 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all inline-flex items-center gap-2"
+              className="px-4 py-2 bg-gold-400 text-black font-bold rounded-lg hover:bg-gold-400 transition-all inline-flex items-center gap-2"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -95,35 +97,35 @@ export default function Subscribers() {
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-8">
-          <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl p-6">
+          <div className="bg-gray-900 border border-gold-400/20 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Total Subscribers</p>
                 <p className="text-3xl font-bold text-white">{stats.count}</p>
               </div>
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-gold-400/20 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl p-6">
+          <div className="bg-gray-900 border border-gold-400/20 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Active Subscribers</p>
-                <p className="text-3xl font-bold text-emerald-400">{stats.activeCount}</p>
+                <p className="text-3xl font-bold text-gold-400">{stats.activeCount}</p>
               </div>
-              <div className="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-12 h-12 bg-gold-400/20 rounded-lg flex items-center justify-center">
+                <svg className="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
             </div>
           </div>
 
-          <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl p-6">
+          <div className="bg-gray-900 border border-gold-400/20 rounded-2xl p-6">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-400 text-sm mb-1">Inactive Subscribers</p>
@@ -139,10 +141,10 @@ export default function Subscribers() {
         </div>
 
         {/* Subscribers Table */}
-        <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl overflow-hidden">
+        <div className="bg-gray-900 border border-gold-400/20 rounded-2xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full">
-              <thead className="bg-gray-800 border-b border-emerald-500/20">
+              <thead className="bg-gray-800 border-b border-gold-400/20">
                 <tr>
                   <th className="px-4 md:px-6 py-3 text-left text-xs font-medium text-gray-400 uppercase tracking-wider">
                     Email
@@ -176,8 +178,8 @@ export default function Subscribers() {
                     <tr key={subscriber._id} className="hover:bg-gray-800 transition-colors">
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center mr-3">
-                            <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="w-8 h-8 bg-gold-400/20 rounded-full flex items-center justify-center mr-3">
+                            <svg className="w-4 h-4 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                           </div>
@@ -194,7 +196,7 @@ export default function Subscribers() {
                       <td className="px-4 md:px-6 py-4 whitespace-nowrap">
                         <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                           subscriber.isActive 
-                            ? 'bg-emerald-500/20 text-emerald-400' 
+                            ? 'bg-gold-400/20 text-gold-400' 
                             : 'bg-gray-700 text-gray-400'
                         }`}>
                           {subscriber.isActive ? 'Active' : 'Inactive'}
@@ -221,3 +223,16 @@ export default function Subscribers() {
     </div>
   );
 }
+
+
+export default function Subscribers() {
+  return (
+    <ProtectedRoute adminOnly={true}>
+      <DashboardLayout>
+        <SubscribersContent />
+      </DashboardLayout>
+    </ProtectedRoute>
+  );
+}
+
+

@@ -45,7 +45,7 @@ function InquiryContent() {
             <p className="text-gray-300 text-lg">Have a question? Send us your inquiry and we'll get back to you soon</p>
           </div>
           
-          <div className="glass-dark border border-emerald-500/20 rounded-xl shadow-emerald-glow p-8">
+          <div className="glass-dark border border-gold-400/20 rounded-xl shadow-emerald-glow p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-semibold text-white mb-2">
@@ -58,7 +58,7 @@ function InquiryContent() {
                   onChange={handleChange}
                   required
                   placeholder="Enter your full name"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -73,7 +73,7 @@ function InquiryContent() {
                   onChange={handleChange}
                   required
                   placeholder="your.email@example.com"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -88,7 +88,7 @@ function InquiryContent() {
                   onChange={handleChange}
                   required
                   placeholder="+1 (555) 000-0000"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -103,7 +103,7 @@ function InquiryContent() {
                   onChange={handleChange}
                   required
                   placeholder="What is your inquiry about?"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -117,7 +117,7 @@ function InquiryContent() {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all resize-none"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all resize-none"
                   placeholder="Describe your inquiry in detail..."
                 ></textarea>
               </div>
@@ -158,3 +158,4 @@ export default function Inquiry() {
     </ProtectedRoute>
   );
 }
+

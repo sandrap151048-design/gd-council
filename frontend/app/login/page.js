@@ -105,7 +105,7 @@ export default function Login() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-emerald-400 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gold-400 transition-colors"
                 >
                   {showPassword ? (
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -130,10 +130,10 @@ export default function Login() {
             </button>
           </form>
 
-          <div className="mt-6 pt-6 border-t border-emerald-500/20 text-center">
+          <div className="mt-6 pt-6 border-t border-gold-400/20 text-center">
             <p className="text-sm text-gray-400">
               Don&apos;t have an account?{' '}
-              <Link href="/register" className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors">
+              <Link href="/register" className="text-gold-400 hover:text-gold-300 font-semibold transition-colors">
                 Register here
               </Link>
             </p>
@@ -143,3 +143,4 @@ export default function Login() {
     </div>
   );
 }
+

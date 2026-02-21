@@ -30,21 +30,21 @@ export default function About() {
 
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-float animation-delay-1000 opacity-40"></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-1000 opacity-40"></div>
           <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
-          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
+          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
         </div>
 
         <div className="container mx-auto px-6 lg:px-12 relative z-20">
           <div className="max-w-4xl mx-auto text-center">
             {/* Badge */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-6 animate-blurToFocus">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gold-400/10 border border-gold-400/30 rounded-full mb-6 animate-blurToFocus">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
               </span>
-              <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase">Established 2015 • Trusted Globally</span>
+              <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">Established 2015 • Trusted Globally</span>
             </div>
             
             {/* Hero Title - Centered */}
@@ -67,12 +67,12 @@ export default function About() {
             
             {/* Description */}
             <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.5s'}}>
-              Empowering institutions worldwide with <span className="text-emerald-400 font-semibold">quality education partnerships</span> since 2015. We bridge the gap between educational institutions and world-class partnership opportunities.
+              Empowering institutions worldwide with <span className="text-gold-400 font-semibold">quality education partnerships</span> since 2015. We bridge the gap between educational institutions and world-class partnership opportunities.
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4 justify-center animate-smoothSlideFade" style={{animationDelay: '0.6s'}}>
-              <Link href="/partnerships" className="btn-magnetic group relative px-8 py-4 bg-emerald-500 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-emerald-500/50">
+              <Link href="/partnerships" className="btn-magnetic group relative px-8 py-4 bg-gold-400 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-emerald-500/50">
                 <span className="relative z-10 flex items-center gap-2">
                   Partner With Us
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,7 +80,7 @@ export default function About() {
                   </svg>
                 </span>
               </Link>
-              <Link href="/contact" className="ripple-effect px-8 py-4 bg-white/5 text-emerald-400 font-bold rounded-xl border-2 border-emerald-500/30 hover:bg-emerald-500/10 hover:border-emerald-400 transition-all hover:scale-105">
+              <Link href="/contact" className="ripple-effect px-8 py-4 bg-white/5 text-gold-400 font-bold rounded-xl border-2 border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 transition-all hover:scale-105">
                 Contact Us
               </Link>
             </div>
@@ -193,3 +193,4 @@ export default function About() {
     </div>
   );
 }
+

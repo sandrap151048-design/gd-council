@@ -10,3 +10,4 @@ export default function robots() {
     sitemap: 'https://globaleducationcouncil.com/sitemap.xml',
   };
 }
+

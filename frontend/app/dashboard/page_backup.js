@@ -68,7 +68,7 @@ function DashboardContent() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
       ),
-      color: 'from-emerald-500 to-green-500',
+      color: 'from-gold-500 to-green-500',
       bgColor: 'bg-primary-100',
       textColor: 'text-primary-700'
     },
@@ -81,7 +81,7 @@ function DashboardContent() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
-      color: 'from-green-500 to-emerald-500',
+      color: 'from-green-500 to-gold-500',
       bgColor: 'bg-accent-100',
       textColor: 'text-accent-700'
     },
@@ -94,7 +94,7 @@ function DashboardContent() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
         </svg>
       ),
-      color: 'from-emerald-400 to-green-400',
+      color: 'from-gold-400 to-green-400',
       bgColor: 'bg-primary-50',
       textColor: 'text-primary-600'
     },
@@ -107,7 +107,7 @@ function DashboardContent() {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
       ),
-      color: 'from-green-400 to-emerald-400',
+      color: 'from-green-400 to-gold-400',
       bgColor: 'bg-emerald-50',
       textColor: 'text-emerald-600'
     },
@@ -139,16 +139,16 @@ function DashboardContent() {
           </h1>
           <p className="text-gray-300 text-lg">Here&apos;s your personalized B2B dashboard overview</p>
         </div>
-        <div className="rounded-xl glass-card-modern border border-emerald-500/30 shadow-emerald-glow p-6">
+        <div className="rounded-xl glass-card-modern border border-gold-400/30 shadow-emerald-glow p-6">
           <div className="flex items-center space-x-4">
-            <div className="w-14 h-14 bg-gradient-to-br from-emerald-400 to-green-500 rounded-full flex items-center justify-center text-gray-900 font-bold text-2xl shadow-emerald-glow">
+            <div className="w-14 h-14 bg-gradient-to-br from-gold-400 to-green-500 rounded-full flex items-center justify-center text-gray-900 font-bold text-2xl shadow-emerald-glow">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div>
               <p className="text-white font-semibold text-lg">{user?.name}</p>
               <p className="text-xs text-gray-400 capitalize">{user?.role} Account</p>
               {user?.companyName && (
-                <p className="text-xs text-emerald-400 font-medium">{user.companyName}</p>
+                <p className="text-xs text-gold-400 font-medium">{user.companyName}</p>
               )}
             </div>
           </div>
@@ -157,10 +157,10 @@ function DashboardContent() {
 
       {/* Notifications Section */}
       {notifications.length > 0 && (
-        <div className="mb-8 rounded-xl glass-card-modern border border-emerald-500/30 p-6 shadow-emerald-glow">
+        <div className="mb-8 rounded-xl glass-card-modern border border-gold-400/30 p-6 shadow-emerald-glow">
           <div className="flex items-center space-x-2 mb-4">
-            <div className="w-10 h-10 bg-emerald-500/10 rounded-lg flex items-center justify-center border border-emerald-500/30">
-              <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="w-10 h-10 bg-gold-400/10 rounded-lg flex items-center justify-center border border-gold-400/30">
+              <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
               </svg>
             </div>
@@ -168,7 +168,7 @@ function DashboardContent() {
           </div>
           <div className="space-y-3">
             {notifications.map((notif, index) => (
-              <div key={index} className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg border border-emerald-500/10 hover:border-emerald-500/30 transition-colors">
+              <div key={index} className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg border border-gold-400/10 hover:border-gold-400/30 transition-colors">
                 <p className="text-gray-300 text-sm">{notif.message}</p>
                 <span className="text-xs text-gray-400 whitespace-nowrap ml-4">{notif.time}</span>
               </div>
@@ -199,15 +199,15 @@ function DashboardContent() {
       {/* Partnership Status & Inquiry Tracking */}
       <div className="grid md:grid-cols-2 gap-6 mb-8">
         {/* Partnership Status */}
-        <div className="rounded-xl glass-dark border border-emerald-500/20 shadow-emerald-glow p-6">
+        <div className="rounded-xl glass-dark border border-gold-400/20 shadow-emerald-glow p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
               </svg>
               Partnership Status
             </h2>
-            <Link href="/dashboard/partnership" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors flex items-center gap-1">
+            <Link href="/dashboard/partnership" className="text-gold-400 hover:text-gold-300 text-sm font-semibold transition-colors flex items-center gap-1">
               Apply
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -216,13 +216,13 @@ function DashboardContent() {
           </div>
           {partnerships.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-400/30">
+                <svg className="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <p className="text-gray-300 font-medium mb-4">No partnerships yet</p>
-              <Link href="/dashboard/partnership" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-400 to-green-500 text-gray-900 rounded-xl font-semibold hover:from-emerald-500 hover:to-green-600 transition-all shadow-emerald-glow hover:shadow-emerald-glow-lg">
+              <Link href="/dashboard/partnership" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-green-500 text-gray-900 rounded-xl font-semibold hover:from-gold-500 hover:to-green-600 transition-all shadow-emerald-glow hover:shadow-emerald-glow-lg">
                 Apply for Partnership
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -232,13 +232,13 @@ function DashboardContent() {
           ) : (
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {partnerships.map((partnership) => (
-                <div key={partnership._id} className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-emerald-500/20 hover:border-emerald-500/40 transition-colors">
+                <div key={partnership._id} className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gold-400/20 hover:border-gold-400/40 transition-colors">
                   <div>
                     <h3 className="font-semibold text-white text-sm">{partnership.companyName}</h3>
                     <p className="text-xs text-gray-400">{partnership.partnershipType}</p>
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                    partnership.status === 'approved' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                    partnership.status === 'approved' ? 'bg-gold-400/20 text-gold-400 border border-gold-400/30' :
                     partnership.status === 'rejected' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
                     'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                   }`}>
@@ -251,15 +251,15 @@ function DashboardContent() {
         </div>
 
         {/* Inquiry Tracking */}
-        <div className="rounded-xl glass-dark border border-emerald-500/20 shadow-emerald-glow p-6">
+        <div className="rounded-xl glass-dark border border-gold-400/20 shadow-emerald-glow p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
               </svg>
               Inquiry Tracking
             </h2>
-            <Link href="/dashboard/inquiry" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors flex items-center gap-1">
+            <Link href="/dashboard/inquiry" className="text-gold-400 hover:text-gold-300 text-sm font-semibold transition-colors flex items-center gap-1">
               Submit
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -268,13 +268,13 @@ function DashboardContent() {
           </div>
           {inquiries.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-500/30">
-                <svg className="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-400/30">
+                <svg className="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
               </div>
               <p className="text-gray-300 font-medium mb-4">No inquiries yet</p>
-              <Link href="/dashboard/inquiry" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-400 to-green-500 text-gray-900 rounded-xl font-semibold hover:from-emerald-500 hover:to-green-600 transition-all shadow-emerald-glow hover:shadow-emerald-glow-lg">
+              <Link href="/dashboard/inquiry" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-gold-400 to-green-500 text-gray-900 rounded-xl font-semibold hover:from-gold-500 hover:to-green-600 transition-all shadow-emerald-glow hover:shadow-emerald-glow-lg">
                 Submit Inquiry
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -284,11 +284,11 @@ function DashboardContent() {
           ) : (
             <div className="space-y-3 max-h-64 overflow-y-auto">
               {inquiries.map((inquiry) => (
-                <div key={inquiry._id} className="p-4 bg-gray-800/50 rounded-lg border border-emerald-500/20 hover:border-green-500/40 transition-colors">
+                <div key={inquiry._id} className="p-4 bg-gray-800/50 rounded-lg border border-gold-400/20 hover:border-gold-400/40 transition-colors">
                   <div className="flex justify-between items-start mb-2">
                     <span className="text-white text-sm font-medium">{inquiry.subject}</span>
                     <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                      inquiry.status === 'resolved' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                      inquiry.status === 'resolved' ? 'bg-gold-400/20 text-gold-400 border border-gold-400/30' :
                       inquiry.status === 'in-progress' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
                       'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                     }`}>
@@ -305,16 +305,16 @@ function DashboardContent() {
 
       {/* Newsletter Subscribers Section */}
       <div className="mb-8">
-        <div className="rounded-xl glass-dark border border-emerald-500/20 shadow-emerald-glow p-6">
+        <div className="rounded-xl glass-dark border border-gold-400/20 shadow-emerald-glow p-6">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-bold text-white flex items-center">
-              <svg className="w-5 h-5 mr-2 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 mr-2 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
               Newsletter Subscribers
             </h2>
             <div className="flex items-center gap-2">
-              <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-semibold border border-emerald-500/30">
+              <span className="px-3 py-1 bg-gold-400/20 text-gold-400 rounded-full text-sm font-semibold border border-gold-400/30">
                 {subscribers.filter(s => s.isActive).length} Active
               </span>
               <span className="text-gray-400 text-sm">
@@ -324,8 +324,8 @@ function DashboardContent() {
           </div>
           {subscribers.length === 0 ? (
             <div className="text-center py-12">
-              <div className="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-500/30">
-                <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-4 border border-gold-400/30">
+                <svg className="w-8 h-8 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
@@ -335,10 +335,10 @@ function DashboardContent() {
           ) : (
             <div className="space-y-2 max-h-80 overflow-y-auto">
               {subscribers.slice(0, 10).map((subscriber) => (
-                <div key={subscriber._id} className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-emerald-500/20 hover:border-emerald-500/40 transition-colors">
+                <div key={subscriber._id} className="flex items-center justify-between p-4 bg-gray-800/50 rounded-lg border border-gold-400/20 hover:border-gold-400/40 transition-colors">
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-emerald-500/10 rounded-full flex items-center justify-center border border-emerald-500/30">
-                      <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-10 h-10 bg-gold-400/10 rounded-full flex items-center justify-center border border-gold-400/30">
+                      <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                       </svg>
                     </div>
@@ -351,7 +351,7 @@ function DashboardContent() {
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
                     subscriber.isActive 
-                      ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                      ? 'bg-gold-400/20 text-gold-400 border border-gold-400/30' 
                       : 'bg-gray-500/20 text-gray-400 border border-gray-500/30'
                   }`}>
                     {subscriber.isActive ? 'Active' : 'Inactive'}
@@ -360,7 +360,7 @@ function DashboardContent() {
               ))}
               {subscribers.length > 10 && user?.role === 'admin' && (
                 <div className="text-center pt-4">
-                  <Link href="/admin/subscribers" className="text-emerald-400 hover:text-emerald-300 text-sm font-semibold transition-colors">
+                  <Link href="/admin/subscribers" className="text-gold-400 hover:text-gold-300 text-sm font-semibold transition-colors">
                     View All {subscribers.length} Subscribers →
                   </Link>
                 </div>
@@ -559,3 +559,4 @@ export default function Dashboard() {
     </ProtectedRoute>
   );
 }
+

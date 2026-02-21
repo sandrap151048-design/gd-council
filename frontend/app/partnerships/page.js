@@ -49,7 +49,7 @@ export default function Partnerships() {
         <div className="lofi-container relative z-20">
           <div className="max-w-5xl">
             <div className="badge-animated mb-8 animate-fadeInDown">
-              <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
               <span>B2B Partnership Models</span>
             </div>
             
@@ -85,17 +85,17 @@ export default function Partnerships() {
                 
                 <div className="lofi-divider mb-6"></div>
                 
-                <h4 className="font-semibold text-emerald-400 mb-3">Key Benefits:</h4>
+                <h4 className="font-semibold text-gold-400 mb-3">Key Benefits:</h4>
                 <ul className="space-y-2 mb-6 flex-grow">
                   {type.benefits.map((benefit, idx) => (
                     <li key={idx} className="text-gray-300 text-sm flex items-start gap-2">
-                      <span className="text-emerald-400 mt-1">✓</span>
+                      <span className="text-gold-400 mt-1">✓</span>
                       {benefit}
                     </li>
                   ))}
                 </ul>
                 
-                <Link href="/dashboard/partnership" className="text-emerald-400 font-semibold hover:text-emerald-300 inline-flex items-center gap-2 mt-auto">
+                <Link href="/dashboard/partnership" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2 mt-auto">
                   Apply for Partnership
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -123,7 +123,7 @@ export default function Partnerships() {
               ].map((item, index) => (
                 <div key={index} className="text-center">
                   <div className="text-4xl mb-3">{item.icon}</div>
-                  <h4 className="font-semibold text-emerald-400 mb-2">{item.title}</h4>
+                  <h4 className="font-semibold text-gold-400 mb-2">{item.title}</h4>
                   <p className="text-gray-400 text-sm">{item.desc}</p>
                 </div>
               ))}
@@ -154,3 +154,4 @@ export default function Partnerships() {
     </div>
   );
 }
+

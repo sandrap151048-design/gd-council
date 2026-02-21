@@ -77,7 +77,7 @@ export default function Services() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-emerald-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 via-transparent to-gold-500/5"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.1),transparent_50%)]"></div>
         
         {/* Animated Grid */}
@@ -92,21 +92,21 @@ export default function Services() {
 
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-float animation-delay-1000 opacity-40"></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-1000 opacity-40"></div>
           <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
-          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
+          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
         </div>
         
         <div className="container mx-auto px-6 lg:px-12 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             {/* Animated Badge */}
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-6 animate-blurToFocus">
+            <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-gold-400/10 border border-gold-400/30 rounded-full mb-6 animate-blurToFocus">
               <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold-400"></span>
               </span>
-              <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase">Our Services</span>
+              <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">Our Services</span>
             </div>
             
             {/* Animated Title */}
@@ -129,7 +129,7 @@ export default function Services() {
             
             {/* Animated Description */}
             <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed animate-smoothSlideFade" style={{animationDelay: '0.3s'}}>
-              Empowering institutions with <span className="text-emerald-400 font-semibold">world-class services</span>, strategic partnerships, and innovative solutions for global education excellence.
+              Empowering institutions with <span className="text-gold-400 font-semibold">world-class services</span>, strategic partnerships, and innovative solutions for global education excellence.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function Services() {
             {services.map((service, index) => (
               <div 
                 key={index}
-                className="bg-white/5 backdrop-blur-sm border border-emerald-500/20 rounded-2xl p-8 hover:bg-white/10 hover:border-emerald-500/40 hover:scale-105 transition-all group animate-smoothSlideFade"
+                className="bg-white/5 backdrop-blur-sm border border-gold-400/20 rounded-2xl p-8 hover:bg-white/10 hover:border-gold-400/40 hover:scale-105 transition-all group animate-smoothSlideFade"
                 style={{animationDelay: `${0.1 * index}s`}}
               >
                 {/* Icon */}
@@ -151,7 +151,7 @@ export default function Services() {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-gold-400 transition-colors">
                   {service.title}
                 </h3>
                 
@@ -164,7 +164,7 @@ export default function Services() {
                 <ul className="space-y-3">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start gap-2 text-sm text-gray-400">
-                      <svg className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{feature}</span>
@@ -197,10 +197,10 @@ export default function Services() {
             ].map((stat, index) => (
               <div 
                 key={index} 
-                className="text-center bg-gradient-to-br from-emerald-500/10 to-transparent border border-emerald-500/20 rounded-xl p-8 hover:border-emerald-500/40 hover:scale-105 transition-all animate-smoothSlideFade"
+                className="text-center bg-gradient-to-br from-gold-500/10 to-transparent border border-gold-400/20 rounded-xl p-8 hover:border-gold-400/40 hover:scale-105 transition-all animate-smoothSlideFade"
                 style={{animationDelay: `${0.2 + (0.1 * index)}s`}}
               >
-                <div className="text-5xl font-bold text-emerald-400 mb-3">{stat.number}</div>
+                <div className="text-5xl font-bold text-gold-400 mb-3">{stat.number}</div>
                 <h3 className="text-xl font-semibold text-white mb-2">{stat.title}</h3>
                 <p className="text-sm text-gray-400">{stat.desc}</p>
               </div>
@@ -220,10 +220,10 @@ export default function Services() {
               Let's discuss how our services can help your institution achieve its goals
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-8 py-4 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 hover:scale-105 transition-all">
+              <Link href="/contact" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 hover:scale-105 transition-all">
                 Contact Us
               </Link>
-              <Link href="/register" className="px-8 py-4 bg-transparent text-emerald-400 font-semibold rounded-lg border border-emerald-500/30 hover:bg-emerald-500/10 hover:border-emerald-400 hover:scale-105 transition-all">
+              <Link href="/register" className="px-8 py-4 bg-transparent text-gold-400 font-semibold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 hover:scale-105 transition-all">
                 Get Started
               </Link>
             </div>
@@ -233,3 +233,4 @@ export default function Services() {
     </div>
   );
 }
+

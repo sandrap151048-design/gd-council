@@ -108,7 +108,7 @@ export default function ManageUniversities() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-400"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400"></div>
       </div>
     );
   }
@@ -121,7 +121,7 @@ export default function ManageUniversities() {
           <h1 className="text-3xl font-bold text-white">Manage Universities</h1>
           <button
             onClick={() => setShowForm(!showForm)}
-            className="px-6 py-3 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all"
+            className="px-6 py-3 bg-gold-400 text-black font-bold rounded-lg hover:bg-gold-400 transition-all"
           >
             {showForm ? 'Cancel' : '+ Add New University'}
           </button>
@@ -129,7 +129,7 @@ export default function ManageUniversities() {
 
         {/* Form */}
         {showForm && (
-          <div className="bg-gray-900 border border-emerald-500/20 rounded-2xl p-6 mb-8">
+          <div className="bg-gray-900 border border-gold-400/20 rounded-2xl p-6 mb-8">
             <h2 className="text-2xl font-bold text-white mb-6">
               {editingUniversity ? 'Edit University' : 'Add New University'}
             </h2>
@@ -142,7 +142,7 @@ export default function ManageUniversities() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -152,7 +152,7 @@ export default function ManageUniversities() {
                     required
                     value={formData.country}
                     onChange={(e) => setFormData({ ...formData, country: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -164,7 +164,7 @@ export default function ManageUniversities() {
                   rows="4"
                   value={formData.description}
                   onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                 />
               </div>
 
@@ -176,7 +176,7 @@ export default function ManageUniversities() {
                     placeholder="e.g., #1 Global"
                     value={formData.ranking}
                     onChange={(e) => setFormData({ ...formData, ranking: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -186,7 +186,7 @@ export default function ManageUniversities() {
                     placeholder="e.g., 350+ Programs"
                     value={formData.programs}
                     onChange={(e) => setFormData({ ...formData, programs: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -196,7 +196,7 @@ export default function ManageUniversities() {
                     placeholder="e.g., 23,000+ Students"
                     value={formData.students}
                     onChange={(e) => setFormData({ ...formData, students: e.target.value })}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -209,7 +209,7 @@ export default function ManageUniversities() {
                     value={formData.image}
                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                     placeholder="https://example.com/image.jpg"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
                 <div>
@@ -219,7 +219,7 @@ export default function ManageUniversities() {
                     value={formData.website}
                     onChange={(e) => setFormData({ ...formData, website: e.target.value })}
                     placeholder="https://university.edu"
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-emerald-500 focus:outline-none"
+                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white focus:border-gold-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -227,7 +227,7 @@ export default function ManageUniversities() {
               <div className="flex gap-4">
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all"
+                  className="px-6 py-3 bg-gold-400 text-black font-bold rounded-lg hover:bg-gold-400 transition-all"
                 >
                   {editingUniversity ? 'Update University' : 'Create University'}
                 </button>
@@ -246,13 +246,13 @@ export default function ManageUniversities() {
         {/* Universities List */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {universities.map((university) => (
-            <div key={university._id} className="bg-gray-900 border border-emerald-500/20 rounded-2xl overflow-hidden">
+            <div key={university._id} className="bg-gray-900 border border-gold-400/20 rounded-2xl overflow-hidden">
               {university.image && (
                 <img src={university.image} alt={university.name} className="w-full h-48 object-cover" />
               )}
               <div className="p-6">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="px-3 py-1 bg-emerald-500/10 text-emerald-400 text-xs font-bold rounded-full">
+                  <span className="px-3 py-1 bg-gold-400/10 text-gold-400 text-xs font-bold rounded-full">
                     {university.ranking}
                   </span>
                   <span className="text-gray-400 text-xs">🌍 {university.country}</span>
@@ -266,7 +266,7 @@ export default function ManageUniversities() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => handleEdit(university)}
-                    className="flex-1 px-4 py-2 bg-emerald-500/10 text-emerald-400 font-bold rounded-lg hover:bg-emerald-500/20 transition-all"
+                    className="flex-1 px-4 py-2 bg-gold-400/10 text-gold-400 font-bold rounded-lg hover:bg-gold-400/20 transition-all"
                   >
                     Edit
                   </button>
@@ -291,3 +291,4 @@ export default function ManageUniversities() {
     </div>
   );
 }
+

@@ -74,7 +74,7 @@ function InquiriesContent() {
   if (loading) {
     return (
       <div className="flex justify-center items-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-500"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold-400"></div>
       </div>
     );
   }
@@ -99,7 +99,7 @@ function InquiriesContent() {
         </div>
 
         {/* Search and Filter */}
-        <div className="glass-dark rounded-xl p-4 border border-emerald-500/20 mb-6">
+        <div className="glass-dark rounded-xl p-4 border border-gold-400/20 mb-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <input
@@ -127,29 +127,29 @@ function InquiriesContent() {
 
         <div className="space-y-4">
           {filteredInquiries.length === 0 ? (
-            <div className="glass-dark rounded-xl p-12 border border-emerald-500/20 text-center">
+            <div className="glass-dark rounded-xl p-12 border border-gold-400/20 text-center">
               <p className="text-gray-400">No inquiries found</p>
             </div>
           ) : (
             filteredInquiries.map((inquiry) => (
-              <div key={inquiry._id} className="glass-dark rounded-xl p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+              <div key={inquiry._id} className="glass-dark rounded-xl p-6 border border-gold-400/20 hover:border-gold-400/40 transition-all">
                 <div className="flex justify-between items-start mb-4">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-2">{inquiry.subject}</h3>
                     <div className="grid md:grid-cols-3 gap-2 text-sm">
                       <p className="text-gray-400">
-                        <span className="text-emerald-400">Name:</span> {inquiry.name}
+                        <span className="text-gold-400">Name:</span> {inquiry.name}
                       </p>
                       <p className="text-gray-400">
-                        <span className="text-emerald-400">Email:</span> {inquiry.email}
+                        <span className="text-gold-400">Email:</span> {inquiry.email}
                       </p>
                       <p className="text-gray-400">
-                        <span className="text-emerald-400">Phone:</span> {inquiry.phone}
+                        <span className="text-gold-400">Phone:</span> {inquiry.phone}
                       </p>
                     </div>
                   </div>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    inquiry.status === 'resolved' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                    inquiry.status === 'resolved' ? 'bg-gold-400/20 text-gold-400 border border-gold-400/30' :
                     inquiry.status === 'in-progress' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
                     'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
                   }`}>
@@ -183,7 +183,7 @@ function InquiriesContent() {
                     {inquiry.status !== 'resolved' && (
                       <button
                         onClick={() => updateStatus(inquiry._id, 'resolved')}
-                        className="px-3 py-1 bg-green-500/20 text-green-400 rounded-lg hover:bg-green-500/30 transition-all text-sm border border-green-500/30"
+                        className="px-3 py-1 bg-gold-400/20 text-gold-400 rounded-lg hover:bg-gold-400/30 transition-all text-sm border border-gold-400/30"
                       >
                         Mark Resolved
                       </button>
@@ -208,3 +208,5 @@ export default function AdminInquiries() {
     </ProtectedRoute>
   );
 }
+
+

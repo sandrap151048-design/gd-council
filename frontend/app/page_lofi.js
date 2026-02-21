@@ -56,15 +56,15 @@ export default function Home() {
 
           {/* Floating Orbs */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl animate-float"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl animate-float animation-delay-2000"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl animate-float"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-gold-400/10 rounded-full blur-3xl animate-float animation-delay-2000"></div>
           </div>
           
           <div className="lofi-container relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               {/* Badge */}
               <div className="lofi-badge mx-auto mb-8 animate-fadeInDown">
-                <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
+                <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse"></span>
                 <span>Trusted by 500+ Institutions Worldwide</span>
               </div>
               
@@ -135,7 +135,7 @@ export default function Home() {
                 <p className="text-gray-400 mb-6">
                   Expert guidance for international education partnerships and visa support
                 </p>
-                <Link href="/services" className="text-emerald-400 font-semibold hover:text-emerald-300 inline-flex items-center gap-2">
+                <Link href="/services" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2">
                   Learn More
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -154,7 +154,7 @@ export default function Home() {
                 <p className="text-gray-400 mb-6">
                   Industry-recognized certifications with flexible scheduling options
                 </p>
-                <Link href="/courses" className="text-emerald-400 font-semibold hover:text-emerald-300 inline-flex items-center gap-2">
+                <Link href="/courses" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2">
                   View Courses
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -173,7 +173,7 @@ export default function Home() {
                 <p className="text-gray-400 mb-6">
                   Access to 500+ partner universities with comprehensive support
                 </p>
-                <Link href="/universities" className="text-emerald-400 font-semibold hover:text-emerald-300 inline-flex items-center gap-2">
+                <Link href="/universities" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2">
                   View Partners
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -237,3 +237,4 @@ export default function Home() {
     </>
   );
 }
+

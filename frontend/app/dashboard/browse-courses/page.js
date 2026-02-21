@@ -49,7 +49,7 @@ function BrowseCoursesContent() {
       </div>
 
       <div className="max-w-3xl">
-        <div className="glass-dark rounded-xl border border-emerald-500/20 shadow-emerald-glow p-8">
+        <div className="glass-dark rounded-xl border border-gold-400/20 shadow-emerald-glow p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-white mb-2">
@@ -62,7 +62,7 @@ function BrowseCoursesContent() {
                 onChange={handleChange}
                 required
                 placeholder="e.g., Business Management & Leadership"
-                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
               />
             </div>
 
@@ -78,7 +78,7 @@ function BrowseCoursesContent() {
                   onChange={handleChange}
                   required
                   placeholder="e.g., 12 weeks"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -91,7 +91,7 @@ function BrowseCoursesContent() {
                   value={formData.level}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 >
                   <option value="Beginner">Beginner</option>
                   <option value="Intermediate">Intermediate</option>
@@ -112,7 +112,7 @@ function BrowseCoursesContent() {
                   onChange={handleChange}
                   required
                   placeholder="e.g., Business, Technology, Marketing"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -128,7 +128,7 @@ function BrowseCoursesContent() {
                   required
                   min="0"
                   placeholder="e.g., 2500"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
             </div>
@@ -168,3 +168,4 @@ export default function BrowseCourses() {
     </ProtectedRoute>
   );
 }
+

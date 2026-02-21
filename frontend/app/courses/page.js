@@ -54,8 +54,8 @@ export default function Courses() {
     return (
       <div className="flex justify-center items-center min-h-screen puzzle-bg-dark">
         <div className="relative">
-          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-emerald-500"></div>
-          <div className="absolute inset-0 animate-ping rounded-full h-16 w-16 border border-emerald-500/30"></div>
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gold-400"></div>
+          <div className="absolute inset-0 animate-ping rounded-full h-16 w-16 border border-gold-400/30"></div>
         </div>
       </div>
     );
@@ -90,10 +90,10 @@ export default function Courses() {
 
         {/* Floating Particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400 rounded-full animate-float opacity-60"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-emerald-500 rounded-full animate-float animation-delay-1000 opacity-40"></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold-400 rounded-full animate-float opacity-60"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-1000 opacity-40"></div>
           <div className="absolute bottom-1/4 left-1/3 w-2 h-2 bg-emerald-300 rounded-full animate-float animation-delay-2000 opacity-50"></div>
-          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-emerald-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
+          <div className="absolute top-2/3 right-1/4 w-3 h-3 bg-gold-400 rounded-full animate-float animation-delay-3000 opacity-30"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-12 relative z-20">
@@ -101,12 +101,12 @@ export default function Courses() {
             {/* Left: Content */}
             <div className="text-center lg:text-left">
               {/* Animated Badge */}
-              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-emerald-500/10 border border-emerald-500/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
+              <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 sm:py-2.5 bg-gold-400/10 border border-gold-400/30 rounded-full mb-4 sm:mb-6 animate-blurToFocus">
                 <span className="relative flex h-2 w-2 sm:h-2.5 sm:w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-400"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-gold-400"></span>
                 </span>
-                <span className="text-xs font-semibold text-emerald-400 tracking-wider uppercase">Professional Development</span>
+                <span className="text-xs font-semibold text-gold-400 tracking-wider uppercase">Professional Development</span>
               </div>
               
               {/* Hero Title */}
@@ -133,7 +133,7 @@ export default function Courses() {
                 animationDelay: '0.2s',
                 opacity: 0
               }}>
-                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-emerald-500/20">
+                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
                   <img 
                     src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&q=80"
                     alt="Students learning"
@@ -149,7 +149,7 @@ export default function Courses() {
                 animationDelay: '0.3s',
                 opacity: 0
               }}>
-                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-emerald-500/20">
+                <div className="relative overflow-hidden rounded-full w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 group border-4 border-gold-400/20">
                   <img 
                     src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&q=80"
                     alt="Professional training"
@@ -170,8 +170,8 @@ export default function Courses() {
             {courses.length === 0 ? (
               <div className="text-center py-20">
                 <div className="puzzle-glass-card p-12 max-w-md mx-auto">
-                  <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-emerald-500/30">
-                    <svg className="w-10 h-10 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="w-20 h-20 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-400/30">
+                    <svg className="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v12m-6-6h12" />
                     </svg>
                   </div>
@@ -194,11 +194,11 @@ export default function Courses() {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0f1729] via-[#0f1729]/50 to-transparent"></div>
-                      <div className="absolute inset-0 bg-emerald-500/10 mix-blend-overlay"></div>
+                      <div className="absolute inset-0 bg-gold-400/10 mix-blend-overlay"></div>
                       
                       {/* Level Badge */}
                       <div className="absolute top-4 right-4">
-                        <span className="px-3 py-1 bg-emerald-500/90 text-black text-xs font-bold rounded-full">
+                        <span className="px-3 py-1 bg-gold-400/90 text-black text-xs font-bold rounded-full">
                           {course.level}
                         </span>
                       </div>
@@ -213,7 +213,7 @@ export default function Courses() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors min-h-[3.5rem]">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors min-h-[3.5rem]">
                       {course.title}
                     </h3>
 
@@ -223,7 +223,7 @@ export default function Courses() {
                     </p>
 
                     {/* Price & CTA */}
-                    <div className="flex items-center justify-between pt-4 border-t border-emerald-500/20 mt-auto">
+                    <div className="flex items-center justify-between pt-4 border-t border-gold-400/20 mt-auto">
                       <div>
                         <div className="puzzle-stat-number text-2xl">
                           ${course.price}
@@ -273,3 +273,4 @@ export default function Courses() {
     </div>
   );
 }
+

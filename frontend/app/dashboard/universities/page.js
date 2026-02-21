@@ -53,7 +53,7 @@ function UniversitiesContent() {
       </div>
 
       <div className="max-w-3xl">
-        <div className="glass-dark rounded-xl border border-emerald-500/20 shadow-emerald-glow p-8">
+        <div className="glass-dark rounded-xl border border-gold-400/20 shadow-emerald-glow p-8">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-white mb-2">
@@ -66,7 +66,7 @@ function UniversitiesContent() {
                 onChange={handleChange}
                 required
                 placeholder="e.g., Harvard University"
-                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
               />
             </div>
 
@@ -82,7 +82,7 @@ function UniversitiesContent() {
                   onChange={handleChange}
                   required
                   placeholder="e.g., United States"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -97,7 +97,7 @@ function UniversitiesContent() {
                   onChange={handleChange}
                   required
                   placeholder="e.g., Cambridge, MA"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ function UniversitiesContent() {
                   value={formData.ranking}
                   onChange={handleChange}
                   placeholder="e.g., Top 1, #5 Globally"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
 
@@ -127,7 +127,7 @@ function UniversitiesContent() {
                   value={formData.website}
                   onChange={handleChange}
                   placeholder="https://www.university.edu"
-                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                  className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
                 />
               </div>
             </div>
@@ -142,7 +142,7 @@ function UniversitiesContent() {
                 value={formData.programs}
                 onChange={handleChange}
                 placeholder="e.g., Business Administration, Law, Medicine, Engineering"
-                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
               />
               <p className="text-xs text-gray-400 mt-1">Separate multiple programs with commas</p>
             </div>
@@ -157,7 +157,7 @@ function UniversitiesContent() {
                 value={formData.students}
                 onChange={handleChange}
                 placeholder="e.g., 20,000+ Students"
-                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-emerald-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/30 transition-all"
+                className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-emerald-500/30 transition-all"
               />
             </div>
 
@@ -196,3 +196,4 @@ export default function Universities() {
     </ProtectedRoute>
   );
 }
+

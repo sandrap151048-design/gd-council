@@ -65,7 +65,7 @@ export default function Sitemap() {
             {sitemapSections.map((section, index) => (
               <div 
                 key={index}
-                className="glass-dark rounded-2xl p-8 border border-emerald-500/20 hover:border-emerald-500/40 transition-all"
+                className="glass-dark rounded-2xl p-8 border border-gold-400/20 hover:border-gold-400/40 transition-all"
               >
                 <div className="flex items-center gap-3 mb-6">
                   <span className="text-4xl">{section.icon}</span>
@@ -76,10 +76,10 @@ export default function Sitemap() {
                     <li key={linkIndex}>
                       <Link 
                         href={link.path}
-                        className="flex items-center gap-2 text-gray-300 hover:text-emerald-400 transition-colors group"
+                        className="flex items-center gap-2 text-gray-300 hover:text-gold-400 transition-colors group"
                       >
                         <svg 
-                          className="w-4 h-4 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity" 
+                          className="w-4 h-4 text-gold-400 opacity-0 group-hover:opacity-100 transition-opacity" 
                           fill="none" 
                           stroke="currentColor" 
                           viewBox="0 0 24 24"
@@ -96,23 +96,23 @@ export default function Sitemap() {
           </div>
 
           {/* Quick Stats */}
-          <div className="glass-dark rounded-2xl p-8 border border-emerald-500/20 mb-8">
+          <div className="glass-dark rounded-2xl p-8 border border-gold-400/20 mb-8">
             <h3 className="text-xl font-bold text-white mb-6 text-center">Quick Stats</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-2">500+</div>
+                <div className="text-3xl font-bold text-gold-400 mb-2">500+</div>
                 <div className="text-sm text-gray-400">Partner Universities</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-2">50+</div>
+                <div className="text-3xl font-bold text-gold-400 mb-2">50+</div>
                 <div className="text-sm text-gray-400">Countries</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-2">200+</div>
+                <div className="text-3xl font-bold text-gold-400 mb-2">200+</div>
                 <div className="text-sm text-gray-400">Courses</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-emerald-400 mb-2">24/7</div>
+                <div className="text-3xl font-bold text-gold-400 mb-2">24/7</div>
                 <div className="text-sm text-gray-400">Support</div>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function Sitemap() {
           <div className="text-center">
             <Link 
               href="/" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 transition-all"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -135,3 +135,4 @@ export default function Sitemap() {
     </div>
   );
 }
+

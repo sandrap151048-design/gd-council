@@ -18,7 +18,7 @@ export default function PrivacyPolicy() {
           </div>
 
           {/* Content */}
-          <div className="glass-dark rounded-2xl p-8 md:p-12 border border-emerald-500/20 space-y-8">
+          <div className="glass-dark rounded-2xl p-8 md:p-12 border border-gold-400/20 space-y-8">
             <section>
               <h2 className="text-2xl font-bold text-white mb-4">1. Information We Collect</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
@@ -90,9 +90,9 @@ export default function PrivacyPolicy() {
               <p className="text-gray-300 leading-relaxed">
                 If you have any questions about this Privacy Policy, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-emerald-500/10 border border-emerald-500/30 rounded-lg">
-                <p className="text-emerald-400">Email: info@globaleducation.com</p>
-                <p className="text-emerald-400">Phone: +1 234 567 8900</p>
+              <div className="mt-4 p-4 bg-gold-400/10 border border-gold-400/30 rounded-lg">
+                <p className="text-gold-400">Email: info@globaleducation.com</p>
+                <p className="text-gold-400">Phone: +1 234 567 8900</p>
               </div>
             </section>
           </div>
@@ -101,7 +101,7 @@ export default function PrivacyPolicy() {
           <div className="text-center mt-8">
             <Link 
               href="/" 
-              className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 text-black font-semibold rounded-lg hover:bg-emerald-400 transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 transition-all"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -114,3 +114,4 @@ export default function PrivacyPolicy() {
     </div>
   );
 }
+

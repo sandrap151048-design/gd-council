@@ -164,7 +164,7 @@ function UniversitiesContent() {
         </div>
 
         {/* Search and Filter */}
-        <div className="glass-dark rounded-xl p-4 border border-emerald-500/20 mb-6">
+        <div className="glass-dark rounded-xl p-4 border border-gold-400/20 mb-6">
           <div className="grid md:grid-cols-2 gap-4">
             <div>
               <input
@@ -191,7 +191,7 @@ function UniversitiesContent() {
         </div>
 
         {showForm && (
-          <div className="glass-dark rounded-xl p-6 border border-emerald-500/20 mb-8">
+          <div className="glass-dark rounded-xl p-6 border border-gold-400/20 mb-8">
             <h2 className="text-xl font-semibold mb-4 text-white">
               {editingId ? 'Edit University' : 'Add New University'}
             </h2>
@@ -277,12 +277,12 @@ function UniversitiesContent() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredUniversities.length === 0 ? (
-            <div className="col-span-full glass-dark rounded-xl p-12 border border-emerald-500/20 text-center">
+            <div className="col-span-full glass-dark rounded-xl p-12 border border-gold-400/20 text-center">
               <p className="text-gray-400">No universities found</p>
             </div>
           ) : (
             filteredUniversities.map((university) => (
-              <div key={university._id} className="glass-dark rounded-xl p-6 border border-emerald-500/20 hover:border-emerald-500/40 transition-all">
+              <div key={university._id} className="glass-dark rounded-xl p-6 border border-gold-400/20 hover:border-gold-400/40 transition-all">
                 <h3 className="text-xl font-semibold mb-2 text-white">{university.name}</h3>
                 <p className="text-sm text-gray-400 mb-3">
                   📍 {university.city}, {university.country}
@@ -294,7 +294,7 @@ function UniversitiesContent() {
                 )}
                 <p className="text-gray-400 mb-4 line-clamp-2 text-sm">{university.description}</p>
                 {university.tuitionFee && (
-                  <p className="text-emerald-400 text-sm mb-4">💰 {university.tuitionFee}</p>
+                  <p className="text-gold-400 text-sm mb-4">💰 {university.tuitionFee}</p>
                 )}
                 <div className="flex gap-2 pt-4 border-t border-gray-800">
                   <button
@@ -328,3 +328,5 @@ export default function AdminUniversities() {
     </ProtectedRoute>
   );
 }
+
+
