@@ -144,30 +144,30 @@ export default function DashboardLayout({ children }) {
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       } md:translate-x-0 fixed md:relative z-50 md:z-auto ${
         sidebarOpen ? 'w-72' : 'md:w-20'
-      } h-full bg-black border-r border-emerald-500/20 transition-all duration-300 flex flex-col shadow-gold-glow overflow-hidden`}>
+      } h-full bg-black border-r border-gold-500/20 transition-all duration-300 flex flex-col shadow-gold-glow overflow-hidden`}>
         {/* Background Effects */}
         <div className="absolute inset-0 tech-grid opacity-5"></div>
-        <div className="absolute top-0 left-0 w-48 h-48 bg-emerald-500/5 rounded-full filter blur-3xl"></div>
+        <div className="absolute top-0 left-0 w-48 h-48 bg-gold-500/5 rounded-full filter blur-3xl"></div>
         
         {/* Top Section - Fixed */}
         <div className="flex-shrink-0">
           {/* Logo */}
-          <div className="p-4 border-b border-emerald-500/20 relative z-10">
+          <div className="p-4 border-b border-gold-500/20 relative z-10">
             <Link href="/" className="flex items-center">
               {sidebarOpen ? (
                 <div className="flex items-center space-x-2">
-                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-gold-500 rounded-lg flex items-center justify-center shadow-gold-glow">
+                  <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center shadow-gold-glow">
                     <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
                     </svg>
                   </div>
-                  <span className="text-lg font-bold gradient-text-emerald">
+                  <span className="text-lg font-bold gradient-text-gold">
                     GEC Portal
                   </span>
                 </div>
               ) : (
-                <div className="w-10 h-10 bg-gradient-to-br from-emerald-400 to-gold-500 rounded-lg flex items-center justify-center mx-auto shadow-gold-glow">
+                <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-500 rounded-lg flex items-center justify-center mx-auto shadow-gold-glow">
                   <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 14l9-5-9-5-9 5 9 5z" />
                   </svg>
@@ -177,9 +177,9 @@ export default function DashboardLayout({ children }) {
           </div>
 
           {/* User Info */}
-          <div className="p-4 border-b border-emerald-500/20 relative z-10">
+          <div className="p-4 border-b border-gold-500/20 relative z-10">
             <div className="flex items-center">
-              <div className="w-10 h-10 bg-gradient-to-br from-emerald-400/20 to-gold-500/20 rounded-full flex items-center justify-center text-emerald-400 font-bold border-2 border-emerald-500/30">
+              <div className="w-10 h-10 bg-gradient-to-br from-gold-400/20 to-gold-500/20 rounded-full flex items-center justify-center text-gold-400 font-bold border-2 border-gold-500/30">
                 {user?.name?.charAt(0).toUpperCase()}
               </div>
               {sidebarOpen && (
@@ -204,7 +204,7 @@ export default function DashboardLayout({ children }) {
                 href={item.path}
                 className={`flex items-center px-3 py-3 mb-1 rounded-lg transition-all ${
                   isActive
-                    ? 'bg-emerald-500/20 text-emerald-400 border-l-4 border-emerald-500 shadow-gold-glow'
+                    ? 'bg-gold-500/20 text-gold-400 border-l-4 border-gold-500 shadow-gold-glow'
                     : 'text-gray-400 hover:bg-gray-800/50 hover:text-gold-400'
                 }`}
               >
@@ -224,7 +224,7 @@ export default function DashboardLayout({ children }) {
                 href={item.path}
                 className={`flex items-center px-3 py-3 mb-1 rounded-lg transition-all ${
                   isActive
-                    ? 'bg-emerald-500/20 text-emerald-400 border-l-4 border-emerald-500 shadow-gold-glow'
+                    ? 'bg-gold-500/20 text-gold-400 border-l-4 border-gold-500 shadow-gold-glow'
                     : 'text-gray-400 hover:bg-gray-800/50 hover:text-gold-400'
                 }`}
               >
@@ -237,7 +237,7 @@ export default function DashboardLayout({ children }) {
           {/* Admin Section */}
           {isAdmin && (
             <>
-              {sidebarOpen && <div className="px-3 mt-6 mb-2 text-xs font-semibold text-green-400 uppercase tracking-wider">Administration</div>}
+              {sidebarOpen && <div className="px-3 mt-6 mb-2 text-xs font-semibold text-gold-400 uppercase tracking-wider">Administration</div>}
               {adminMenuItems.map((item) => {
                 const isActive = pathname === item.path;
                 return (
@@ -246,8 +246,8 @@ export default function DashboardLayout({ children }) {
                     href={item.path}
                     className={`flex items-center px-3 py-3 mb-1 rounded-lg transition-all ${
                       isActive
-                        ? 'bg-green-500/20 text-green-400 border-l-4 border-green-500 shadow-gold-glow'
-                        : 'text-gray-400 hover:bg-gray-800/50 hover:text-green-400'
+                        ? 'bg-gold-500/20 text-gold-400 border-l-4 border-gold-500 shadow-gold-glow'
+                        : 'text-gray-400 hover:bg-gray-800/50 hover:text-gold-400'
                     }`}
                   >
                     <span className={sidebarOpen ? '' : 'mx-auto'}>{item.icon}</span>
@@ -260,7 +260,7 @@ export default function DashboardLayout({ children }) {
         </nav>
 
         {/* Bottom Actions - Fixed */}
-        <div className="flex-shrink-0 border-t border-emerald-500/20 p-4 space-y-2 relative z-10 bg-black">
+        <div className="flex-shrink-0 border-t border-gold-500/20 p-4 space-y-2 relative z-10 bg-black">
           <button
             onClick={logout}
             className="flex items-center px-3 py-2 text-red-400 hover:text-red-300 hover:bg-red-500/20 rounded-lg transition-all w-full tap-target"
@@ -285,7 +285,7 @@ export default function DashboardLayout({ children }) {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="md:hidden fixed bottom-4 right-4 z-30 w-14 h-14 bg-gradient-to-br from-emerald-400 to-gold-500 rounded-full shadow-lg shadow-gold-500/50 flex items-center justify-center text-gray-900 tap-target"
+        className="md:hidden fixed bottom-4 right-4 z-30 w-14 h-14 bg-gradient-to-br from-gold-400 to-gold-500 rounded-full shadow-lg shadow-gold-500/50 flex items-center justify-center text-gray-900 tap-target"
         aria-label="Toggle menu"
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

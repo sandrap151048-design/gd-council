@@ -47,7 +47,7 @@ export default function Footer() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold-400/5 rounded-full filter blur-3xl"></div>
       
       {/* Newsletter Section */}
-      <div className="bg-gradient-to-r from-emerald-900/20 to-green-900/20 border-b border-gold-400/20 relative z-10">
+      <div className="bg-gradient-to-r from-brown-900/20 to-gold-900/20 border-b border-gold-400/20 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left w-full md:w-auto">

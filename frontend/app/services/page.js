@@ -78,7 +78,7 @@ export default function Services() {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-br from-gold-500/5 via-transparent to-gold-500/5"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(16,185,129,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(230,200,124,0.1),transparent_50%)]"></div>
         
         {/* Animated Grid */}
         <div className="absolute inset-0 opacity-20" style={{
