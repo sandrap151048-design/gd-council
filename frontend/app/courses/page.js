@@ -164,12 +164,16 @@ export default function Courses() {
                   <p className="text-[10px] sm:text-xs font-bold text-white">Master</p>
                 </div>
 
-                {/* Center Circle - Main (Larger) - Positioned more up */}
-                <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 sm:w-32 sm:h-32 lg:w-36 lg:h-36 bg-gradient-to-br from-gold-500/40 to-gold-600/30 backdrop-blur-sm border-3 border-gold-400/50 rounded-full flex flex-col items-center justify-center text-center shadow-xl shadow-gold-400/30 animate-pulse-slow z-10">
-                  <svg className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 text-gold-400 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                {/* Center Circle - Main (Larger & More Prominent) */}
+                <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 bg-gradient-to-br from-gold-500/60 to-gold-600/40 backdrop-blur-md border-4 border-gold-400/70 rounded-full flex flex-col items-center justify-center text-center shadow-2xl shadow-gold-400/50 z-20 relative">
+                  {/* Pulsing ring effect */}
+                  <div className="absolute inset-0 rounded-full border-2 border-gold-400/50 animate-ping"></div>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-gold-400/20 to-transparent animate-pulse-slow"></div>
+                  
+                  <svg className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 text-gold-400 mb-1 relative z-10 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
-                  <p className="text-sm sm:text-base font-bold text-white">Certify</p>
+                  <p className="text-base sm:text-lg font-black text-white relative z-10 tracking-wide">CERTIFY</p>
                 </div>
 
                 {/* Workflow Arrows - Clockwise: Discover → Learn → Practice → Master → Certify */}
@@ -213,12 +217,21 @@ export default function Courses() {
                   <path d="M 10 80 Q 10 40, 45 10" fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="5 3" markerEnd="url(#arrowMasterDiscover)" className="animate-pulse"/>
                 </svg>
 
-                {/* Connecting lines to center Certify circle */}
-                <svg className="absolute inset-0 w-full h-full text-gold-400/30 pointer-events-none">
-                  <line x1="50%" y1="20%" x2="50%" y2="40%" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" className="animate-pulse" style={{animationDelay: '0.2s'}}/>
-                  <line x1="80%" y1="50%" x2="60%" y2="50%" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" className="animate-pulse" style={{animationDelay: '0.5s'}}/>
-                  <line x1="50%" y1="80%" x2="50%" y2="60%" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" className="animate-pulse" style={{animationDelay: '0.8s'}}/>
-                  <line x1="20%" y1="50%" x2="40%" y2="50%" stroke="currentColor" strokeWidth="1.5" strokeDasharray="3 3" className="animate-pulse" style={{animationDelay: '1.1s'}}/>
+                {/* Focused Arrows pointing to center CERTIFY circle */}
+                <svg className="absolute inset-0 w-full h-full text-gold-400/70 pointer-events-none z-10">
+                  <defs>
+                    <marker id="arrowToCenterCourse" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+                      <polygon points="0 0, 10 3, 0 6" fill="currentColor" />
+                    </marker>
+                  </defs>
+                  {/* Top to Center */}
+                  <line x1="50%" y1="20%" x2="50%" y2="38%" stroke="currentColor" strokeWidth="2.5" strokeDasharray="4 2" markerEnd="url(#arrowToCenterCourse)" className="animate-pulse" style={{animationDelay: '0.2s'}}/>
+                  {/* Right to Center */}
+                  <line x1="80%" y1="50%" x2="62%" y2="50%" stroke="currentColor" strokeWidth="2.5" strokeDasharray="4 2" markerEnd="url(#arrowToCenterCourse)" className="animate-pulse" style={{animationDelay: '0.5s'}}/>
+                  {/* Bottom to Center */}
+                  <line x1="50%" y1="80%" x2="50%" y2="62%" stroke="currentColor" strokeWidth="2.5" strokeDasharray="4 2" markerEnd="url(#arrowToCenterCourse)" className="animate-pulse" style={{animationDelay: '0.8s'}}/>
+                  {/* Left to Center */}
+                  <line x1="20%" y1="50%" x2="38%" y2="50%" stroke="currentColor" strokeWidth="2.5" strokeDasharray="4 2" markerEnd="url(#arrowToCenterCourse)" className="animate-pulse" style={{animationDelay: '1.1s'}}/>
                 </svg>
 
                 {/* Decorative Glowing Orbs */}
