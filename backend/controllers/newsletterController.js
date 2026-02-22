@@ -3,16 +3,26 @@ const Newsletter = require('../models/Newsletter');
 // Subscribe to newsletter
 exports.subscribe = async (req, res) => {
   try {
+    console.log('Newsletter subscription request received:', req.body);
     const { email } = req.body;
 
     if (!email) {
+      console.log('Error: Email is required');
       return res.status(400).json({ message: 'Email is required' });
     }
 
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      console.log('Error: Invalid email format:', email);
+      return res.status(400).json({ message: 'Please enter a valid email address' });
+    }
+
     // Check if email already exists
-    const existingSubscriber = await Newsletter.findOne({ email });
+    const existingSubscriber = await Newsletter.findOne({ email: email.toLowerCase().trim() });
     
     if (existingSubscriber) {
+      console.log('Email already exists:', email);
       if (existingSubscriber.isActive) {
         return res.status(400).json({ message: 'This email is already subscribed' });
       } else {
@@ -20,6 +30,7 @@ exports.subscribe = async (req, res) => {
         existingSubscriber.isActive = true;
         existingSubscriber.subscribedAt = Date.now();
         await existingSubscriber.save();
+        console.log('Subscription reactivated:', email);
         return res.status(200).json({ 
           message: 'Welcome back! Your subscription has been reactivated',
           subscriber: existingSubscriber 
@@ -28,7 +39,8 @@ exports.subscribe = async (req, res) => {
     }
 
     // Create new subscriber
-    const subscriber = await Newsletter.create({ email });
+    const subscriber = await Newsletter.create({ email: email.toLowerCase().trim() });
+    console.log('New subscriber created:', email);
     
     res.status(201).json({ 
       message: 'Successfully subscribed to newsletter!',
@@ -36,7 +48,11 @@ exports.subscribe = async (req, res) => {
     });
   } catch (error) {
     console.error('Newsletter subscription error:', error);
-    res.status(500).json({ message: 'Error subscribing to newsletter', error: error.message });
+    console.error('Error stack:', error.stack);
+    res.status(500).json({ 
+      message: 'Error subscribing to newsletter. Please try again later.',
+      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+    });
   }
 };
 
