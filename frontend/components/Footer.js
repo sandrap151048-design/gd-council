@@ -50,7 +50,14 @@ export default function Footer() {
       
       let errorMessage = 'Failed to subscribe. Please try again.';
       
-      if (err.response) {
+      if (err.code === 'ERR_NETWORK' || err.message === 'Network Error') {
+        errorMessage = '⚠️ Cannot connect to server. Backend is not configured.';
+        
+        // Check if we're on Vercel/production
+        if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost')) {
+          errorMessage = '⚠️ Backend not configured. Please contact administrator.';
+        }
+      } else if (err.response) {
         // Server responded with error
         errorMessage = err.response.data?.message || errorMessage;
       } else if (err.request) {

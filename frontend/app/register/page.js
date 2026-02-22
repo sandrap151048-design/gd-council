@@ -49,7 +49,12 @@ export default function Register() {
       let errorMessage = 'Registration failed. Please try again.';
       
       if (error.code === 'ERR_NETWORK' || error.message === 'Network Error') {
-        errorMessage = 'Cannot connect to server. Please check if the backend is running or check your internet connection.';
+        errorMessage = '⚠️ Cannot connect to server. The backend is not configured. Please contact the administrator.';
+        
+        // Check if we're on Vercel/production
+        if (typeof window !== 'undefined' && !window.location.hostname.includes('localhost')) {
+          errorMessage = '⚠️ Backend server is not configured. Please set NEXT_PUBLIC_API_URL environment variable in Vercel. See URGENT_FIX_VERCEL.md for instructions.';
+        }
       } else if (error.code === 'ECONNABORTED') {
         errorMessage = 'Request timeout. The server is taking too long to respond.';
       } else if (error.response) {
