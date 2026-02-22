@@ -2,6 +2,13 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
+    // Check if MONGODB_URI is set
+    if (!process.env.MONGODB_URI) {
+      throw new Error('MONGODB_URI environment variable is not set');
+    }
+
+    console.log('🔄 Connecting to MongoDB...');
+    
     // MongoDB connection options
     const options = {
       useNewUrlParser: true,
@@ -26,10 +33,20 @@ const connectDB = async () => {
       console.log('✅ MongoDB reconnected');
     });
 
+    return conn;
+
   } catch (error) {
     console.error(`❌ Error connecting to MongoDB: ${error.message}`);
-    console.error('Please check your MONGODB_URI in the .env file');
-    process.exit(1);
+    
+    if (!process.env.MONGODB_URI) {
+      console.error('⚠️  MONGODB_URI environment variable is not set!');
+      console.error('⚠️  Please add MONGODB_URI in Render environment variables');
+    } else {
+      console.error('⚠️  Please check your MONGODB_URI is correct');
+      console.error('⚠️  Make sure MongoDB Atlas allows connections from anywhere (0.0.0.0/0)');
+    }
+    
+    throw error;
   }
 };
 

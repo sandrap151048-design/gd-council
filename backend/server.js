@@ -14,9 +14,6 @@ const partnershipRoutes = require('./routes/partnershipRoutes');
 const newsletterRoutes = require('./routes/newsletter');
 const resourceRoutes = require('./routes/resourceRoutes');
 
-// Connect to MongoDB
-connectDB();
-
 const app = express();
 
 // CORS Configuration
@@ -50,7 +47,8 @@ app.get('/', (req, res) => {
   res.json({ 
     message: 'Global Education Council API',
     status: 'running',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || 'development'
   });
 });
 
@@ -70,8 +68,15 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
+// Start server first, then connect to MongoDB
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
-  console.log(`✅ Environment: ${process.env.NODE_ENV}`);
+  console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
   console.log(`✅ API URL: http://localhost:${PORT}/api`);
+  
+  // Connect to MongoDB after server starts
+  connectDB().catch(err => {
+    console.error('❌ MongoDB connection failed:', err.message);
+    console.error('⚠️  Server will continue running without database');
+  });
 });
