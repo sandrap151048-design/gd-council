@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Remove ALL focus, active, and blur effects globally */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+*:focus,
+*:active,
+*:focus-visible,
+*:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: inherit !important;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+[role="button"] {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  outline: none !important;
+}
+
+button:focus,
+button:active,
+a:focus,
+a:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
 @layer base {
   :root {
     /* Modern Font Variables */
