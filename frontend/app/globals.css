@@ -32,6 +32,17 @@
     --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
+  
+  /* Remove default focus styles globally */
+  *:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 
   body {
     @apply antialiased;
@@ -61,6 +72,36 @@
   
   * {
     border-color: rgba(230, 200, 124, 0.2);
+  }
+  
+  /* Remove blur/outline on button and link clicks */
+  button:focus,
+  button:active,
+  a:focus,
+  a:active,
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: none !important;
+  }
+  
+  /* Remove tap highlight on mobile */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  
+  /* Allow text selection in inputs */
+  input,
+  textarea {
+    -webkit-user-select: text;
+    user-select: text;
   }
 }
 
