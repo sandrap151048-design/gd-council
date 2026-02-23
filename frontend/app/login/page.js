@@ -62,27 +62,6 @@ export default function Login() {
         </div>
 
         <div className="dark-card rounded-2xl p-8 neon-border animate-fadeInUp delay-200">
-          {/* Test Credentials Helper */}
-          <div className="mb-6 p-4 bg-gold-400/10 border border-gold-400/30 rounded-lg">
-            <p className="text-xs font-semibold text-gold-400 mb-3">Quick Login (Test Credentials):</p>
-            <div className="flex gap-2">
-              <button
-                type="button"
-                onClick={() => setFormData({ email: 'admin@globaledu.com', password: 'admin123' })}
-                className="flex-1 px-3 py-2 bg-gold-400/20 hover:bg-gold-400/30 border border-gold-400/40 rounded-lg text-xs text-white font-semibold transition-all"
-              >
-                Fill Admin
-              </button>
-              <button
-                type="button"
-                onClick={() => setFormData({ email: 'test@example.com', password: 'test123' })}
-                className="flex-1 px-3 py-2 bg-gold-400/20 hover:bg-gold-400/30 border border-gold-400/40 rounded-lg text-xs text-white font-semibold transition-all"
-              >
-                Fill User
-              </button>
-            </div>
-          </div>
-
           {error && (
             <div className="mb-4 p-4 bg-red-500/10 border border-red-500/50 rounded-lg animate-fadeInDown">
               <div className="flex items-start">
