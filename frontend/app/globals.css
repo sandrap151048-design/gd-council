@@ -1246,6 +1246,8 @@ a:active * {
     -webkit-backdrop-filter: none !important;
     filter: none !important;
     -webkit-filter: none !important;
+    opacity: 1 !important;
+    color: #111827 !important;
   }
 
   .btn-primary:hover::before {
@@ -1282,10 +1284,6 @@ a:active * {
   [type="submit"] {
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
   
   .btn-secondary {
