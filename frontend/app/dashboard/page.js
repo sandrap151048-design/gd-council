@@ -13,7 +13,6 @@ function DashboardContent() {
   const [inquiries, setInquiries] = useState([]);
   const [partnerships, setPartnerships] = useState([]);
   const [courses, setCourses] = useState([]);
-  const [newsletters, setNewsletters] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -27,8 +26,7 @@ function DashboardContent() {
         api.get('/enrollments'),
         api.get('/inquiries'),
         api.get('/partnerships'),
-        api.get('/courses'),
-        api.get('/newsletter')
+        api.get('/courses')
       ];
 
       const responses = await Promise.all(requests);
@@ -37,15 +35,13 @@ function DashboardContent() {
         enrollments: responses[0].data,
         inquiries: responses[1].data,
         partnerships: responses[2].data,
-        courses: responses[3].data,
-        newsletters: responses[4].data
+        courses: responses[3].data
       });
       
       setEnrollments(Array.isArray(responses[0].data) ? responses[0].data : []);
       setInquiries(Array.isArray(responses[1].data) ? responses[1].data : []);
       setPartnerships(Array.isArray(responses[2].data) ? responses[2].data : []);
       setCourses(Array.isArray(responses[3].data) ? responses[3].data : []);
-      setNewsletters(Array.isArray(responses[4].data) ? responses[4].data : []);
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
@@ -102,14 +98,14 @@ function DashboardContent() {
       )
     },
     {
-      title: 'Newsletter Subscribers',
-      value: newsletters.length,
-      total: newsletters.length,
-      change: '+15%',
+      title: 'Available Courses',
+      value: courses.length,
+      total: courses.length,
+      change: '+3%',
       trend: 'up',
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       )
     }
@@ -337,59 +333,6 @@ function DashboardContent() {
               </Link>
             </div>
           </div>
-        </div>
-
-        {/* Newsletter Subscribers Section */}
-        <div className="data-card p-6 animate-fadeInUp mb-8" style={{ animationDelay: '600ms' }}>
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-white">Newsletter Subscribers</h2>
-            <div className="flex items-center gap-2 text-gold-400">
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              <span className="font-semibold">{newsletters.length} Total</span>
-            </div>
-          </div>
-          
-          {newsletters.length === 0 ? (
-            <div className="text-center py-12">
-              <div className="w-20 h-20 bg-gold-400/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-gold-400/30">
-                <svg className="w-10 h-10 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <p className="text-gray-300 text-lg mb-2">No subscribers yet</p>
-              <p className="text-gray-400 text-sm">Subscribers will appear here when users sign up for the newsletter</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {newsletters.map((subscriber, index) => (
-                <div 
-                  key={subscriber._id} 
-                  className="info-card group"
-                  style={{ animationDelay: `${index * 50}ms` }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold-500 to-gold-500 flex items-center justify-center text-black font-bold flex-shrink-0">
-                      {subscriber.email.charAt(0).toUpperCase()}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-white font-semibold truncate group-hover:text-gold-400 transition-colors">
-                        {subscriber.email}
-                      </div>
-                      <div className="text-gray-400 text-xs mt-1">
-                        Subscribed: {new Date(subscriber.createdAt).toLocaleDateString()}
-                      </div>
-                      <div className="flex items-center gap-2 mt-2">
-                        <div className="status-dot active"></div>
-                        <span className="text-gold-400 text-xs font-semibold">Active</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
         </div>
 
         {/* Bottom Section - Progress Overview */}
