@@ -1,12 +1,6 @@
 {
+  "framework": "nextjs",
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
-  "installCommand": "npm install",
-  "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_API_URL": {
-      "description": "Backend API URL - MUST be set to your deployed backend URL (e.g., https://your-backend.onrender.com/api)",
-      "required": true
-    }
-  }
+  "installCommand": "npm install"
 }
