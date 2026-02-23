@@ -3487,3 +3487,63 @@ nav.fixed-navbar.scroll-up {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+
+/* FINAL NUCLEAR OPTION - Remove ALL blur effects from buttons */
+button,
+button:hover,
+button:focus,
+button:active,
+button:focus-visible,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:focus-visible,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary:focus-visible,
+[type="submit"],
+[type="submit"]:hover,
+[type="submit"]:focus,
+[type="submit"]:active,
+[type="submit"]:focus-visible,
+[type="button"],
+[type="button"]:hover,
+[type="button"]:focus,
+[type="button"]:active,
+[type="button"]:focus-visible {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  text-shadow: none !important;
+  -webkit-text-shadow: none !important;
+}
+
+/* Remove any glow or shadow effects */
+.shadow-gold-glow,
+.shadow-gold-glow-lg,
+.hover\:shadow-gold-glow:hover,
+.hover\:shadow-gold-glow-lg:hover {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+}
+
+/* Remove transform effects that might cause blur */
+button:active,
+.btn-primary:active,
+.btn-secondary:active,
+[type="submit"]:active,
+[type="button"]:active {
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+}
