@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ULTRA AGGRESSIVE: Remove ALL blur, focus, and visual effects - HIGHEST PRIORITY */
+* {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+*:focus,
+*:active,
+*:focus-visible,
+*:focus-within {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
 /* AGGRESSIVE: Remove ALL focus, active, blur, and visual feedback effects */
 *,
 *::before,
@@ -59,9 +84,13 @@ select,
 button:focus,
 button:active,
 button:focus-visible,
+button:hover,
+button:active:focus,
+button:focus:active,
 a:focus,
 a:active,
 a:focus-visible,
+a:hover,
 input:focus,
 input:active,
 textarea:focus,
@@ -79,6 +108,50 @@ select:active {
   -webkit-filter: none !important;
 }
 
+/* Extra aggressive for buttons specifically */
+button,
+button *,
+[type="button"],
+[type="submit"],
+[type="reset"],
+.btn-primary,
+.btn-secondary {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: inherit !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+button:focus,
+button:active,
+button:focus-visible,
+button:hover:focus,
+button:active:hover,
+[type="button"]:focus,
+[type="button"]:active,
+[type="submit"]:focus,
+[type="submit"]:active,
+[type="reset"]:focus,
+[type="reset"]:active,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-secondary:focus,
+.btn-secondary:active {
+  outline: 0 !important;
+  outline: none !important;
+  box-shadow: inherit !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
 /* Allow text selection in inputs */
 input,
 textarea {
@@ -86,6 +159,37 @@ textarea {
   -moz-user-select: text !important;
   -ms-user-select: text !important;
   user-select: text !important;
+}
+
+/* NUCLEAR OPTION: Remove ALL blur effects globally */
+html,
+body,
+div,
+button,
+a,
+span,
+input,
+textarea,
+select {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Prevent any blur on active/clicked state */
+*:active,
+*:active *,
+button:active,
+button:active *,
+a:active,
+a:active * {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+  -webkit-filter: none !important;
+  transform: none !important;
+  -webkit-transform: none !important;
 }
 
 @layer base {
