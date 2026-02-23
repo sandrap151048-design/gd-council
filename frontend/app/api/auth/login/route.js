@@ -9,7 +9,8 @@ export async function POST(request) {
     await dbConnect();
     const { email, password } = await request.json();
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email: email.trim().toLowerCase() });
+    
     if (!user) {
       return NextResponse.json(
         { message: 'Invalid credentials' },
@@ -18,6 +19,7 @@ export async function POST(request) {
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
+    
     if (!isMatch) {
       return NextResponse.json(
         { message: 'Invalid credentials' },
@@ -41,6 +43,7 @@ export async function POST(request) {
       }
     });
   } catch (error) {
+    console.error('Login error:', error);
     return NextResponse.json(
       { message: error.message },
       { status: 500 }
