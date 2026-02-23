@@ -16,7 +16,7 @@ const resourceRoutes = require('./routes/resourceRoutes');
 
 const app = express();
 
-// CORS Configuration
+// CORS Configuration - Allow all origins in development
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
@@ -28,7 +28,10 @@ const corsOptions = {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+    // In development, allow all origins
+    if (process.env.NODE_ENV === 'development') {
+      callback(null, true);
+    } else if (allowedOrigins.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
@@ -69,10 +72,13 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 // Start server first, then connect to MongoDB
-app.listen(PORT, () => {
+// Listen on 0.0.0.0 to accept connections from other devices on the network
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`✅ API URL: http://localhost:${PORT}/api`);
+  console.log(`✅ Local: http://localhost:${PORT}/api`);
+  console.log(`✅ Network: http://<your-ip>:${PORT}/api`);
+  console.log(`💡 To access from other devices, use your computer's IP address`);
   
   // Connect to MongoDB after server starts
   connectDB().catch(err => {
