@@ -1210,9 +1210,6 @@ a:active * {
       0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
   }
 
   .btn-primary::before {
@@ -1225,7 +1222,7 @@ a:active * {
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 
       0 15px 40px rgba(245, 229, 184, 0.5),
       0 0 0 1px rgba(255, 255, 255, 0.2) inset;
@@ -1238,7 +1235,6 @@ a:active * {
   .btn-primary:focus-visible {
     outline: 0 !important;
     outline: none !important;
-    transform: translateY(0px) !important;
     box-shadow: 
       0 10px 30px rgba(245, 229, 184, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
@@ -3547,7 +3543,7 @@ button:active,
 .btn-secondary:active,
 [type="submit"]:active,
 [type="button"]:active {
-  /* Keep consistent transform instead of removing it */
-  backface-visibility: hidden !important;
-  -webkit-font-smoothing: antialiased !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
 }
