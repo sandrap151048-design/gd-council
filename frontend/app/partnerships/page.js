@@ -155,8 +155,8 @@ export default function Partnerships() {
               <Link href="/register" className="lofi-button">
                 Register as Partner
               </Link>
-              <Link href="/login" className="lofi-button-secondary">
-                Login to Apply
+              <Link href="/dashboard/partnership" className="lofi-button-secondary">
+                Apply for Partnership
               </Link>
             </div>
           </div>
