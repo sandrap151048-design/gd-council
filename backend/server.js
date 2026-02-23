@@ -79,20 +79,22 @@ app.use('/api/resources', resourceRoutes);
 // Error Handler Middleware (must be last)
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
-
-// Start server first, then connect to MongoDB
-// Listen on 0.0.0.0 to accept connections from other devices on the network
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`✅ Server running on port ${PORT}`);
-  console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`✅ Local: http://localhost:${PORT}/api`);
-  console.log(`✅ Network: http://<your-ip>:${PORT}/api`);
-  console.log(`💡 To access from other devices, use your computer's IP address`);
-  
-  // Connect to MongoDB after server starts
-  connectDB().catch(err => {
-    console.error('❌ MongoDB connection failed:', err.message);
-    console.error('⚠️  Server will continue running without database');
-  });
+// Connect to MongoDB
+connectDB().catch(err => {
+  console.error('❌ MongoDB connection failed:', err.message);
 });
+
+// For Vercel serverless deployment
+if (process.env.VERCEL) {
+  module.exports = app;
+} else {
+  // For local development
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Server running on port ${PORT}`);
+    console.log(`✅ Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`✅ Local: http://localhost:${PORT}/api`);
+    console.log(`✅ Network: http://<your-ip>:${PORT}/api`);
+    console.log(`💡 To access from other devices, use your computer's IP address`);
+  });
+}
