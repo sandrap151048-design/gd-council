@@ -1210,6 +1210,9 @@ a:active * {
       0 0 0 1px rgba(255, 255, 255, 0.1) inset;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   .btn-primary::before {
@@ -1252,15 +1255,37 @@ a:active * {
   /* Prevent blur on all gold/brown buttons */
   button:active,
   button:focus,
+  button:focus-visible,
   a:active,
   a:focus,
+  a:focus-visible,
   [type="submit"]:active,
-  [type="submit"]:focus {
+  [type="submit"]:focus,
+  [type="submit"]:focus-visible,
+  .btn-primary:active,
+  .btn-primary:focus,
+  .btn-primary:focus-visible {
     transform: none !important;
     filter: none !important;
     -webkit-filter: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+  }
+
+  /* Prevent tap highlight on mobile */
+  button,
+  a,
+  [type="submit"] {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
   .btn-secondary {
