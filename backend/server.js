@@ -16,11 +16,11 @@ const resourceRoutes = require('./routes/resourceRoutes');
 
 const app = express();
 
-// CORS Configuration - Allow Vercel and localhost
+// CORS Configuration - Allow Vercel deployments
 const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
-  'https://gd-back.onrender.com',
+  'https://gd-73zs.vercel.app', // Your frontend
   process.env.FRONTEND_URL
 ].filter(Boolean);
 
@@ -29,21 +29,23 @@ const corsOptions = {
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) return callback(null, true);
     
-    // In development, allow all origins
-    if (process.env.NODE_ENV === 'development') {
-      callback(null, true);
-    } else if (process.env.NODE_ENV === 'production') {
-      // In production, allow all Vercel domains and configured origins
-      if (!origin || origin.includes('.vercel.app') || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(null, true); // Allow all for now, can restrict later
-      }
-    } else if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(null, true); // Allow all for now
+    // Allow all Vercel domains
+    if (origin && origin.includes('.vercel.app')) {
+      return callback(null, true);
     }
+    
+    // Allow configured origins
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    }
+    
+    // In development, allow all
+    if (process.env.NODE_ENV === 'development') {
+      return callback(null, true);
+    }
+    
+    // Allow all for now (can restrict later)
+    callback(null, true);
   },
   credentials: true,
   optionsSuccessStatus: 200
