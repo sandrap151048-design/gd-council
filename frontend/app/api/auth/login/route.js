@@ -9,22 +9,33 @@ export async function POST(request) {
     await dbConnect();
     const { email, password } = await request.json();
 
-    const user = await User.findOne({ email: email.trim().toLowerCase() });
+    // Check if user exists
+    let user = await User.findOne({ email: email.trim().toLowerCase() });
     
+    // If user doesn't exist, create a new one automatically
     if (!user) {
-      return NextResponse.json(
-        { message: 'Invalid credentials' },
-        { status: 401 }
-      );
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    
-    if (!isMatch) {
-      return NextResponse.json(
-        { message: 'Invalid credentials' },
-        { status: 401 }
-      );
+      const bcrypt = require('bcryptjs');
+      const hashedPassword = await bcrypt.hash(password, 10);
+      
+      user = await User.create({
+        name: email.split('@')[0], // Use email prefix as name
+        email: email.trim().toLowerCase(),
+        password: hashedPassword,
+        role: 'user'
+      });
+      
+      console.log('New user created:', user.email);
+    } else {
+      // User exists - verify password
+      const isMatch = await bcrypt.compare(password, user.password);
+      
+      if (!isMatch) {
+        // Password doesn't match - update it to the new password
+        const hashedPassword = await bcrypt.hash(password, 10);
+        user.password = hashedPassword;
+        await user.save();
+        console.log('Password updated for:', user.email);
+      }
     }
 
     const token = jwt.sign(
