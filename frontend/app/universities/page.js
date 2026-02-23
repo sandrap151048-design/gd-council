@@ -298,7 +298,7 @@ export default function Universities() {
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-gold-400/20 mt-auto">
                     <Link 
-                      href="/contact"
+                      href="/login"
                       className="flex-1 px-3 sm:px-4 py-2 bg-gold-400 text-black text-xs sm:text-sm font-bold rounded-lg hover:bg-gold-400 transition-all text-center"
                     >
                       Apply Now

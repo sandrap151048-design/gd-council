@@ -303,7 +303,7 @@ export default function Courses() {
                 <Link href="/register" className="puzzle-btn-primary">
                   <span>Get Started</span>
                 </Link>
-                <Link href="/contact" className="puzzle-btn-secondary">
+                <Link href="/login" className="puzzle-btn-secondary">
                   Contact Us
                 </Link>
               </div>

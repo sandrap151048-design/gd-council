@@ -220,7 +220,7 @@ export default function Services() {
               Let's discuss how our services can help your institution achieve its goals
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 hover:scale-105 transition-all">
+              <Link href="/login" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 hover:scale-105 transition-all">
                 Contact Us
               </Link>
               <Link href="/register" className="px-8 py-4 bg-transparent text-gold-400 font-semibold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 hover:scale-105 transition-all">
