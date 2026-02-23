@@ -89,8 +89,8 @@ export default function Footer() {
         <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left w-full md:w-auto">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 gradient-text-emerald">Stay Updated</h3>
-              <p className="text-gray-300 text-base sm:text-lg">Subscribe to our newsletter for the latest updates</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2 gradient-text-emerald">Global Education Insights</h3>
+              <p className="text-gray-300 text-base sm:text-lg">Get international study opportunities, scholarship alerts & career guidance</p>
             </div>
             <form onSubmit={handleSubscribe} className="flex flex-col gap-3 w-full md:w-auto">
               <div className="flex flex-col sm:flex-row gap-3 w-full">

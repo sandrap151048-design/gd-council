@@ -267,7 +267,7 @@ export default function Courses() {
                     <div className="flex items-center justify-between pt-4 border-t border-gold-400/20 mt-auto">
                       <div>
                         <div className="puzzle-stat-number text-2xl">
-                          ${course.price}
+                          ₹{(course.price * 83).toLocaleString('en-IN')}
                         </div>
                         <div className="text-xs text-gray-500">per course</div>
                       </div>

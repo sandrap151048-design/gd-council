@@ -118,7 +118,7 @@ function BrowseCoursesContent() {
 
               <div>
                 <label className="block text-sm font-semibold text-white mb-2">
-                  Price (USD) <span className="text-red-400">*</span>
+                  Price (INR ₹) <span className="text-red-400">*</span>
                 </label>
                 <input
                   type="number"
@@ -127,7 +127,7 @@ function BrowseCoursesContent() {
                   onChange={handleChange}
                   required
                   min="0"
-                  placeholder="e.g., 2500"
+                  placeholder="e.g., 41417"
                   className="w-full px-4 py-3 bg-gray-900/70 border-2 border-gold-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-gold-400 focus:ring-4 focus:ring-gold-500/30 transition-all"
                 />
               </div>
