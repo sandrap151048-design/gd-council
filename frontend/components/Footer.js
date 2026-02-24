@@ -1,8 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { useAuth } from '../context/AuthContext';
 
 export default function Footer() {
+  const { user } = useAuth();
+
+  const handleEmailClick = (e) => {
+    if (!user) {
+      e.preventDefault();
+      window.location.href = '/login';
+    }
+  };
 
   return (
     <footer className="bg-black border-t border-gold-400/20 text-white relative overflow-hidden">
@@ -132,7 +141,8 @@ export default function Footer() {
               <ul className="space-y-3 text-gray-300">
                 <li>
                   <a 
-                    href="mailto:info@globaleducation.com" 
+                    href={user ? `mailto:info@globaleducation.com?subject=Inquiry from ${user.user?.name || user.name}&body=From: ${user.user?.email || user.email}` : "mailto:info@globaleducation.com"}
+                    onClick={handleEmailClick}
                     className="flex items-center gap-2 hover:text-gold-400 transition-colors group"
                   >
                     <svg className="w-5 h-5 text-gold-400 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

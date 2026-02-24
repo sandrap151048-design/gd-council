@@ -1,8 +1,18 @@
 'use client';
 
 import { useEffect } from 'react';
+import { useAuth } from '../../context/AuthContext';
 
 export default function Contact() {
+  const { user } = useAuth();
+
+  const handleEmailClick = (e) => {
+    if (!user) {
+      e.preventDefault();
+      window.location.href = '/login';
+    }
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
@@ -225,7 +235,11 @@ export default function Contact() {
               Our support team is available 24/7 to help with your inquiries
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <a href="mailto:info@globaleducation.com" className="puzzle-btn-primary">
+              <a 
+                href={user ? `mailto:info@globaleducation.com?subject=Inquiry from ${user.user?.name || user.name}&body=From: ${user.user?.email || user.email}` : "mailto:info@globaleducation.com"}
+                onClick={handleEmailClick}
+                className="puzzle-btn-primary"
+              >
                 <span>Email Us</span>
               </a>
               <a href="tel:+12345678900" className="puzzle-btn-secondary">
