@@ -40,7 +40,7 @@ export default function Footer() {
                 <span>Connect With Us</span>
               </Link>
               <Link 
-                href="/dashboard/inquiry"
+                href="/contact"
                 className="px-6 sm:px-8 py-3.5 sm:py-4 bg-gray-900/70 border-2 border-gold-400/30 text-white rounded-xl font-bold hover:border-gold-400 hover:bg-gold-400/10 active:scale-95 transition-all whitespace-nowrap w-full sm:w-auto text-base sm:text-base touch-manipulation min-h-[50px] text-center flex items-center justify-center gap-2"
                 style={{ WebkitTapHighlightColor: 'transparent', fontSize: '16px' }}
               >
