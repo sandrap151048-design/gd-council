@@ -18,7 +18,7 @@ const demoUniversities = [
     website: 'https://www.uts.edu.au',
     courses: ['Engineering', 'Business', 'IT & Computer Science', 'Design & Architecture', 'Health Sciences'],
     facilities: ['Modern Campus', 'Research Labs', 'Innovation Hub', 'Sports Complex'],
-    tuitionRange: '$25,000 - $45,000/year'
+    tuitionRange: '₹20,00,000 - ₹37,00,000/year'
   },
   {
     _id: '2',
@@ -32,7 +32,7 @@ const demoUniversities = [
     website: 'https://www.utoronto.ca',
     courses: ['Medicine', 'Law', 'Engineering', 'Arts & Sciences', 'Business Administration'],
     facilities: ['Multiple Campuses', 'Research Centers', 'Libraries', 'Student Housing'],
-    tuitionRange: '$30,000 - $55,000/year'
+    tuitionRange: '₹25,00,000 - ₹45,00,000/year'
   },
   {
     _id: '3',
@@ -46,7 +46,7 @@ const demoUniversities = [
     website: 'https://www.tum.de',
     courses: ['Mechanical Engineering', 'Computer Science', 'Physics', 'Chemistry', 'Mathematics'],
     facilities: ['Research Institutes', 'Innovation Labs', 'Technology Park', 'Sports Facilities'],
-    tuitionRange: '€0 - €3,000/year'
+    tuitionRange: '₹0 - ₹2,50,000/year'
   },
   {
     _id: '4',
@@ -60,7 +60,7 @@ const demoUniversities = [
     website: 'https://www.nus.edu.sg',
     courses: ['Business', 'Engineering', 'Computing', 'Medicine', 'Law', 'Design'],
     facilities: ['Smart Campus', 'Research Centers', 'Innovation Labs', 'Student Centers'],
-    tuitionRange: '$20,000 - $40,000/year'
+    tuitionRange: '₹16,00,000 - ₹33,00,000/year'
   },
   {
     _id: '5',
@@ -74,7 +74,7 @@ const demoUniversities = [
     website: 'https://www.unimelb.edu.au',
     courses: ['Medicine', 'Law', 'Business', 'Engineering', 'Arts', 'Science'],
     facilities: ['Historic Campus', 'Research Facilities', 'Libraries', 'Sports Complex'],
-    tuitionRange: '$28,000 - $48,000/year'
+    tuitionRange: '₹23,00,000 - ₹40,00,000/year'
   },
   {
     _id: '6',
@@ -88,7 +88,7 @@ const demoUniversities = [
     website: 'https://ethz.ch',
     courses: ['Physics', 'Mathematics', 'Computer Science', 'Engineering', 'Architecture'],
     facilities: ['Research Labs', 'Supercomputing Center', 'Innovation Park', 'Libraries'],
-    tuitionRange: 'CHF 1,500/year'
+    tuitionRange: '₹1,40,000/year'
   }
 ];
 
