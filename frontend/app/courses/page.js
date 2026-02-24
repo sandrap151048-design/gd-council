@@ -221,14 +221,14 @@ export default function Courses() {
                 </div>
               </div>
             ) : (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {courses.map((course, index) => (
                   <div 
                     key={course._id} 
                     className={`puzzle-icon-card group h-full ${index % 3 === 0 ? 'card-slide-left' : index % 3 === 1 ? 'card-slide-up' : 'card-slide-right'} delay-${(index + 1) * 100}`}
                   >
                     {/* Course Image */}
-                    <div className="relative h-48 overflow-hidden rounded-xl mb-6">
+                    <div className="relative h-40 overflow-hidden rounded-xl mb-4">
                       <img 
                         src={`https://images.unsplash.com/photo-${['1434030216411-0b793f4b4173', '1513258496099-48168024aec0', '1503676260728-1c00da094a0b'][index % 3]}?w=600&q=80`}
                         alt={course.title}
@@ -238,15 +238,15 @@ export default function Courses() {
                       <div className="absolute inset-0 bg-gold-400/10 mix-blend-overlay"></div>
                       
                       {/* Level Badge */}
-                      <div className="absolute top-4 right-4">
-                        <span className="px-3 py-1 bg-gold-400/90 text-black text-xs font-bold rounded-full">
+                      <div className="absolute top-3 right-3">
+                        <span className="px-2 py-1 bg-gold-400/90 text-black text-xs font-bold rounded-full">
                           {course.level}
                         </span>
                       </div>
                     </div>
 
                     {/* Category & Duration */}
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-2">
                       <span className="puzzle-label text-xs">
                         {course.category}
                       </span>
@@ -254,26 +254,26 @@ export default function Courses() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-400 transition-colors min-h-[3.5rem]">
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors line-clamp-2">
                       {course.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="puzzle-text text-sm mb-6 line-clamp-3 min-h-[4.5rem]">
+                    <p className="puzzle-text text-xs mb-4 line-clamp-2">
                       {course.description}
                     </p>
 
                     {/* Price & CTA */}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-4 border-t border-gold-400/20 mt-auto">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pt-3 border-t border-gold-400/20 mt-auto">
                       <div>
-                        <div className="puzzle-stat-number text-2xl">
+                        <div className="puzzle-stat-number text-xl">
                           ₹{(course.price * 83).toLocaleString('en-IN')}
                         </div>
                         <div className="text-xs text-gray-500">per course</div>
                       </div>
                       <Link 
                         href={`/dashboard/enroll?courseId=${course._id}`}
-                        className="puzzle-btn-primary px-6 py-2.5 text-sm whitespace-nowrap w-full sm:w-auto text-center"
+                        className="puzzle-btn-primary px-4 py-2 text-xs whitespace-nowrap w-full sm:w-auto text-center"
                       >
                         <span>Enroll Now</span>
                       </Link>
