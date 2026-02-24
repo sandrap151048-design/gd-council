@@ -208,28 +208,6 @@ export default function Services() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="container mx-auto px-6 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center animate-smoothSlideFade" style={{animationDelay: '0.2s'}}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Get Started?
-            </h2>
-            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
-              Let's discuss how our services can help your institution achieve its goals
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 hover:scale-105 transition-all">
-                Contact Us
-              </Link>
-              <Link href="/courses" className="px-8 py-4 bg-transparent text-gold-400 font-semibold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 hover:scale-105 transition-all">
-                Get Started
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

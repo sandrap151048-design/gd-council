@@ -11,7 +11,8 @@ export async function GET(request) {
     const query = userId ? { user: userId } : {};
     const enrollments = await Enrollment.find(query)
       .populate('course')
-      .populate('user', 'name email');
+      .populate('user', 'name email')
+      .sort({ createdAt: -1 });
     
     return NextResponse.json(enrollments);
   } catch (error) {

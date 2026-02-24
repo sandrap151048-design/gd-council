@@ -10,7 +10,7 @@ const demoUniversities = [
     _id: '1',
     name: 'University of Technology Sydney',
     country: 'Australia',
-    description: 'Leading Australian university known for innovation and industry connections with world-class research facilities.',
+    description: 'Leading Australian university known for innovation and industry connections',
     ranking: 'Top 150 Global',
     programs: '200+ Programs',
     students: '45,000+ Students',
@@ -24,7 +24,7 @@ const demoUniversities = [
     _id: '2',
     name: 'University of Toronto',
     country: 'Canada',
-    description: 'Canada\'s top-ranked university offering diverse programs and cutting-edge research opportunities.',
+    description: 'Renowned Canadian institution with world-class faculty and innovative academic programs',
     ranking: 'Top 20 Global',
     programs: '700+ Programs',
     students: '90,000+ Students',
@@ -38,7 +38,7 @@ const demoUniversities = [
     _id: '3',
     name: 'Technical University of Munich',
     country: 'Germany',
-    description: 'Premier German university specializing in engineering, technology, and natural sciences.',
+    description: 'Premier German university specializing in engineering and technology',
     ranking: 'Top 50 Global',
     programs: '150+ Programs',
     students: '42,000+ Students',
@@ -52,7 +52,7 @@ const demoUniversities = [
     _id: '4',
     name: 'National University of Singapore',
     country: 'Singapore',
-    description: 'Asia\'s leading university with strong global partnerships and innovative research programs.',
+    description: 'Leading Asian university with strong global partnerships and research programs',
     ranking: 'Top 15 Global',
     programs: '300+ Programs',
     students: '38,000+ Students',
@@ -66,7 +66,7 @@ const demoUniversities = [
     _id: '5',
     name: 'University of Melbourne',
     country: 'Australia',
-    description: 'Prestigious Australian university with excellence in research and comprehensive academic programs.',
+    description: 'Prestigious Australian university with excellence in research and academics',
     ranking: 'Top 40 Global',
     programs: '350+ Programs',
     students: '50,000+ Students',
@@ -80,7 +80,7 @@ const demoUniversities = [
     _id: '6',
     name: 'ETH Zurich',
     country: 'Switzerland',
-    description: 'World-renowned Swiss university for science, technology, engineering and mathematics.',
+    description: 'World-renowned Swiss university for science, technology and mathematics',
     ranking: 'Top 10 Global',
     programs: '100+ Programs',
     students: '22,000+ Students',
@@ -95,25 +95,28 @@ const demoUniversities = [
 export default function Universities() {
   const [universities, setUniversities] = useState(demoUniversities);
   const [loading, setLoading] = useState(false);
-  const [expandedCard, setExpandedCard] = useState(null);
+  const [expandedCards, setExpandedCards] = useState({});
 
   useEffect(() => {
-    // Use demo data instead of API
-    setUniversities(demoUniversities);
+    // Fetch universities from API
+    fetchUniversities();
   }, []);
 
   const fetchUniversities = async () => {
     try {
+      setLoading(true);
       console.log('Fetching universities from API...');
       const { data } = await api.get('/universities');
       console.log('Universities received:', data);
-      // Use only database universities
-      setUniversities(data);
+      
+      // Combine database universities with demo universities
+      const allUniversities = [...data, ...demoUniversities];
+      setUniversities(allUniversities);
     } catch (error) {
       console.error('Error fetching universities:', error);
       console.error('Error details:', error.response?.data || error.message);
-      // If API fails, show empty array
-      setUniversities([]);
+      // If API fails, use demo universities only
+      setUniversities(demoUniversities);
     } finally {
       setLoading(false);
     }
@@ -254,7 +257,7 @@ export default function Universities() {
           ) : (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {universities.map((university, index) => (
-                <div key={university._id} className={`puzzle-icon-card group h-full ${index % 2 === 0 ? 'card-slide-left' : 'card-slide-right'} delay-${(index + 1) * 100}`}>
+                <div key={university._id} className={`puzzle-icon-card group h-full flex flex-col ${index % 2 === 0 ? 'card-slide-left' : 'card-slide-right'} delay-${(index + 1) * 100}`}>
                   {/* University Image */}
                   {university.image && (
                     <div className="relative h-36 overflow-hidden rounded-xl mb-4">
@@ -290,12 +293,12 @@ export default function Universities() {
                   </h3>
 
                   {/* Description */}
-                  <p className="puzzle-text text-xs mb-3 line-clamp-2">
+                  <p className="puzzle-text text-xs mb-3 flex-grow">
                     {university.description}
                   </p>
 
                   {/* Expandable Details */}
-                  {expandedCard === index && (
+                  {expandedCards[university._id] && (
                     <div className="mb-3 pt-3 border-t border-gold-400/20">
                       {/* Available Courses */}
                       <div className="mb-3">
@@ -369,14 +372,19 @@ export default function Universities() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col gap-2 pt-3 border-t border-gold-400/20 mt-auto">
+                  <div className="flex flex-col gap-2 pt-3 border-t border-gold-400/20">
                     <button
-                      onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+                      onClick={() => {
+                        setExpandedCards(prev => ({
+                          ...prev,
+                          [university._id]: !prev[university._id]
+                        }));
+                      }}
                       className="w-full px-3 py-2 bg-white/5 text-gold-400 text-xs font-bold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 transition-all text-center flex items-center justify-center gap-1"
                     >
-                      <span>{expandedCard === index ? 'Hide Details' : 'View Details'}</span>
+                      <span>{expandedCards[university._id] ? 'Hide Details' : 'View Details'}</span>
                       <svg 
-                        className={`w-3 h-3 transition-transform ${expandedCard === index ? 'rotate-180' : ''}`}
+                        className={`w-3 h-3 transition-transform ${expandedCards[university._id] ? 'rotate-180' : ''}`}
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24"
@@ -386,7 +394,7 @@ export default function Universities() {
                     </button>
                     <div className="flex gap-2">
                       <Link 
-                        href="/login"
+                        href="/dashboard/inquiry"
                         className="flex-1 px-3 py-2 bg-gold-400 text-black text-xs font-bold rounded-lg hover:bg-gold-400 transition-all text-center"
                       >
                         Apply Now

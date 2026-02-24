@@ -106,7 +106,7 @@ export default function Partnerships() {
                   ))}
                 </ul>
                 
-                <Link href="/register" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2 mt-auto">
+                <Link href="/dashboard/partnership" className="text-gold-400 font-semibold hover:text-gold-300 inline-flex items-center gap-2 mt-auto">
                   Apply for Partnership
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -155,7 +155,7 @@ export default function Partnerships() {
               <Link href="/register" className="lofi-button">
                 Register as Partner
               </Link>
-              <Link href="/register" className="lofi-button-secondary">
+              <Link href="/dashboard/partnership" className="lofi-button-secondary">
                 Apply for Partnership
               </Link>
             </div>

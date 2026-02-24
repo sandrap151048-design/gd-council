@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '../../../context/AuthContext';
 import ProtectedRoute from '../../../components/ProtectedRoute';
 import DashboardLayout from '../../../components/DashboardLayout';
 import api from '../../../services/api';
 import { toast } from 'react-toastify';
 
 function PartnershipContent() {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     companyName: '',
     contactPerson: '',
@@ -28,7 +30,12 @@ function PartnershipContent() {
     e.preventDefault();
     setLoading(true);
     try {
-      await api.post('/partnerships', formData);
+      // Include user ID in the submission
+      const submissionData = {
+        ...formData,
+        user: user?.user?._id || user?._id
+      };
+      await api.post('/partnerships', submissionData);
       toast.success('Partnership application submitted successfully!');
       router.push('/dashboard');
     } catch (error) {

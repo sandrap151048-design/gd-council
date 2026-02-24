@@ -480,7 +480,7 @@ export default function Home() {
                   Get Started Today
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-transparent text-gold-400 font-semibold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 transition-all">
-                  Contact Sales
+                  Contact Us
                 </Link>
               </div>
             </div>

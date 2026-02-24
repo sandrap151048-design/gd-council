@@ -4,178 +4,197 @@ import { useState, useEffect } from 'react';
 import api from '../../services/api';
 import Link from 'next/link';
 
-// Demo courses data
+// Demo courses data with unique images
 const demoCourses = [
   {
     _id: '1',
     title: 'Digital Marketing Mastery',
-    description: 'Comprehensive digital marketing course covering SEO, social media, content marketing, and analytics for modern businesses.',
+    description: 'Comprehensive digital marketing course covering SEO, social media, content marketing, and analytics for modern businesses',
     category: 'Marketing',
     level: 'Intermediate',
     duration: '8 weeks',
-    price: 499
+    price: 499,
+    image: 'https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&q=80' // Marketing team
   },
   {
     _id: '2',
     title: 'Full Stack Web Development',
-    description: 'Learn to build complete web applications using modern technologies including React, Node.js, and MongoDB.',
+    description: 'Learn to build complete web applications using modern technologies including React, Node.js, and MongoDB',
     category: 'IT & Computer Science',
     level: 'Advanced',
     duration: '12 weeks',
-    price: 799
+    price: 799,
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80' // Developer coding
   },
   {
     _id: '3',
     title: 'Business Analytics & Data Science',
-    description: 'Master data analysis, visualization, and machine learning techniques to drive business decisions.',
+    description: 'Master data analysis, visualization, and machine learning techniques to drive business decisions',
     category: 'Business',
     level: 'Intermediate',
     duration: '10 weeks',
-    price: 699
+    price: 699,
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80' // Analytics dashboard
   },
   {
     _id: '4',
     title: 'Project Management Professional',
-    description: 'Prepare for PMP certification with comprehensive project management methodologies and best practices.',
+    description: 'Prepare for PMP certification with comprehensive project management methodologies and best practices',
     category: 'Management',
     level: 'Professional',
     duration: '6 weeks',
-    price: 599
+    price: 599,
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80' // Team collaboration
   },
   {
     _id: '5',
     title: 'UI/UX Design Fundamentals',
-    description: 'Create stunning user interfaces and experiences with industry-standard design tools and principles.',
+    description: 'Create stunning user interfaces and experiences with industry-standard design tools and principles',
     category: 'Design',
     level: 'Beginner',
     duration: '8 weeks',
-    price: 449
+    price: 449,
+    image: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&q=80' // UI design
   },
   {
     _id: '6',
     title: 'Cloud Computing with AWS',
-    description: 'Master Amazon Web Services and cloud architecture for scalable, secure applications.',
+    description: 'Master Amazon Web Services and cloud architecture for scalable, secure applications',
     category: 'IT & Computer Science',
     level: 'Advanced',
     duration: '10 weeks',
-    price: 749
+    price: 749,
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80' // Cloud servers
   },
   {
     _id: '7',
     title: 'Mechanical Engineering Fundamentals',
-    description: 'Core concepts in mechanical engineering including thermodynamics, mechanics, and materials science.',
+    description: 'Core concepts in mechanical engineering including thermodynamics, mechanics, and materials science',
     category: 'Engineering',
     level: 'Intermediate',
     duration: '14 weeks',
-    price: 899
+    price: 899,
+    image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?w=600&q=80' // Engineering blueprints
   },
   {
     _id: '8',
     title: 'Computer Science & Programming',
-    description: 'Learn programming fundamentals, algorithms, data structures, and software development principles.',
+    description: 'Learn programming fundamentals, algorithms, data structures, and software development principles',
     category: 'Computer Science',
     level: 'Beginner',
     duration: '16 weeks',
-    price: 799
+    price: 799,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80' // Code on screen
   },
   {
     _id: '9',
     title: 'Medicine & Healthcare Management',
-    description: 'Healthcare administration, medical ethics, and patient care management for healthcare professionals.',
+    description: 'Healthcare administration, medical ethics, and patient care management for healthcare professionals',
     category: 'Medicine',
     level: 'Professional',
     duration: '12 weeks',
-    price: 1299
+    price: 1299,
+    image: 'https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=600&q=80' // Medical professionals
   },
   {
     _id: '10',
     title: 'Business Law & Legal Studies',
-    description: 'Understanding business law, contracts, corporate governance, and legal compliance.',
+    description: 'Understanding business law, contracts, corporate governance, and legal compliance',
     category: 'Law',
     level: 'Advanced',
     duration: '10 weeks',
-    price: 999
+    price: 999,
+    image: 'https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=600&q=80' // Law library
   },
   {
     _id: '11',
     title: 'Arts & Humanities',
-    description: 'Explore literature, philosophy, history, and cultural studies in this comprehensive humanities course.',
+    description: 'Explore literature, philosophy, history, and cultural studies in this comprehensive humanities course',
     category: 'Arts & Sciences',
     level: 'Intermediate',
     duration: '8 weeks',
-    price: 549
+    price: 549,
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&q=80' // Books and reading
   },
   {
     _id: '12',
     title: 'Business Administration MBA Prep',
-    description: 'Prepare for MBA programs with courses in finance, strategy, operations, and leadership.',
+    description: 'Prepare for MBA programs with courses in finance, strategy, operations, and leadership',
     category: 'Business Administration',
     level: 'Advanced',
     duration: '20 weeks',
-    price: 1499
+    price: 1499,
+    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80' // Business strategy
   },
   {
     _id: '13',
     title: 'Physics & Applied Sciences',
-    description: 'Advanced physics concepts including quantum mechanics, relativity, and experimental methods.',
+    description: 'Advanced physics concepts including quantum mechanics, relativity, and experimental methods',
     category: 'Physics',
     level: 'Advanced',
     duration: '14 weeks',
-    price: 899
+    price: 899,
+    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&q=80' // Physics experiment
   },
   {
     _id: '14',
     title: 'Chemistry & Biochemistry',
-    description: 'Organic, inorganic, and biochemistry fundamentals with laboratory techniques.',
+    description: 'Organic, inorganic, and biochemistry fundamentals with laboratory techniques',
     category: 'Chemistry',
     level: 'Intermediate',
     duration: '12 weeks',
-    price: 799
+    price: 799,
+    image: 'https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=600&q=80' // Chemistry beakers
   },
   {
     _id: '15',
     title: 'Mathematics & Statistics',
-    description: 'Advanced mathematics including calculus, linear algebra, and statistical analysis.',
+    description: 'Advanced mathematics including calculus, linear algebra, and statistical analysis',
     category: 'Mathematics',
     level: 'Advanced',
     duration: '16 weeks',
-    price: 849
+    price: 849,
+    image: 'https://images.unsplash.com/photo-1596495578065-6e0763fa1178?w=600&q=80' // Math formulas
   },
   {
     _id: '16',
     title: 'Computing & Information Technology',
-    description: 'IT infrastructure, networking, cybersecurity, and system administration.',
+    description: 'IT infrastructure, networking, cybersecurity, and system administration',
     category: 'Computing',
     level: 'Intermediate',
     duration: '12 weeks',
-    price: 749
+    price: 749,
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80' // Network cables
   },
   {
     _id: '17',
     title: 'Design & Architecture',
-    description: 'Architectural design principles, CAD software, and sustainable building practices.',
+    description: 'Architectural design principles, CAD software, and sustainable building practices',
     category: 'Design & Architecture',
     level: 'Advanced',
     duration: '18 weeks',
-    price: 1199
+    price: 1199,
+    image: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80' // Architecture plans
   },
   {
     _id: '18',
     title: 'Health Sciences & Nursing',
-    description: 'Healthcare fundamentals, patient care, medical terminology, and clinical practices.',
+    description: 'Healthcare fundamentals, patient care, medical terminology, and clinical practices',
     category: 'Health Sciences',
     level: 'Professional',
     duration: '16 weeks',
-    price: 1099
+    price: 1099,
+    image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80' // Nursing care
   },
   {
     _id: '19',
     title: 'Science & Research Methods',
-    description: 'Scientific methodology, research design, data collection, and academic writing.',
+    description: 'Scientific methodology, research design, data collection, and academic writing',
     category: 'Science',
     level: 'Intermediate',
     duration: '10 weeks',
-    price: 699
+    price: 699,
+    image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&q=80' // Scientific research
   }
 ];
 
@@ -192,8 +211,8 @@ export default function Courses() {
       setSearchQuery(search);
     }
 
-    // Use demo data instead of API
-    setCourses(demoCourses);
+    // Fetch courses from API
+    fetchCourses();
     
     // Scroll reveal observer
     const observerOptions = {
@@ -216,16 +235,19 @@ export default function Courses() {
 
   const fetchCourses = async () => {
     try {
+      setLoading(true);
       console.log('Fetching courses from API...');
       const { data } = await api.get('/courses');
       console.log('Courses received:', data);
-      // Use only database courses
-      setCourses(data);
+      
+      // Combine database courses with demo courses
+      const allCourses = [...data, ...demoCourses];
+      setCourses(allCourses);
     } catch (error) {
       console.error('Error fetching courses:', error);
       console.error('Error details:', error.response?.data || error.message);
-      // If API fails, show empty array
-      setCourses([]);
+      // If API fails, use demo courses only
+      setCourses(demoCourses);
     } finally {
       setLoading(false);
     }
@@ -381,12 +403,12 @@ export default function Courses() {
                   .map((course, index) => (
                   <div 
                     key={course._id} 
-                    className={`puzzle-icon-card group h-full ${index % 3 === 0 ? 'card-slide-left' : index % 3 === 1 ? 'card-slide-up' : 'card-slide-right'} delay-${(index + 1) * 100}`}
+                    className={`puzzle-icon-card group h-full flex flex-col ${index % 3 === 0 ? 'card-slide-left' : index % 3 === 1 ? 'card-slide-up' : 'card-slide-right'} delay-${(index + 1) * 100}`}
                   >
                     {/* Course Image */}
                     <div className="relative h-40 overflow-hidden rounded-xl mb-4">
                       <img 
-                        src={`https://images.unsplash.com/photo-${['1434030216411-0b793f4b4173', '1513258496099-48168024aec0', '1503676260728-1c00da094a0b'][index % 3]}?w=600&q=80`}
+                        src={course.image || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&q=80'}
                         alt={course.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       />
@@ -410,12 +432,12 @@ export default function Courses() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors line-clamp-2">
+                    <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gold-400 transition-colors">
                       {course.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="puzzle-text text-xs mb-4 line-clamp-2">
+                    <p className="puzzle-text text-xs mb-4 flex-grow">
                       {course.description}
                     </p>
 
@@ -428,7 +450,7 @@ export default function Courses() {
                         <div className="text-xs text-gray-500">per course</div>
                       </div>
                       <Link 
-                        href={`/dashboard/enroll?courseId=${course._id}`}
+                        href={`/enquiry?type=course&name=${encodeURIComponent(course.title)}`}
                         className="puzzle-btn-primary px-4 py-2 text-xs whitespace-nowrap w-full sm:w-auto text-center"
                       >
                         <span>Enroll Now</span>
