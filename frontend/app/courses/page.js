@@ -300,7 +300,7 @@ export default function Courses() {
                 Join thousands of institutions advancing their teams' skills
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/register" className="puzzle-btn-primary">
+                <Link href="/courses" className="puzzle-btn-primary">
                   <span>Get Started</span>
                 </Link>
                 <Link href="/contact" className="puzzle-btn-secondary">

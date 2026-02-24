@@ -94,7 +94,7 @@ export default function Home() {
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center lg:justify-start animate-smoothSlideFade" style={{animationDelay: '0.5s'}}>
-                  <Link href="/register" className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-gold-500/50 hover:scale-105 text-sm sm:text-base">
+                  <Link href="/courses" className="group relative px-5 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold rounded-xl overflow-hidden transition-all hover:shadow-2xl hover:shadow-gold-500/50 hover:scale-105 text-sm sm:text-base">
                     <div className="absolute inset-0 bg-gradient-to-r from-gold-400 to-gold-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       Get Started
@@ -476,7 +476,7 @@ export default function Home() {
                 Join hundreds of institutions already benefiting from our global network
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link href="/register" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 transition-all">
+                <Link href="/courses" className="px-8 py-4 bg-gold-400 text-black font-semibold rounded-lg hover:bg-gold-400 transition-all">
                   Get Started Today
                 </Link>
                 <Link href="/contact" className="px-8 py-4 bg-transparent text-gold-400 font-semibold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 hover:border-gold-400 transition-all">
