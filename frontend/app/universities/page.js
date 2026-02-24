@@ -15,7 +15,10 @@ const demoUniversities = [
     programs: '200+ Programs',
     students: '45,000+ Students',
     image: 'https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80',
-    website: 'https://www.uts.edu.au'
+    website: 'https://www.uts.edu.au',
+    courses: ['Engineering', 'Business', 'IT & Computer Science', 'Design & Architecture', 'Health Sciences'],
+    facilities: ['Modern Campus', 'Research Labs', 'Innovation Hub', 'Sports Complex'],
+    tuitionRange: '$25,000 - $45,000/year'
   },
   {
     _id: '2',
@@ -26,7 +29,10 @@ const demoUniversities = [
     programs: '700+ Programs',
     students: '90,000+ Students',
     image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80',
-    website: 'https://www.utoronto.ca'
+    website: 'https://www.utoronto.ca',
+    courses: ['Medicine', 'Law', 'Engineering', 'Arts & Sciences', 'Business Administration'],
+    facilities: ['Multiple Campuses', 'Research Centers', 'Libraries', 'Student Housing'],
+    tuitionRange: '$30,000 - $55,000/year'
   },
   {
     _id: '3',
@@ -37,7 +43,10 @@ const demoUniversities = [
     programs: '150+ Programs',
     students: '42,000+ Students',
     image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80',
-    website: 'https://www.tum.de'
+    website: 'https://www.tum.de',
+    courses: ['Mechanical Engineering', 'Computer Science', 'Physics', 'Chemistry', 'Mathematics'],
+    facilities: ['Research Institutes', 'Innovation Labs', 'Technology Park', 'Sports Facilities'],
+    tuitionRange: '€0 - €3,000/year'
   },
   {
     _id: '4',
@@ -48,7 +57,10 @@ const demoUniversities = [
     programs: '300+ Programs',
     students: '38,000+ Students',
     image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80',
-    website: 'https://www.nus.edu.sg'
+    website: 'https://www.nus.edu.sg',
+    courses: ['Business', 'Engineering', 'Computing', 'Medicine', 'Law', 'Design'],
+    facilities: ['Smart Campus', 'Research Centers', 'Innovation Labs', 'Student Centers'],
+    tuitionRange: '$20,000 - $40,000/year'
   },
   {
     _id: '5',
@@ -59,7 +71,10 @@ const demoUniversities = [
     programs: '350+ Programs',
     students: '50,000+ Students',
     image: 'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=600&q=80',
-    website: 'https://www.unimelb.edu.au'
+    website: 'https://www.unimelb.edu.au',
+    courses: ['Medicine', 'Law', 'Business', 'Engineering', 'Arts', 'Science'],
+    facilities: ['Historic Campus', 'Research Facilities', 'Libraries', 'Sports Complex'],
+    tuitionRange: '$28,000 - $48,000/year'
   },
   {
     _id: '6',
@@ -70,13 +85,17 @@ const demoUniversities = [
     programs: '100+ Programs',
     students: '22,000+ Students',
     image: 'https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?w=600&q=80',
-    website: 'https://ethz.ch'
+    website: 'https://ethz.ch',
+    courses: ['Physics', 'Mathematics', 'Computer Science', 'Engineering', 'Architecture'],
+    facilities: ['Research Labs', 'Supercomputing Center', 'Innovation Park', 'Libraries'],
+    tuitionRange: 'CHF 1,500/year'
   }
 ];
 
 export default function Universities() {
   const [universities, setUniversities] = useState(demoUniversities);
   const [loading, setLoading] = useState(false);
+  const [expandedCard, setExpandedCard] = useState(null);
 
   useEffect(() => {
     // Use demo data instead of API
@@ -275,6 +294,56 @@ export default function Universities() {
                     {university.description}
                   </p>
 
+                  {/* Expandable Details */}
+                  {expandedCard === index && (
+                    <div className="mb-3 pt-3 border-t border-gold-400/20">
+                      {/* Available Courses */}
+                      <div className="mb-3">
+                        <h4 className="text-xs font-bold text-gold-400 mb-2 flex items-center gap-1">
+                          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                          </svg>
+                          Available Courses
+                        </h4>
+                        <div className="flex flex-wrap gap-1">
+                          {university.courses?.map((course, idx) => (
+                            <span key={idx} className="px-2 py-1 bg-gold-400/10 border border-gold-400/30 rounded text-xs text-gray-300">
+                              {course}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Facilities */}
+                      {university.facilities && (
+                        <div className="mb-3">
+                          <h4 className="text-xs font-bold text-gold-400 mb-2 flex items-center gap-1">
+                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                            Facilities
+                          </h4>
+                          <div className="grid grid-cols-2 gap-1">
+                            {university.facilities.map((facility, idx) => (
+                              <div key={idx} className="flex items-center gap-1 text-xs text-gray-400">
+                                <span className="text-gold-400">•</span>
+                                {facility}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Tuition Range */}
+                      {university.tuitionRange && (
+                        <div className="p-2 bg-gold-400/5 rounded-lg border border-gold-400/20">
+                          <div className="text-xs text-gray-400 mb-1">Tuition Range</div>
+                          <div className="text-sm font-bold text-gold-400">{university.tuitionRange}</div>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
                   {/* Stats */}
                   <div className="grid grid-cols-2 gap-2 mb-3">
                     {university.programs && (
@@ -296,23 +365,39 @@ export default function Universities() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2 pt-3 border-t border-gold-400/20 mt-auto">
-                    <Link 
-                      href="/login"
-                      className="flex-1 px-3 py-2 bg-gold-400 text-black text-xs font-bold rounded-lg hover:bg-gold-400 transition-all text-center"
+                  <div className="flex flex-col gap-2 pt-3 border-t border-gold-400/20 mt-auto">
+                    <button
+                      onClick={() => setExpandedCard(expandedCard === index ? null : index)}
+                      className="w-full px-3 py-2 bg-white/5 text-gold-400 text-xs font-bold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 transition-all text-center flex items-center justify-center gap-1"
                     >
-                      Apply Now
-                    </Link>
-                    {university.website && (
-                      <a 
-                        href={university.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex-1 px-3 py-2 bg-white/5 text-gold-400 text-xs font-bold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 transition-all text-center"
+                      <span>{expandedCard === index ? 'Hide Details' : 'View Details'}</span>
+                      <svg 
+                        className={`w-3 h-3 transition-transform ${expandedCard === index ? 'rotate-180' : ''}`}
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
                       >
-                        Visit Website
-                      </a>
-                    )}
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                    <div className="flex gap-2">
+                      <Link 
+                        href="/login"
+                        className="flex-1 px-3 py-2 bg-gold-400 text-black text-xs font-bold rounded-lg hover:bg-gold-400 transition-all text-center"
+                      >
+                        Apply Now
+                      </Link>
+                      {university.website && (
+                        <a 
+                          href={university.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 px-3 py-2 bg-white/5 text-gold-400 text-xs font-bold rounded-lg border border-gold-400/30 hover:bg-gold-400/10 transition-all text-center"
+                        >
+                          Website
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
