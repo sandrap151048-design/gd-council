@@ -19,7 +19,7 @@ const demoCourses = [
     _id: '2',
     title: 'Full Stack Web Development',
     description: 'Learn to build complete web applications using modern technologies including React, Node.js, and MongoDB.',
-    category: 'Technology',
+    category: 'IT & Computer Science',
     level: 'Advanced',
     duration: '12 weeks',
     price: 799
@@ -28,7 +28,7 @@ const demoCourses = [
     _id: '3',
     title: 'Business Analytics & Data Science',
     description: 'Master data analysis, visualization, and machine learning techniques to drive business decisions.',
-    category: 'Data Science',
+    category: 'Business',
     level: 'Intermediate',
     duration: '10 weeks',
     price: 699
@@ -55,10 +55,127 @@ const demoCourses = [
     _id: '6',
     title: 'Cloud Computing with AWS',
     description: 'Master Amazon Web Services and cloud architecture for scalable, secure applications.',
-    category: 'Technology',
+    category: 'IT & Computer Science',
     level: 'Advanced',
     duration: '10 weeks',
     price: 749
+  },
+  {
+    _id: '7',
+    title: 'Mechanical Engineering Fundamentals',
+    description: 'Core concepts in mechanical engineering including thermodynamics, mechanics, and materials science.',
+    category: 'Engineering',
+    level: 'Intermediate',
+    duration: '14 weeks',
+    price: 899
+  },
+  {
+    _id: '8',
+    title: 'Computer Science & Programming',
+    description: 'Learn programming fundamentals, algorithms, data structures, and software development principles.',
+    category: 'Computer Science',
+    level: 'Beginner',
+    duration: '16 weeks',
+    price: 799
+  },
+  {
+    _id: '9',
+    title: 'Medicine & Healthcare Management',
+    description: 'Healthcare administration, medical ethics, and patient care management for healthcare professionals.',
+    category: 'Medicine',
+    level: 'Professional',
+    duration: '12 weeks',
+    price: 1299
+  },
+  {
+    _id: '10',
+    title: 'Business Law & Legal Studies',
+    description: 'Understanding business law, contracts, corporate governance, and legal compliance.',
+    category: 'Law',
+    level: 'Advanced',
+    duration: '10 weeks',
+    price: 999
+  },
+  {
+    _id: '11',
+    title: 'Arts & Humanities',
+    description: 'Explore literature, philosophy, history, and cultural studies in this comprehensive humanities course.',
+    category: 'Arts & Sciences',
+    level: 'Intermediate',
+    duration: '8 weeks',
+    price: 549
+  },
+  {
+    _id: '12',
+    title: 'Business Administration MBA Prep',
+    description: 'Prepare for MBA programs with courses in finance, strategy, operations, and leadership.',
+    category: 'Business Administration',
+    level: 'Advanced',
+    duration: '20 weeks',
+    price: 1499
+  },
+  {
+    _id: '13',
+    title: 'Physics & Applied Sciences',
+    description: 'Advanced physics concepts including quantum mechanics, relativity, and experimental methods.',
+    category: 'Physics',
+    level: 'Advanced',
+    duration: '14 weeks',
+    price: 899
+  },
+  {
+    _id: '14',
+    title: 'Chemistry & Biochemistry',
+    description: 'Organic, inorganic, and biochemistry fundamentals with laboratory techniques.',
+    category: 'Chemistry',
+    level: 'Intermediate',
+    duration: '12 weeks',
+    price: 799
+  },
+  {
+    _id: '15',
+    title: 'Mathematics & Statistics',
+    description: 'Advanced mathematics including calculus, linear algebra, and statistical analysis.',
+    category: 'Mathematics',
+    level: 'Advanced',
+    duration: '16 weeks',
+    price: 849
+  },
+  {
+    _id: '16',
+    title: 'Computing & Information Technology',
+    description: 'IT infrastructure, networking, cybersecurity, and system administration.',
+    category: 'Computing',
+    level: 'Intermediate',
+    duration: '12 weeks',
+    price: 749
+  },
+  {
+    _id: '17',
+    title: 'Design & Architecture',
+    description: 'Architectural design principles, CAD software, and sustainable building practices.',
+    category: 'Design & Architecture',
+    level: 'Advanced',
+    duration: '18 weeks',
+    price: 1199
+  },
+  {
+    _id: '18',
+    title: 'Health Sciences & Nursing',
+    description: 'Healthcare fundamentals, patient care, medical terminology, and clinical practices.',
+    category: 'Health Sciences',
+    level: 'Professional',
+    duration: '16 weeks',
+    price: 1099
+  },
+  {
+    _id: '19',
+    title: 'Science & Research Methods',
+    description: 'Scientific methodology, research design, data collection, and academic writing.',
+    category: 'Science',
+    level: 'Intermediate',
+    duration: '10 weeks',
+    price: 699
   }
 ];
 
