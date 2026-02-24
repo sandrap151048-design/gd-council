@@ -47,7 +47,7 @@ const demoUniversities = [
     ranking: 'Top 15 Global',
     programs: '300+ Programs',
     students: '38,000+ Students',
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1564981797816-1043664bf78d?w=600&q=80',
     website: 'https://www.nus.edu.sg'
   },
   {
