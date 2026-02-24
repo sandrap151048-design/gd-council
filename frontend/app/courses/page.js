@@ -65,8 +65,16 @@ const demoCourses = [
 export default function Courses() {
   const [courses, setCourses] = useState(demoCourses);
   const [loading, setLoading] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
+    // Get search parameter from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const search = urlParams.get('search');
+    if (search) {
+      setSearchQuery(search);
+    }
+
     // Use demo data instead of API
     setCourses(demoCourses);
     
@@ -208,6 +216,30 @@ export default function Courses() {
       <section className="py-20 puzzle-section relative">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
+            {/* Search Filter Display */}
+            {searchQuery && (
+              <div className="mb-8 p-4 bg-gold-400/10 border border-gold-400/30 rounded-lg flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                  <span className="text-white font-semibold">Showing courses related to: </span>
+                  <span className="px-3 py-1 bg-gold-400 text-black text-sm font-bold rounded-full">{searchQuery}</span>
+                </div>
+                <button
+                  onClick={() => {
+                    setSearchQuery('');
+                    window.history.pushState({}, '', '/courses');
+                  }}
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            )}
+
             {courses.length === 0 ? (
               <div className="text-center py-20">
                 <div className="puzzle-glass-card p-12 max-w-md mx-auto">
@@ -222,7 +254,14 @@ export default function Courses() {
               </div>
             ) : (
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {courses.map((course, index) => (
+                {courses
+                  .filter(course => {
+                    if (!searchQuery) return true;
+                    return course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           course.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                           course.description.toLowerCase().includes(searchQuery.toLowerCase());
+                  })
+                  .map((course, index) => (
                   <div 
                     key={course._id} 
                     className={`puzzle-icon-card group h-full ${index % 3 === 0 ? 'card-slide-left' : index % 3 === 1 ? 'card-slide-up' : 'card-slide-right'} delay-${(index + 1) * 100}`}
